@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="source/css/style.css">
-    <title>Home</title>
+    <title>Counter App</title>
 </head>
 <body>
-    <h1>initiation</h1>
+    <h1>Counter: <span id="counter">0</span></h1>
+    <button id="incrementBtn">Increment Counter</button>
+
+    <script>
+        document.getElementById('incrementBtn').addEventListener('click', async () => {
+            const response = await fetch('/.netlify/functions/incrementCounter');
+            const data = await response.json();
+            document.getElementById('counter').textContent = data.count;
+        });
+    </script>
 </body>
 </html>
