@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="source/css/questionaire.css">
     <title>Questionaire</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="container-question">
+            <h2 id="question">blablabli ou blablablou ?</h2>
+            <div class="container-button">
+                <button onclick="Q1R1()" id="btn1">blablabli</button>
+                <button onclick="Q1R2()" id="btn2">blablablou</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-bottom-info">
+        <p id="bottom-info">1/5</p>
+        <div class="barre-info"><div id="barre-info-contenue"></div></div>
+    </div>
+    <script src="source/js/question.js"></script>
 </body>
+
 </html>
