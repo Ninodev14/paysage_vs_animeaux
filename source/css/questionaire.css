@@ -46,6 +46,17 @@ h2 {
     border-radius: 20px;
 }
 
-.container-img{
+.container-img {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
 
+.container-img img {
+    height: 80px;
+    width: 80px;
+}
+
+#img3, #img4{
+display: none;
 }
