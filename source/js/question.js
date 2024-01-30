@@ -1,6 +1,6 @@
 let infoWithTotal = 5;
 let infoWithActualle = 1;
-let typeVs = 0;
+let typeKind = 0;
 
 function IniA() {
     typeVs = 0;
@@ -18,7 +18,6 @@ function IniA() {
 }
 
 function IniP() {
-    typeVs = 1;
     document.getElementById("question").innerText = "Choisser votre type";
     document.getElementById("img1").setAttribute("onclick", "teamPA()");
     document.getElementById("img2").setAttribute("onclick", "teamPB()");
@@ -30,6 +29,54 @@ function IniP() {
     document.getElementById("img2").src = "source/image/test_mer.jpg";
     document.getElementById("img3").src = "source/image/test_mer.jpg";
     document.getElementById("img4").src = "source/image/test_mer.jpg";
+}
+
+function teamAA() {
+    BeginQuestion()
+    typeKind = 1;
+}
+
+function teamAB() {
+    BeginQuestion()
+    typeKind = 2;
+}
+
+function teamAC() {
+    BeginQuestion()
+    typeKind = 3;
+}
+
+function teamAD() {
+    BeginQuestion()
+    typeKind = 4;
+}
+
+function teamPA() {
+    BeginQuestion()
+    typeKind = 5;
+}
+
+function teamPB() {
+    BeginQuestion()
+    typeKind = 6;
+}
+
+function teamPC() {
+    BeginQuestion()
+    typeKind = 7;
+}
+
+function teamPD() {
+    BeginQuestion()
+    typeKind = 8;
+}
+
+
+function BeginQuestion() {
+    document.getElementById("container-img").style.display = "none";
+    document.getElementById("container-bottom-info").style.display = "flex";
+    document.getElementById("container-button").style.display = "flex";
+    document.getElementById("question").innerText = "Choisiz votre équipe";
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick) {
