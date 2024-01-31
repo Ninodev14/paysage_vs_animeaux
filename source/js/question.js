@@ -4,17 +4,33 @@ let typeKind = 0;
 let pointPerso = 0;
 
 function IniA() {
-    BeginQuestion()
     typeKind = 0;
+    document.getElementById("question").innerText = "Bienvenue chez les animaux";
+    document.getElementById("paragraphe-center").innerText = "BLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAbla";
+    document.getElementById("paragraphe-center").style.display = "flex";
+    document.getElementById("img2").style.display = "none";
+    document.getElementById("img1").style.width = "200px";
+    document.getElementById("img1").style.height = "200px";
+    document.getElementById("button-begin").style.display = "flex";
 }
 
 function IniP() {
-    BeginQuestion()
     typeKind = 1;
+    document.getElementById("question").innerText = "Bienvenue chez les paysages";
+    document.getElementById("paragraphe-center").innerText = "BLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAbla";
+    document.getElementById("paragraphe-center").style.display = "flex";
+    document.getElementById("img1").style.display = "none";
+    document.getElementById("img2").style.width = "200px";
+    document.getElementById("img2").style.height = "200px";
+    document.getElementById("button-begin").style.display = "flex";
 }
 
 
+
+
 function BeginQuestion() {
+    document.getElementById("button-begin").style.display = "none";
+    document.getElementById("paragraphe-center").style.display = "none";
     document.getElementById("container-img").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
@@ -44,7 +60,9 @@ function Q2R1() {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
-    }
+    }    
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q2R2() {
@@ -60,6 +78,8 @@ function Q2R2() {
     } else {
         pointPerso = pointPerso + 5;
     }
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q3R1() {
@@ -75,6 +95,8 @@ function Q3R1() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q3R2() {
@@ -90,6 +112,8 @@ function Q3R2() {
     } else {
         pointPerso = pointPerso + 5;
     }
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q4R1() {
@@ -105,6 +129,8 @@ function Q4R1() {
     } else {
         pointPerso = pointPerso + 5;
     }
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q4R2() {
@@ -120,6 +146,8 @@ function Q4R2() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q5R1() {
@@ -131,10 +159,13 @@ function Q5R1() {
         "Q6R2()"
     );
     if (typeKind == 0) {
+        console.log("test")
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
     }
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q5R2() {
@@ -150,13 +181,29 @@ function Q5R2() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q6R1() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
     checkCompletion();
 }
 
 function Q6R2() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
     checkCompletion();
 }
 function checkCompletion() {
