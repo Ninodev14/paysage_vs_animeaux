@@ -3,7 +3,6 @@ let infoWithActualle = 1;
 let typeKind = 0;
 
 function IniA() {
-    typeVs = 0;
     document.getElementById("question").innerText = "Choisser votre type";
     document.getElementById("img1").setAttribute("onclick", "teamAA()");
     document.getElementById("img2").setAttribute("onclick", "teamAB()");
@@ -90,22 +89,98 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
 }
 
-function Q1R1() {
+function Q2R1() {
     updateQuestionAndButtons(
         "c'est la deusieme question ou kua ?",
         "é wé mon pote",
-        "Q2R1()",
+        "Q3R1()",
         "bof en vrai",
-        "Q2R2()"
+        "Q3R2()"
     );
 }
 
-function Q1R2() {
+function Q2R2() {
     updateQuestionAndButtons(
         "c'est la deusieme question ou kua ?",
         "é wé mon pote",
-        "Q2R1()",
+        "Q3R1()",
         "bof en vrai",
-        "Q2R2()"
+        "Q3R2()"
     );
+}
+
+function Q3R1() {
+    updateQuestionAndButtons(
+        "Est de 3 ?",
+        "é wé mon pote",
+        "Q4R1()",
+        "bof en vrai",
+        "Q4R2()"
+    );
+}
+
+function Q2R2() {
+    updateQuestionAndButtons(
+        "Est de 3 ?",
+        "é wé mon pote",
+        "Q4R1()",
+        "bof en vrai",
+        "Q4R2()"
+    );
+}
+
+function Q4R1() {
+    updateQuestionAndButtons(
+        "Est de 4 ?",
+        "é wé mon pote",
+        "Q5R1()",
+        "bof en vrai",
+        "Q5R2()"
+    );
+}
+
+function Q4R2() {
+    updateQuestionAndButtons(
+        "Est de 4 ?",
+        "é wé mon pote",
+        "Q5R1()",
+        "bof en vrai",
+        "Q5R2()"
+    );
+}
+
+function Q5R1() {
+    updateQuestionAndButtons(
+        "Est de 5 ?",
+        "é wé mon pote",
+        "Q6R1()",
+        "bof en vrai",
+        "Q6R2()"
+    );
+}
+
+function Q5R2() {
+    updateQuestionAndButtons(
+        "Est de 5 ?",
+        "é wé mon pote",
+        "Q6R1()",
+        "bof en vrai",
+        "Q6R2()"
+    );
+}
+
+function Q6R1() {
+    checkCompletion();
+}
+
+function Q6R2() {
+    checkCompletion();
+}
+function checkCompletion() {
+    if (infoWithActualle = infoWithTotal) {
+        document.getElementById("question").innerText = "Vous avez finis";
+        document.getElementById("container-button").style.display = "none";
+        document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
+        document.getElementById("barre-info-contenue").style.width = "100%";
+    }
 }
