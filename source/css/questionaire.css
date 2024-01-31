@@ -6,7 +6,7 @@ h2 {
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: center
+    justify-content: center;
 }
 
 .container-question {
@@ -44,15 +44,20 @@ h2 {
     height: 5px;
     background-color: blue;
     border-radius: 20px;
+    margin-top: -2.5px;
 }
 
 .container-img {
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
+    
 }
 
 .container-img img {
+    margin-bottom: 20px;
     height: 80px;
     width: 80px;
 }

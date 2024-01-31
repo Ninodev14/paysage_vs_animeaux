@@ -75,7 +75,7 @@ function BeginQuestion() {
     document.getElementById("container-img").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
-    document.getElementById("question").innerText = "Choisiz votre équipe";
+    document.getElementById("question").innerText = "blablabli ou blablablou ?";
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick) {
@@ -119,7 +119,7 @@ function Q3R1() {
     );
 }
 
-function Q2R2() {
+function Q3R2() {
     updateQuestionAndButtons(
         "Est de 3 ?",
         "é wé mon pote",
