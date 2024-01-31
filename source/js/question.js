@@ -49,23 +49,32 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
 }
 
 function Q2R1() {
-    updateQuestionAndButtons(
-        "c'est la deusieme question ou kua ?",
-        "é wé mon pote",
-        "Q3R1()",
-        "bof en vrai",
-        "Q3R2()"
-    );
     if (typeKind == 0) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
-    }    
+    }
+    document.getElementById("button-begin").innerText = "suivant";
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next1()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q2R2() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 1;
+    } else {
+        pointPerso = pointPerso + 5;
+    }
+    document.getElementById("button-begin").innerText = "suivant";
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next1()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+
+function next1() {
     updateQuestionAndButtons(
         "c'est la deusieme question ou kua ?",
         "é wé mon pote",
@@ -73,40 +82,25 @@ function Q2R2() {
         "bof en vrai",
         "Q3R2()"
     );
-    if (typeKind == 0) {
-        pointPerso = pointPerso + 1;
-    } else {
-        pointPerso = pointPerso + 5;
-    }
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("button-begin").style.display = "none";
 }
 
 function Q3R1() {
-    updateQuestionAndButtons(
-        "Est de 3 ?",
-        "é wé mon pote",
-        "Q4R1()",
-        "bof en vrai",
-        "Q4R2()"
-    );
+
     if (typeKind == 0) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next2()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
+
 
 function Q3R2() {
-    updateQuestionAndButtons(
-        "Est de 3 ?",
-        "é wé mon pote",
-        "Q4R1()",
-        "bof en vrai",
-        "Q4R2()"
-    );
+
     if (typeKind == 0) {
         pointPerso = pointPerso + 1;
     } else {
@@ -114,26 +108,49 @@ function Q3R2() {
     }
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next2()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
-function Q4R1() {
+function next2() {
     updateQuestionAndButtons(
-        "Est de 4 ?",
+        "Est de 3 ?",
         "é wé mon pote",
-        "Q5R1()",
+        "Q4R1()",
         "bof en vrai",
-        "Q5R2()"
+        "Q4R2()"
     );
+    document.getElementById("button-begin").style.display = "none";
+}
+
+
+function Q4R1() {
     if (typeKind == 0) {
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
     }
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next3()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q4R2() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next3()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+
+function next3() {
     updateQuestionAndButtons(
         "Est de 4 ?",
         "é wé mon pote",
@@ -141,34 +158,36 @@ function Q4R2() {
         "bof en vrai",
         "Q5R2()"
     );
-    if (typeKind == 0) {
-        pointPerso = pointPerso + 5;
-    } else {
-        pointPerso = pointPerso + 1;
-    }
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("button-begin").style.display = "none";
 }
 
+
 function Q5R1() {
-    updateQuestionAndButtons(
-        "Est de 5 ?",
-        "é wé mon pote",
-        "Q6R1()",
-        "bof en vrai",
-        "Q6R2()"
-    );
     if (typeKind == 0) {
         console.log("test")
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
     }
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next4()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q5R2() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next4()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+
+function next4() {
     updateQuestionAndButtons(
         "Est de 5 ?",
         "é wé mon pote",
@@ -176,14 +195,9 @@ function Q5R2() {
         "bof en vrai",
         "Q6R2()"
     );
-    if (typeKind == 0) {
-        pointPerso = pointPerso + 5;
-    } else {
-        pointPerso = pointPerso + 1;
-    }
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("button-begin").style.display = "none";
 }
+
 
 function Q6R1() {
     if (typeKind == 0) {
@@ -191,9 +205,11 @@ function Q6R1() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next5()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
-    checkCompletion();
+
 }
 
 function Q6R2() {
@@ -202,10 +218,17 @@ function Q6R2() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("button-begin").style.display = "flex";
+    document.getElementById("button-begin").setAttribute("onclick", "next5()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
-    checkCompletion();
 }
+
+function next5() {
+    checkCompletion();
+    document.getElementById("button-begin").style.display = "none";
+}
+
 function checkCompletion() {
     if (infoWithActualle = infoWithTotal) {
         document.getElementById("question").innerText = "Vous avez fais " + pointPerso + " point";
