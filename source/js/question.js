@@ -1,73 +1,16 @@
 let infoWithTotal = 5;
 let infoWithActualle = 1;
 let typeKind = 0;
+let pointPerso = 0;
 
 function IniA() {
-    document.getElementById("question").innerText = "Choisser votre type";
-    document.getElementById("img1").setAttribute("onclick", "teamAA()");
-    document.getElementById("img2").setAttribute("onclick", "teamAB()");
-    document.getElementById("img3").setAttribute("onclick", "teamAC()");
-    document.getElementById("img4").setAttribute("onclick", "teamAD()");
-    document.getElementById("img3").style.display = "flex";
-    document.getElementById("img4").style.display = "flex";
-    document.getElementById("img1").src = "source/image/test_ours.webp";
-    document.getElementById("img2").src = "source/image/test_ours.webp";
-    document.getElementById("img3").src = "source/image/test_ours.webp";
-    document.getElementById("img4").src = "source/image/test_ours.webp";
+    BeginQuestion()
+    typeKind = 0;
 }
 
 function IniP() {
-    document.getElementById("question").innerText = "Choisser votre type";
-    document.getElementById("img1").setAttribute("onclick", "teamPA()");
-    document.getElementById("img2").setAttribute("onclick", "teamPB()");
-    document.getElementById("img3").setAttribute("onclick", "teamPC()");
-    document.getElementById("img4").setAttribute("onclick", "teamPD()");
-    document.getElementById("img3").style.display = "flex";
-    document.getElementById("img4").style.display = "flex";
-    document.getElementById("img1").src = "source/image/test_mer.jpg";
-    document.getElementById("img2").src = "source/image/test_mer.jpg";
-    document.getElementById("img3").src = "source/image/test_mer.jpg";
-    document.getElementById("img4").src = "source/image/test_mer.jpg";
-}
-
-function teamAA() {
     BeginQuestion()
     typeKind = 1;
-}
-
-function teamAB() {
-    BeginQuestion()
-    typeKind = 2;
-}
-
-function teamAC() {
-    BeginQuestion()
-    typeKind = 3;
-}
-
-function teamAD() {
-    BeginQuestion()
-    typeKind = 4;
-}
-
-function teamPA() {
-    BeginQuestion()
-    typeKind = 5;
-}
-
-function teamPB() {
-    BeginQuestion()
-    typeKind = 6;
-}
-
-function teamPC() {
-    BeginQuestion()
-    typeKind = 7;
-}
-
-function teamPD() {
-    BeginQuestion()
-    typeKind = 8;
 }
 
 
@@ -97,6 +40,11 @@ function Q2R1() {
         "bof en vrai",
         "Q3R2()"
     );
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
 }
 
 function Q2R2() {
@@ -107,6 +55,11 @@ function Q2R2() {
         "bof en vrai",
         "Q3R2()"
     );
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 1;
+    } else {
+        pointPerso = pointPerso + 5;
+    }
 }
 
 function Q3R1() {
@@ -117,6 +70,11 @@ function Q3R1() {
         "bof en vrai",
         "Q4R2()"
     );
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
 }
 
 function Q3R2() {
@@ -127,6 +85,11 @@ function Q3R2() {
         "bof en vrai",
         "Q4R2()"
     );
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 1;
+    } else {
+        pointPerso = pointPerso + 5;
+    }
 }
 
 function Q4R1() {
@@ -137,6 +100,11 @@ function Q4R1() {
         "bof en vrai",
         "Q5R2()"
     );
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 1;
+    } else {
+        pointPerso = pointPerso + 5;
+    }
 }
 
 function Q4R2() {
@@ -147,6 +115,11 @@ function Q4R2() {
         "bof en vrai",
         "Q5R2()"
     );
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
 }
 
 function Q5R1() {
@@ -157,6 +130,11 @@ function Q5R1() {
         "bof en vrai",
         "Q6R2()"
     );
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 1;
+    } else {
+        pointPerso = pointPerso + 5;
+    }
 }
 
 function Q5R2() {
@@ -167,6 +145,11 @@ function Q5R2() {
         "bof en vrai",
         "Q6R2()"
     );
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
 }
 
 function Q6R1() {
@@ -178,7 +161,7 @@ function Q6R2() {
 }
 function checkCompletion() {
     if (infoWithActualle = infoWithTotal) {
-        document.getElementById("question").innerText = "Vous avez finis";
+        document.getElementById("question").innerText = "Vous avez fais " + pointPerso + " point";
         document.getElementById("container-button").style.display = "none";
         document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
         document.getElementById("barre-info-contenue").style.width = "100%";
