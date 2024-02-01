@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déplacer une image</title>
+    <style>
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="image" src="source/image/test.canvas.png" alt="Image à déplacer">
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const image = document.getElementById('image');
+    let offsetX, offsetY;
+    let isDragging = false;
+
+    image.addEventListener('mousedown', startDragging);
+    image.addEventListener('touchstart', startDragging);
+
+    document.addEventListener('mouseup', stopDragging);
+    document.addEventListener('touchend', stopDragging);
+
+    function startDragging(event) {
+        event.preventDefault();
+        isDragging = true;
+        if (event.type === 'mousedown') {
+            offsetX = event.clientX - image.getBoundingClientRect().left;
+            offsetY = event.clientY - image.getBoundingClientRect().top;
+        } else if (event.type === 'touchstart') {
+            offsetX = event.touches[0].clientX - image.getBoundingClientRect().left;
+            offsetY = event.touches[0].clientY - image.getBoundingClientRect().top;
+        }
+        document.addEventListener('mousemove', dragImage);
+        document.addEventListener('touchmove', dragImage, { passive: false });
+    }
+
+    function dragImage(event) {
+        if (isDragging) {
+            event.preventDefault();
+            let x, y;
+            if (event.type === 'mousemove') {
+                x = event.clientX - offsetX;
+                y = event.clientY - offsetY;
+            } else if (event.type === 'touchmove') {
+                x = event.touches[0].clientX - offsetX;
+                y = event.touches[0].clientY - offsetY;
+            }
+            image.style.left = x + 'px';
+            image.style.top = y + 'px';
+        }
+    }
+
+    function stopDragging() {
+        isDragging = false;
+        document.removeEventListener('mousemove', dragImage);
+        document.removeEventListener('touchmove', dragImage);
+    }
+});
+
+    </script>
+</body>
+</html>
