@@ -2,7 +2,9 @@ let infoWithTotal = 5;
 let infoWithActualle = 1;
 let typeKind = 0;
 let pointPerso = 0;
-
+window.onbeforeunload = function() {
+    return "Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.";
+};
 function IniA() {
     typeKind = 1;
     document.getElementById("img2").style.width = "100px";
