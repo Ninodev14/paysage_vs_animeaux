@@ -7,52 +7,79 @@
 </head>
 <body>
     <h1 id="points">Points: 0</h1>
-    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <canvas id="myCanvas"></canvas>
     <script>
         let canvas = document.getElementById('myCanvas');
-        let ctx = canvas.getContext('2d');
+        let ctx = canvas.getContext('2d', { willReadFrequently: true });
         let isDrawing = false;
         let points = 0;
+        let gommePositions = {}; // Tableau pour stocker les positions déjà gommées
+        let surfaceTotale = canvas.width * canvas.height;
+        let surfaceGaumeeTotal = 0; // Suivre la surface gommée totale
 
         function surfaceCercle(rayon) {
             return Math.PI * rayon * rayon;
         }
 
-        let surfaceTotale = canvas.width * canvas.height;
+        function attribuerPoints(pourcentageGomme) {
+            let pointsAttribues = 0;
 
-        function attribuerPoints(surfaceGommee) {
-            let pourcentageGomme = (surfaceGommee / surfaceTotale) * 100;
-            let pointsAttribues = (pourcentageGomme / 100) * 50; // 50 points pour 100% de la surface gommée
-            return pointsAttribues;
+            if (pourcentageGomme >= 100) {
+                pointsAttribues = 50;
+            } else if (pourcentageGomme >= 50) {
+                pointsAttribues = 25;
+            } else if (pourcentageGomme >= 25) {
+                pointsAttribues = 5;
+            }
+            document.getElementById('points').innerText = "Points: " + pointsAttribues;
         }
 
         function gommer(x, y, rayon) {
-            ctx.globalCompositeOperation = 'destination-out';
-            ctx.beginPath();
-            ctx.arc(x, y, rayon, 0, Math.PI * 2, true);
-            ctx.fill();
+            let keyX = Math.round(x); // Arrondir les coordonnées pour une correspondance précise
+            let keyY = Math.round(y);
 
-            let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            let pixelIndex = (y * canvas.width + x) * 4; // Trouver l'indice du pixel dans les données de l'image
-            let alphaValue = imageData.data[pixelIndex + 3]; // Récupérer la valeur alpha du pixel
+            // Récupérer la valeur de l'alpha du pixel à la position donnée
+            let pixelData = ctx.getImageData(x, y, 1, 1).data;
+            let alphaValue = pixelData[3];
 
-            // Si le pixel est déjà transparent, ne pas attribuer de points
-            if (alphaValue !== 0) {
-                let surfaceGommee = surfaceCercle(rayon);
-                let pointsGagnes = attribuerPoints(surfaceGommee);
+            if (!gommePositions[keyX]) {
+                gommePositions[keyX] = {};
+            }
+
+            if (!gommePositions[keyX][keyY] && alphaValue !== 0) {
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(x, y, rayon, 0, Math.PI * 2, true);
+                ctx.fill();
+
+                // Mettre à jour la surface gommée totale
+                surfaceGaumeeTotal += surfaceCercle(rayon);
+
+                // Calculer le pourcentage d'image effacée
+                let pourcentageGomme = (surfaceGaumeeTotal / surfaceTotale);
+                console.log("%" + pourcentageGomme)
+                // Attribuer les points en fonction du pourcentage
+                let pointsGagnes = attribuerPoints(pourcentageGomme);
                 points += pointsGagnes;
 
-                document.getElementById('points').innerText = "Points: " + points.toFixed(2);
+
+                gommePositions[keyX][keyY] = true; // Marquer comme gommé
             }
         }
 
         let img = new Image();
+        img.onload = function () {
+            // Redimensionner le canvas en fonction de la taille de l'image
+            canvas.width = img.width;
+            canvas.height = img.height;
+            // Dessiner l'image sur le canvas
+            ctx.drawImage(img, 0, 0);
+            // Réinitialiser la surface gommée totale
+            surfaceGaumeeTotal = 0;
+        };
         img.src = 'source/image/above_the_birds.png';
 
-        img.onload = function () {
-            ctx.drawImage(img, 0, 0);
-        };
-
+        // Ajout des écouteurs d'événements tactiles et de souris
         canvas.addEventListener('mousedown', function (e) {
             isDrawing = true;
             let rect = canvas.getBoundingClientRect();
@@ -63,6 +90,7 @@
 
         canvas.addEventListener('mousemove', function (e) {
             if (isDrawing) {
+
                 let rect = canvas.getBoundingClientRect();
                 let x = e.clientX - rect.left;
                 let y = e.clientY - rect.top;
@@ -71,6 +99,27 @@
         });
 
         canvas.addEventListener('mouseup', function () {
+            isDrawing = false;
+        });
+
+        canvas.addEventListener('touchstart', function (e) {
+            isDrawing = true;
+            let rect = canvas.getBoundingClientRect();
+            let x = e.touches[0].clientX - rect.left;
+            let y = e.touches[0].clientY - rect.top;
+            gommer(x, y, 20);
+        });
+
+        canvas.addEventListener('touchmove', function (e) {
+            if (isDrawing) {
+                let rect = canvas.getBoundingClientRect();
+                let x = e.touches[0].clientX - rect.left;
+                let y = e.touches[0].clientY - rect.top;
+                gommer(x, y, 20);
+            }
+        });
+
+        canvas.addEventListener('touchend', function () {
             isDrawing = false;
         });
 
