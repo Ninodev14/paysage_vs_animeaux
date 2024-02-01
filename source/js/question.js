@@ -2,6 +2,46 @@ let infoWithTotal = 5;
 let infoWithActualle = 1;
 let typeKind = 0;
 let pointPerso = 0;
+let pointsCounted = false;
+
+let req = new XMLHttpRequest();
+let lol = false;
+
+
+        req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
+        req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
+        req.send();
+
+        function addPoint(teamName, points) {
+            req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    const jsonData = JSON.parse(req.responseText);
+                    const team = jsonData.record.teams.find(t => t.teamName === teamName);
+
+                    if (team) {
+                        team.points += points;
+
+                        // Update data on JSONBin
+                        req.open("PUT", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7", true);
+                        req.setRequestHeader("Content-Type", "application/json");
+                        req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
+
+                        if (lol == false) {
+                        req.send(JSON.stringify(jsonData.record));
+                        console.log('POINTS!');
+                        lol = true;
+                        }
+
+                    }
+                }
+            };
+
+            req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
+            req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
+            req.send();
+            
+            lol = false; 
+        }
 
 function IniA() {
     typeKind = 1;
@@ -248,8 +288,14 @@ function Q6R2() {
 }
 
 function next5() {
+    if (pointsCounted == false){
+    if (typeKind = 1) {
+        addPoint('Team A', pointPerso);
+    } else {
+        addPoint('Team B', pointPerso)
+    }
     checkCompletion();
-    console.log(infoWithActualle);
+}
 }
 
 function checkCompletion() {
@@ -261,5 +307,6 @@ function checkCompletion() {
         document.getElementById("barre-info-contenue").style.width = "100%";
         document.getElementById("scorF").style.display = "flex";
         document.getElementById("button-next").style.display = "none";
+        
     }
 }

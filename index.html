@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="source/css/reset.css">
     <title>Counter App</title>
 
     <style>
@@ -20,7 +19,7 @@
         }
     </style>
 </head>
-<body style="background-color: antiquewhite;">
+<body>
     <a href="questionaire.html">pour nino</a>
     <h1>initiation</h1>
 
@@ -36,16 +35,15 @@
 
     <script>
         let req = new XMLHttpRequest();
-
+        let lol = false;
         req.onreadystatechange = () => {
             if (req.readyState == XMLHttpRequest.DONE) {
                 const jsonData = JSON.parse(req.responseText);
                 displayData(jsonData.record.teams);
-                console.log(JSON.parse(req.responseText));
             }
         };
 
-        req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", false);
+        req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
         req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
         req.send();
 
@@ -68,26 +66,30 @@
                     const jsonData = JSON.parse(req.responseText);
                     const team = jsonData.record.teams.find(t => t.teamName === teamName);
 
-                    console.log(jsonData.record.teams.find(t => t.teamName === teamName));
                     if (team) {
                         team.points += 1;
 
                         // Update data on JSONBin
-                        req.open("PUT", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7", false);
+                        req.open("PUT", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7", true);
                         req.setRequestHeader("Content-Type", "application/json");
                         req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
 
+                        if (lol == false) {
                         req.send(JSON.stringify(jsonData.record));
+                        lol = true;
+                        }
 
                         // Display updated points
-                        displayData(jsonData.record);
+                        displayData(jsonData.record.teams);
                     }
                 }
             };
 
-            req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", false);
+            req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
             req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
             req.send();
+            
+            lol = false; 
         }
     </script>
 </body>
