@@ -66,6 +66,11 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
 }
 
+function step() {
+    document.getElementById("button-next").style.display = "none";
+}
+
+
 function Q2R1() {
     if (typeKind == 0) {
         pointPerso = pointPerso + 5;
