@@ -4,32 +4,50 @@ let typeKind = 0;
 let pointPerso = 0;
 
 function IniA() {
-    typeKind = 0;
-    document.getElementById("question").innerText = "Bienvenue chez les animaux";
-    document.getElementById("paragraphe-center").innerText = "BLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAbla";
-    document.getElementById("paragraphe-center").style.display = "flex";
-    document.getElementById("img2").style.display = "none";
-    document.getElementById("img1").style.width = "200px";
-    document.getElementById("img1").style.height = "200px";
-    document.getElementById("button-begin").style.display = "flex";
+    typeKind = 1;
+    document.getElementById("img2").style.width = "100px";
+    document.getElementById("img2").style.height = "100px";
+    document.getElementById("img1").style.width = "150px";
+    document.getElementById("img1").style.height = "150px";
 }
 
 function IniP() {
-    typeKind = 1;
-    document.getElementById("question").innerText = "Bienvenue chez les paysages";
-    document.getElementById("paragraphe-center").innerText = "BLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAbla";
-    document.getElementById("paragraphe-center").style.display = "flex";
-    document.getElementById("img1").style.display = "none";
-    document.getElementById("img2").style.width = "200px";
-    document.getElementById("img2").style.height = "200px";
-    document.getElementById("button-begin").style.display = "flex";
+    typeKind = 2;
+    document.getElementById("img1").style.width = "100px";
+    document.getElementById("img1").style.height = "100px";
+    document.getElementById("img2").style.width = "150px";
+    document.getElementById("img2").style.height = "150px";
+}
+
+
+function validationKind() {
+    if (typeKind == 1) {
+        document.getElementById("question").innerText = "Bienvenue chez les animaux";
+        document.getElementById("paragraphe-center").innerText = "BLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAbla";
+        document.getElementById("img2").style.display = "none";
+        document.getElementById("img1").style.width = "200px";
+        document.getElementById("img1").style.height = "200px";
+        document.getElementById("img1").setAttribute("onclick","");
+        document.getElementById("button-next").setAttribute("onclick"," BeginQuestion()");
+        document.getElementById("paragraphe-center").style.display = "flex";
+    }
+    else if (typeKind == 2){
+        document.getElementById("question").innerText = "Bienvenue chez les paysages";
+        document.getElementById("paragraphe-center").innerText = "BLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAbla";
+        document.getElementById("img1").style.display = "none";
+        document.getElementById("img2").style.width = "200px";
+        document.getElementById("img2").style.height = "200px";
+        document.getElementById("img2").setAttribute("onclick","");
+        document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
+        document.getElementById("paragraphe-center").style.display = "flex";
+    }
 }
 
 
 
 
 function BeginQuestion() {
-    document.getElementById("button-begin").style.display = "none";
+    document.getElementById("button-next").style.display = "none";
     document.getElementById("paragraphe-center").style.display = "none";
     document.getElementById("container-img").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
@@ -54,9 +72,9 @@ function Q2R1() {
     } else {
         pointPerso = pointPerso + 1;
     }
-    document.getElementById("button-begin").innerText = "suivant";
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next1()");
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -67,9 +85,9 @@ function Q2R2() {
     } else {
         pointPerso = pointPerso + 5;
     }
-    document.getElementById("button-begin").innerText = "suivant";
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next1()");
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -82,7 +100,7 @@ function next1() {
         "bof en vrai",
         "Q3R2()"
     );
-    document.getElementById("button-begin").style.display = "none";
+    document.getElementById("button-next").style.display = "none";
 }
 
 function Q3R1() {
@@ -92,8 +110,8 @@ function Q3R1() {
     } else {
         pointPerso = pointPerso + 1;
     }
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next2()");
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next2()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -108,8 +126,8 @@ function Q3R2() {
     }
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next2()");
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next2()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -122,7 +140,7 @@ function next2() {
         "bof en vrai",
         "Q4R2()"
     );
-    document.getElementById("button-begin").style.display = "none";
+    document.getElementById("button-next").style.display = "none";
 }
 
 
@@ -132,8 +150,8 @@ function Q4R1() {
     } else {
         pointPerso = pointPerso + 5;
     }
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next3()");
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next3()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -144,8 +162,8 @@ function Q4R2() {
     } else {
         pointPerso = pointPerso + 1;
     }
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next3()");
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next3()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -158,7 +176,7 @@ function next3() {
         "bof en vrai",
         "Q5R2()"
     );
-    document.getElementById("button-begin").style.display = "none";
+    document.getElementById("button-next").style.display = "none";
 }
 
 
@@ -169,8 +187,8 @@ function Q5R1() {
     } else {
         pointPerso = pointPerso + 5;
     }
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next4()");
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next4()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -181,8 +199,8 @@ function Q5R2() {
     } else {
         pointPerso = pointPerso + 1;
     }
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next4()");
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next4()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -195,7 +213,7 @@ function next4() {
         "bof en vrai",
         "Q6R2()"
     );
-    document.getElementById("button-begin").style.display = "none";
+    document.getElementById("button-next").style.display = "none";
 }
 
 
@@ -205,8 +223,8 @@ function Q6R1() {
     } else {
         pointPerso = pointPerso + 1;
     }
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next5()");
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 
@@ -218,22 +236,24 @@ function Q6R2() {
     } else {
         pointPerso = pointPerso + 1;
     }
-    document.getElementById("button-begin").style.display = "flex";
-    document.getElementById("button-begin").setAttribute("onclick", "next5()");
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function next5() {
     checkCompletion();
-    document.getElementById("button-begin").style.display = "none";
 }
 
 function checkCompletion() {
     if (infoWithActualle = infoWithTotal) {
-        document.getElementById("question").innerText = "Vous avez fais " + pointPerso + " point";
+        document.getElementById("question").innerText = "Merci d'avoir participer, vous avez fais " + pointPerso + " point";
         document.getElementById("container-button").style.display = "none";
+        document.getElementById("container-score").style.display = "none";
         document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
         document.getElementById("barre-info-contenue").style.width = "100%";
+        document.getElementById("scorF").style.display = "flex";
+        document.getElementById("button-next").style.display = "none";
     }
 }
