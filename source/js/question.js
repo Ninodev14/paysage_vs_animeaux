@@ -43,6 +43,9 @@ let lol = false;
             lol = false; 
         }
 
+window.onbeforeunload = function() {
+    return "Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.";
+};
 function IniA() {
     typeKind = 1;
     document.getElementById("img2").style.width = "100px";
@@ -68,7 +71,7 @@ function validationKind() {
         document.getElementById("img1").style.width = "200px";
         document.getElementById("img1").style.height = "200px";
         document.getElementById("img1").setAttribute("onclick","");
-        document.getElementById("button-next").setAttribute("onclick"," BeginQuestion()");
+        document.getElementById("button-next").setAttribute("onclick"," step1()");
         document.getElementById("paragraphe-center").style.display = "flex";
     }
     else if (typeKind == 2){
@@ -78,18 +81,26 @@ function validationKind() {
         document.getElementById("img2").style.width = "200px";
         document.getElementById("img2").style.height = "200px";
         document.getElementById("img2").setAttribute("onclick","");
-        document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
+        document.getElementById("button-next").setAttribute("onclick", "step1()");
         document.getElementById("paragraphe-center").style.display = "flex";
     }
 }
 
-
+function step1() {
+    document.getElementById("img1").style.display = "flex";
+    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img2").style.display = "none";
+    document.getElementById("question").innerText = "nom de l'oeuvre 1";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
+    document.getElementById("button-next").innerText = "j'y suis";
+}
 
 
 function BeginQuestion() {
     document.getElementById("button-next").style.display = "none";
     document.getElementById("paragraphe-center").style.display = "none";
-    document.getElementById("container-img").style.display = "none";
+    document.getElementById("img1").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
     document.getElementById("question").innerText = "blablabli ou blablablou ?";
@@ -106,9 +117,6 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
 }
 
-function step() {
-    document.getElementById("button-next").style.display = "none";
-}
 
 
 function Q2R1() {
@@ -119,7 +127,7 @@ function Q2R1() {
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next1()");
+    document.getElementById("button-next").setAttribute("onclick", "step2()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -132,10 +140,23 @@ function Q2R2() {
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next1()");
+    document.getElementById("button-next").setAttribute("onclick", "step2()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
+
+function step2() {
+    document.getElementById("img1").style.display = "flex";
+    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img2").style.width = "none";
+    document.getElementById("question").innerText = "nom de l'oeuvre 2";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("button-next").setAttribute("onclick", "next1()");
+    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("container-button").style.display = "none";
+    document.getElementById("container-score").style.display = "none"
+}
+
 
 function next1() {
     updateQuestionAndButtons(
@@ -145,8 +166,12 @@ function next1() {
         "bof en vrai",
         "Q3R2()"
     );
+    document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
+    document.getElementById("container-button").style.display = "flex";
 }
+
+
 
 function Q3R1() {
 
@@ -155,8 +180,9 @@ function Q3R1() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next2()");
+    document.getElementById("button-next").setAttribute("onclick", "step3()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -169,12 +195,25 @@ function Q3R2() {
     } else {
         pointPerso = pointPerso + 5;
     }
+    document.getElementById("button-next").innerText = "suivant";
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next2()");
+    document.getElementById("button-next").setAttribute("onclick", "step3()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
+}
+
+function step3() {
+    document.getElementById("img1").style.display = "flex";
+    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img2").style.width = "none";
+    document.getElementById("question").innerText = "nom de l'oeuvre 3";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("button-next").setAttribute("onclick", "next2()");
+    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("container-button").style.display = "none";
+    document.getElementById("container-score").style.display = "none"
 }
 
 function next2() {
@@ -185,7 +224,9 @@ function next2() {
         "bof en vrai",
         "Q4R2()"
     );
+    document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
+    document.getElementById("container-button").style.display = "flex";
 }
 
 
@@ -195,8 +236,9 @@ function Q4R1() {
     } else {
         pointPerso = pointPerso + 5;
     }
+    document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next3()");
+    document.getElementById("button-next").setAttribute("onclick", "step4()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -207,12 +249,23 @@ function Q4R2() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next3()");
+    document.getElementById("button-next").setAttribute("onclick", "step4()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
-
+function step4() {
+    document.getElementById("img1").style.display = "flex";
+    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img2").style.width = "none";
+    document.getElementById("question").innerText = "nom de l'oeuvre 4";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("button-next").setAttribute("onclick", "next3()");
+    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("container-button").style.display = "none";
+    document.getElementById("container-score").style.display = "none"
+}
 function next3() {
     updateQuestionAndButtons(
         "Est de 4 ?",
@@ -221,8 +274,11 @@ function next3() {
         "bof en vrai",
         "Q5R2()"
     );
+    document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
+    document.getElementById("container-button").style.display = "flex";
 }
+
 
 
 function Q5R1() {
@@ -232,8 +288,9 @@ function Q5R1() {
     } else {
         pointPerso = pointPerso + 5;
     }
+    document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next4()");
+    document.getElementById("button-next").setAttribute("onclick", "step5()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
@@ -244,12 +301,24 @@ function Q5R2() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next4()");
+    document.getElementById("button-next").setAttribute("onclick", "step5()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
+function step5() {
+    document.getElementById("img1").style.display = "flex";
+    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img2").style.width = "none";
+    document.getElementById("question").innerText = "nom de l'oeuvre 5";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("button-next").setAttribute("onclick", "next4()");
+    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("container-button").style.display = "none";
+    document.getElementById("container-score").style.display = "none"
+}
 function next4() {
     updateQuestionAndButtons(
         "Est de 5 ?",
@@ -258,7 +327,9 @@ function next4() {
         "bof en vrai",
         "Q6R2()"
     );
+    document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
+    document.getElementById("container-button").style.display = "flex";
 }
 
 
@@ -268,6 +339,7 @@ function Q6R1() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("container-score").style.display = "flex";
@@ -281,6 +353,7 @@ function Q6R2() {
     } else {
         pointPerso = pointPerso + 1;
     }
+    document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("container-score").style.display = "flex";
