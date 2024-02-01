@@ -1,11 +1,5 @@
-let counter = 0;
+import countapi from 'countapi-js';
 
-exports.handler = async (event, context) => {
-    // Increment the counter
-    counter++;
-
-    return {
-        statusCode: 200,
-        body: JSON.stringify({ count: counter }),
-    };
-};
+countapi.visits().then((result) => {
+    console.log(result.value);
+});
