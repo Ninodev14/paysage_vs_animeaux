@@ -3,49 +3,53 @@ let infoWithActualle = 1;
 let typeKind = 0;
 let pointPerso = 0;
 let pointsCounted = false;
-
+let checkLost = 0;
 let req = new XMLHttpRequest();
 let lol = false;
 
 
-        req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
-        req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
-        req.send();
+req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
+req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
+req.send();
 
-        function addPoint(teamName, points) {
-            req.onreadystatechange = () => {
-                if (req.readyState == XMLHttpRequest.DONE) {
-                    const jsonData = JSON.parse(req.responseText);
-                    const team = jsonData.record.teams.find(t => t.teamName === teamName);
+function addPoint(teamName, points) {
+    req.onreadystatechange = () => {
+        if (req.readyState == XMLHttpRequest.DONE) {
+            const jsonData = JSON.parse(req.responseText);
+            const team = jsonData.record.teams.find(t => t.teamName === teamName);
 
-                    if (team) {
-                        team.points += points;
+            if (team) {
+                team.points += points;
 
-                        // Update data on JSONBin
-                        req.open("PUT", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7", true);
-                        req.setRequestHeader("Content-Type", "application/json");
-                        req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
+                // Update data on JSONBin
+                req.open("PUT", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7", true);
+                req.setRequestHeader("Content-Type", "application/json");
+                req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
 
-                        if (lol == false) {
-                        req.send(JSON.stringify(jsonData.record));
-                        console.log('POINTS!');
-                        lol = true;
-                        }
-
-                    }
+                if (lol == false) {
+                    req.send(JSON.stringify(jsonData.record));
+                    console.log('POINTS!');
+                    lol = true;
                 }
-            };
 
-            req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
-            req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
-            req.send();
-            
-            lol = false; 
+            }
         }
+    };
 
-window.onbeforeunload = function() {
+    req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
+    req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
+    req.send();
+
+    lol = false;
+}
+
+window.onbeforeunload = function(event) {
+    if (event.target.id === "scoreLink") {
+        return;
+    }
     return "Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.";
 };
+
 function IniA() {
     typeKind = 1;
     document.getElementById("img2").style.width = "100px";
@@ -70,17 +74,17 @@ function validationKind() {
         document.getElementById("img2").style.display = "none";
         document.getElementById("img1").style.width = "200px";
         document.getElementById("img1").style.height = "200px";
-        document.getElementById("img1").setAttribute("onclick","");
-        document.getElementById("button-next").setAttribute("onclick"," step1()");
+        document.getElementById("img1").setAttribute("onclick", "");
+        document.getElementById("button-next").setAttribute("onclick", " step1()");
         document.getElementById("paragraphe-center").style.display = "flex";
     }
-    else if (typeKind == 2){
+    else if (typeKind == 2) {
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
         document.getElementById("paragraphe-center").innerText = "BLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAbla";
         document.getElementById("img1").style.display = "none";
         document.getElementById("img2").style.width = "200px";
         document.getElementById("img2").style.height = "200px";
-        document.getElementById("img2").setAttribute("onclick","");
+        document.getElementById("img2").setAttribute("onclick", "");
         document.getElementById("button-next").setAttribute("onclick", "step1()");
         document.getElementById("paragraphe-center").style.display = "flex";
     }
@@ -94,6 +98,7 @@ function step1() {
     document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
     document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("button-lost").style.display = "flex";
 }
 
 
@@ -104,6 +109,9 @@ function BeginQuestion() {
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
     document.getElementById("question").innerText = "blablabli ou blablablou ?";
+    checkLost = 1;
+    iAmLost()
+    document.getElementById("button-lost").style.display = "none";
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick) {
@@ -155,6 +163,7 @@ function step2() {
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("container-score").style.display = "none"
+    document.getElementById("button-lost").style.display = "flex";
 }
 
 
@@ -169,6 +178,9 @@ function next1() {
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
+    checkLost = 1;
+    iAmLost()
+    document.getElementById("button-lost").style.display = "none";
 }
 
 
@@ -214,6 +226,7 @@ function step3() {
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("container-score").style.display = "none"
+    document.getElementById("button-lost").style.display = "flex";
 }
 
 function next2() {
@@ -227,6 +240,9 @@ function next2() {
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
+    checkLost = 1;
+    iAmLost()
+    document.getElementById("button-lost").style.display = "none";
 }
 
 
@@ -265,6 +281,7 @@ function step4() {
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("container-score").style.display = "none"
+    document.getElementById("button-lost").style.display = "flex";
 }
 function next3() {
     updateQuestionAndButtons(
@@ -277,6 +294,9 @@ function next3() {
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
+    checkLost = 1;
+    iAmLost()
+    document.getElementById("button-lost").style.display = "none";
 }
 
 
@@ -318,6 +338,7 @@ function step5() {
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("container-score").style.display = "none"
+    document.getElementById("button-lost").style.display = "flex";
 }
 function next4() {
     updateQuestionAndButtons(
@@ -330,6 +351,9 @@ function next4() {
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
+    checkLost = 1;
+    iAmLost()
+    document.getElementById("button-lost").style.display = "none";
 }
 
 
@@ -361,14 +385,14 @@ function Q6R2() {
 }
 
 function next5() {
-    if (pointsCounted == false){
-    if (typeKind = 1) {
-        addPoint('Team A', pointPerso);
-    } else {
-        addPoint('Team B', pointPerso)
+    if (pointsCounted == false) {
+        if (typeKind = 1) {
+            addPoint('Team A', pointPerso);
+        } else {
+            addPoint('Team B', pointPerso)
+        }
+        checkCompletion();
     }
-    checkCompletion();
-}
 }
 
 function checkCompletion() {
@@ -380,6 +404,16 @@ function checkCompletion() {
         document.getElementById("barre-info-contenue").style.width = "100%";
         document.getElementById("scorF").style.display = "flex";
         document.getElementById("button-next").style.display = "none";
-        
+
+    }
+}
+
+function iAmLost() {
+    if (checkLost == 0) {
+        document.getElementById("plans").style.display = "flex";
+        checkLost = 1;
+    } else {
+        document.getElementById("plans").style.display = "none";
+        checkLost = 0;
     }
 }
