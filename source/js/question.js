@@ -112,7 +112,7 @@ function BeginQuestion() {
     document.getElementById("img1").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
-    document.getElementById("question").innerText = "blablabli ou blablablou ?";
+    document.getElementById("question").innerText = "Ces chevaux…";
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
@@ -161,33 +161,33 @@ function Q2R3() {
 function reponceQ2() {
     if (witchReponce = 1) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Bravo, tu as compris. Continue sur cette lancée.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Malheureusement, cette réponse était en faveur des animaux. Rappelle-toi, nous devons tout faire pour les battre.";
             witchReponce = 0;
         }
     }
     else if (witchReponce = 2) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe paysage, mais au moins nous avons pu récolter quelques points.";
             witchReponce = 0;
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            document.getElementById("paragraphe-center").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe animal, mais au moins nous avons pu récolter quelques points.";
             witchReponce = 0;
         }
     } else if (witchReponce = 3) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Malheureusement, cette réponse était en faveur du paysage. Rappelle-toi, nous devons tout faire pour les battre.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Bravo, tu as compris. Continue sur cette lancée.";
             witchReponce = 0;
         }
     }
@@ -334,7 +334,7 @@ function next2() {
         "Q4R1()",
         "Originale et mystérieuse",
         "Q4R2()",
-        "bof en vrai",
+        "Stressante, mais protectrice",
         "Q4R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -432,12 +432,12 @@ function step4() {
 }
 function next3() {
     updateQuestionAndButtons(
-        "Est de 4 ?",
-        "é wé mon pote",
+        "Le plus important dans ce tableau c’est…",
+        "Le mythe, l’histoire qui inspire le tableau.",
         "Q5R1()",
-        "bof en vrai",
+        "L’ensemble du tableau qui donne vie à l'espace.",
         "Q5R2()",
-        "bof en vrai",
+        "Les détails qui apportent de la consistance à l’œuvre.",
         "Q5R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -478,12 +478,12 @@ function Q5R3() {
 function reponceQ5() {
     if (witchReponce = 1) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Bravo, tu as compris. Continue sur cette lancée.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Malheureusement, cette réponse était en faveur des animaux. Rappelle-toi, nous devons tout faire pour les battre.";
             witchReponce = 0;
         }
     }
@@ -537,12 +537,12 @@ function step5() {
 }
 function next4() {
     updateQuestionAndButtons(
-        "Est de 5 ?",
-        "é wé mon pote",
+        "En regardant cette œuvre, tu ressens…",
+        "Une profonde tristesse.",
         "Q6R1()",
-        "bof en vrai",
+        "Une indifférence totale.",
         "Q6R2()",
-        "bof en vrai",
+        "Un sentiment de calme brisé.",
         "Q6R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -640,12 +640,12 @@ function step6() {
 }
 function next5() {
     updateQuestionAndButtons(
-        "Est de 6 ?",
-        "é wé mon pote",
+        "Je suis attiré par…",
+        "Le reflet de la vache dans la flaque d’eau.",
         "Q7R1()",
-        "bof en vrai",
+        "Les textures de la laine des moutons.",
         "Q7R2()",
-        "bof en vrai",
+        "Le soir qui approche, et les ombres qui arrivent.",
         "Q7R3()"
     );
     document.getElementById("img1").style.display = "none";
