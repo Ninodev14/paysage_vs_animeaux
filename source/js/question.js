@@ -1,4 +1,4 @@
-let infoWithTotal = 5;
+let infoWithTotal = 6;
 let infoWithActualle = 1;
 let typeKind = 0;
 let pointPerso = 0;
@@ -420,26 +420,64 @@ function Q6R1() {
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next5()");
+    document.getElementById("button-next").setAttribute("onclick", "step6()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
-
 }
 
 function Q6R2() {
     if (typeKind == 0) {
-        pointPerso = pointPerso + 5;
-    } else {
         pointPerso = pointPerso + 1;
+    } else {
+        pointPerso = pointPerso + 5;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next5()");
+    document.getElementById("button-next").setAttribute("onclick", "step6()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+function Q6R3() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 1;
+    } else {
+        pointPerso = pointPerso + 5;
+    }
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "step6()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
-function Q6R3() {
+function step6() {
+    document.getElementById("img1").style.display = "flex";
+    document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
+    document.getElementById("img2").style.width = "none";
+    document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("button-next").setAttribute("onclick", "next5()");
+    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("container-button").style.display = "none";
+    document.getElementById("container-score").style.display = "none"
+    document.getElementById("button-lost").style.display = "flex";
+}
+function next5() {
+    updateQuestionAndButtons(
+        "Est de 6 ?",
+        "é wé mon pote",
+        "Q7R1()",
+        "bof en vrai",
+        "Q7R2()"
+    );
+    document.getElementById("img1").style.display = "none";
+    document.getElementById("button-next").style.display = "none";
+    document.getElementById("container-button").style.display = "flex";
+    checkLost = 1;
+    iAmLost()
+    document.getElementById("button-lost").style.display = "none";
+}
+function Q7R1() {
     if (typeKind == 0) {
         pointPerso = pointPerso + 5;
     } else {
@@ -447,12 +485,39 @@ function Q6R3() {
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next5()");
+    document.getElementById("button-next").setAttribute("onclick", "next6()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+
+}
+
+function Q7R2() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next6()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
-function next5() {
+function Q7R3() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next6()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+
+function next6() {
     if (pointsCounted == false) {
         if (typeKind = 1) {
             addPoint('Team A', pointPerso);

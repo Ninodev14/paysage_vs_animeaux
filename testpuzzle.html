@@ -47,6 +47,9 @@
         <div class="drop-zone" style="top: 350px; left: 50px;"></div>
         <div class="drop-zone" style="top: 350px; left: 150px;"></div>
         <div class="drop-zone" style="top: 450px; left: 50px;"></div>
+
+        <!-- Chronomètre -->
+        <p id="timer">Temps écoulé : <span id="timerValue">0</span> secondes</p>
     </div>
 
     <script>
@@ -56,6 +59,8 @@
             let offsetX = [];
             let offsetY = [];
             let isDragging = [];
+            let allImagesOnDropZones = false;
+            let seconds = 0;
 
             for (let i = 0; i < images.length; i++) {
                 offsetX[i] = 0;
@@ -125,6 +130,7 @@
                         images[index].style.transition = '';
                     }
                 }
+                checkAllImagesOnDropZones();
             }
 
             function stopDragging() {
@@ -134,6 +140,33 @@
                 document.removeEventListener('mousemove', dragImage);
                 document.removeEventListener('touchmove', dragImage);
             }
+
+            function checkAllImagesOnDropZones() {
+                let allOnDropZones = true;
+                for (let i = 0; i < images.length; i++) {
+                    const rectImage = images[i].getBoundingClientRect();
+                    const rectZone = dropZones[i].getBoundingClientRect();
+                    if (
+                        rectImage.right < rectZone.left ||
+                        rectImage.left > rectZone.right ||
+                        rectImage.bottom < rectZone.top ||
+                        rectImage.top > rectZone.bottom
+                    ) {
+                        allOnDropZones = false;
+                        break;
+                    }
+                }
+                if (allOnDropZones && !allImagesOnDropZones) {
+                    allImagesOnDropZones = true;
+                    clearInterval(timer);
+                    console.log("Toutes les images sont sur leurs points de dépôt.");
+                }
+            }
+
+            let timer = setInterval(function() {
+                seconds++;
+                document.getElementById('timerValue').textContent = seconds;
+            }, 1000); // Incrémente chaque seconde
         });
     </script>
 </body>
