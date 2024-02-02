@@ -15,6 +15,7 @@
             height: auto;
             position: absolute;
             cursor: pointer;
+            top: 50px; left: 50px;
         }
         .drop-zone {
             position: absolute;
@@ -50,6 +51,8 @@
 
         <!-- Chronomètre -->
         <p id="timer">Temps écoulé : <span id="timerValue">0</span> secondes</p>
+        <!-- Points -->
+        <p id="points">Points : <span id="pointsValue">0</span></p>
     </div>
 
     <script>
@@ -61,6 +64,7 @@
             let isDragging = [];
             let allImagesOnDropZones = false;
             let seconds = 0;
+            let points = 0;
 
             for (let i = 0; i < images.length; i++) {
                 offsetX[i] = 0;
@@ -160,7 +164,19 @@
                     allImagesOnDropZones = true;
                     clearInterval(timer);
                     console.log("Toutes les images sont sur leurs points de dépôt.");
+                    calculatePoints();
                 }
+            }
+
+            function calculatePoints() {
+                if (seconds <= 10) {
+                    points = 50;
+                } else if (seconds <= 20) {
+                    points = 25;
+                } else if (seconds <= 30) {
+                    points = 5;
+                }
+                document.getElementById('pointsValue').textContent = points;
             }
 
             let timer = setInterval(function() {

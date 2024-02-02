@@ -115,13 +115,15 @@ function BeginQuestion() {
     document.getElementById("button-lost").style.display = "none";
 }
 
-function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick) {
+function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick, btn3Text, btn3OnClick) {
     infoWithActualle++;
     document.getElementById("question").innerText = questionText;
     document.getElementById("btn1").innerText = btn1Text;
     document.getElementById("btn1").setAttribute("onclick", btn1OnClick);
     document.getElementById("btn2").innerText = btn2Text;
     document.getElementById("btn2").setAttribute("onclick", btn2OnClick);
+    document.getElementById("btn3").innerText = btn3Text;
+    document.getElementById("btn3").setAttribute("onclick", btn3OnClick);
     document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
 }
@@ -129,7 +131,7 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
 
 
 function Q2R1() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
@@ -142,7 +144,7 @@ function Q2R1() {
 }
 
 function Q2R2() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
@@ -154,7 +156,7 @@ function Q2R2() {
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 function Q2R3() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
@@ -186,7 +188,9 @@ function next1() {
         "é wé mon pote",
         "Q3R1()",
         "bof en vrai",
-        "Q3R2()"
+        "Q3R2()",
+        "bof en vraaaaa",
+        "Q3R3()"
     );
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
@@ -200,7 +204,7 @@ function next1() {
 
 function Q3R1() {
 
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
@@ -215,7 +219,7 @@ function Q3R1() {
 
 function Q3R2() {
 
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
@@ -231,7 +235,7 @@ function Q3R2() {
 
 function Q3R3() {
 
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
@@ -264,7 +268,9 @@ function next2() {
         "é wé mon pote",
         "Q4R1()",
         "bof en vrai",
-        "Q4R2()"
+        "Q4R2()",
+        "bof en vrai",
+        "Q4R3()"
     );
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
@@ -276,7 +282,7 @@ function next2() {
 
 
 function Q4R1() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
@@ -289,7 +295,7 @@ function Q4R1() {
 }
 
 function Q4R2() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
@@ -302,7 +308,7 @@ function Q4R2() {
 }
 
 function Q4R3() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
@@ -331,7 +337,9 @@ function next3() {
         "é wé mon pote",
         "Q5R1()",
         "bof en vrai",
-        "Q5R2()"
+        "Q5R2()",
+        "bof en vrai",
+        "Q5R3()"
     );
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
@@ -344,7 +352,7 @@ function next3() {
 
 
 function Q5R1() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         console.log("test")
         pointPerso = pointPerso + 1;
     } else {
@@ -358,7 +366,7 @@ function Q5R1() {
 }
 
 function Q5R2() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
@@ -371,7 +379,7 @@ function Q5R2() {
 }
 
 function Q5R3() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
@@ -401,7 +409,9 @@ function next4() {
         "é wé mon pote",
         "Q6R1()",
         "bof en vrai",
-        "Q6R2()"
+        "Q6R2()",
+        "bof en vrai",
+        "Q6R3()"
     );
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
@@ -413,7 +423,7 @@ function next4() {
 
 
 function Q6R1() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
@@ -426,7 +436,7 @@ function Q6R1() {
 }
 
 function Q6R2() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
@@ -438,7 +448,7 @@ function Q6R2() {
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 function Q6R3() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 1;
     } else {
         pointPerso = pointPerso + 5;
@@ -468,7 +478,9 @@ function next5() {
         "é wé mon pote",
         "Q7R1()",
         "bof en vrai",
-        "Q7R2()"
+        "Q7R2()",
+        "bof en vrai",
+        "Q7R3()"
     );
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
@@ -478,7 +490,7 @@ function next5() {
     document.getElementById("button-lost").style.display = "none";
 }
 function Q7R1() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
@@ -492,7 +504,7 @@ function Q7R1() {
 }
 
 function Q7R2() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
@@ -505,7 +517,7 @@ function Q7R2() {
 }
 
 function Q7R3() {
-    if (typeKind == 0) {
+    if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 1;
