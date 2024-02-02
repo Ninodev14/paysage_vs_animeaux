@@ -44,7 +44,8 @@ function addPoint(teamName, points) {
 }
 
 window.onbeforeunload = function(event) {
-    if (event.target.id === "scoreLink") {
+    const link = document.getElementById('scorF');
+    if (event.target === link) {
         return;
     }
     return "Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.";
@@ -152,6 +153,18 @@ function Q2R2() {
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
+function Q2R3() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 1;
+    } else {
+        pointPerso = pointPerso + 5;
+    }
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "step2()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
 
 function step2() {
     document.getElementById("img1").style.display = "flex";
@@ -201,6 +214,22 @@ function Q3R1() {
 
 
 function Q3R2() {
+
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 1;
+    } else {
+        pointPerso = pointPerso + 5;
+    }
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "step3()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+
+function Q3R3() {
 
     if (typeKind == 0) {
         pointPerso = pointPerso + 1;
@@ -271,6 +300,19 @@ function Q4R2() {
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
+
+function Q4R3() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "step4()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
 function step4() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/above_the_birds.png";
@@ -328,6 +370,19 @@ function Q5R2() {
     document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
+function Q5R3() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "step5()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+
 function step5() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/above_the_birds.png";
@@ -372,6 +427,19 @@ function Q6R1() {
 }
 
 function Q6R2() {
+    if (typeKind == 0) {
+        pointPerso = pointPerso + 5;
+    } else {
+        pointPerso = pointPerso + 1;
+    }
+    document.getElementById("button-next").innerText = "suivant";
+    document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "next5()");
+    document.getElementById("container-score").style.display = "flex";
+    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+
+function Q6R3() {
     if (typeKind == 0) {
         pointPerso = pointPerso + 5;
     } else {
