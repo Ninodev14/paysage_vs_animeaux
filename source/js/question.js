@@ -71,7 +71,7 @@ function IniP() {
 function validationKind() {
     if (typeKind == 1) {
         document.getElementById("question").innerText = "Bienvenue chez les animaux";
-        document.getElementById("paragraphe-center").innerText = "BLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAbla";
+        document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Animal. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
         document.getElementById("img2").style.display = "none";
         document.getElementById("img1").style.width = "200px";
         document.getElementById("img1").style.height = "200px";
@@ -81,7 +81,7 @@ function validationKind() {
     }
     else if (typeKind == 2) {
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
-        document.getElementById("paragraphe-center").innerText = "BLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAblaBLAbla";
+        document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe paysage. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
         document.getElementById("img1").style.display = "none";
         document.getElementById("img2").style.width = "200px";
         document.getElementById("img2").style.height = "200px";
@@ -95,8 +95,8 @@ function step1() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/above_the_birds.png";
     document.getElementById("img2").style.display = "none";
-    document.getElementById("question").innerText = "nom de l'oeuvre 1";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("question").innerText = "La Foulaison du blé en Camargue, Rosa Bonheur";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("button-lost").style.display = "flex";
