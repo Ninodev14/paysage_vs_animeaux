@@ -66,9 +66,11 @@ h2 {
 
 }
 
-#button-begin{
+#button-begin, #button-lost, #scorF, #plans{
     display: none;
 }
-#scorF{
-    display: none;
+
+#plans{
+    width: 200px;
+    height: auto;
 }
