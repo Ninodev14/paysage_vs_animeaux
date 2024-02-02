@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rub the Square Game</title>
+<style>
+  #square {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    cursor: pointer;
+  }
+  #score {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div id="square"></div>
+<div id="score">Score: 500</div>
+
+<script>
+  var score = 500;
+  var scoreDisplay = document.getElementById('score');
+  var square = document.getElementById('square');
+
+  square.addEventListener('mousedown', startRub);
+  square.addEventListener('touchstart', startRub);
+
+  function startRub() {
+    square.style.backgroundColor = 'red';
+
+    square.addEventListener('mousemove', rub);
+    square.addEventListener('touchmove', rub);
+
+    document.addEventListener('mouseup', endRub);
+    document.addEventListener('touchend', endRub);
+  }
+
+  function rub() {
+    score--;
+    if (score < 0) {
+      score = 0;
+    }
+    scoreDisplay.textContent = 'Score: ' + score;
+  }
+
+  function endRub() {
+    square.style.backgroundColor = 'blue';
+
+    square.removeEventListener('mousemove', rub);
+    square.removeEventListener('touchmove', rub);
+
+    document.removeEventListener('mouseup', endRub);
+    document.removeEventListener('touchend', endRub);
+  }
+</script>
+</body>
+</html>
