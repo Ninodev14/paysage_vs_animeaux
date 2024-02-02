@@ -2,59 +2,152 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Rub the Square Game</title>
 <style>
-  #square {
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-    cursor: pointer;
+  body {
+    overflow: hidden;
+    margin: 0;
   }
-  #score {
+
+  #game-container {
+    position: relative;
+    width: 260vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('source/image/Statue.png') no-repeat;background-size: contain;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .square {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    background: url('source/image/Splot.png') no-repeat center center;
+    background-size: contain;
+  }
+
+  .score {
+display: none;}
+  #square1 { top: 350px; left: 100px; }
+  #square2 { top: 100px; left: 250px; }
+  #square3 { top: 500px; left: 500px; }
+  #square4 { top: 100px; left: 600px; }
+  #square5 { top: 500px; left: 750px; }
+
+  #score1, #score2, #score3, #score4, #score5 {
     font-size: 24px;
     margin-top: 20px;
   }
 </style>
 </head>
 <body>
-<div id="square"></div>
-<div id="score">Score: 500</div>
-
+<div id="game-container">
+  <div id="square1" class="square"></div>
+  <div id="square2" class="square"></div>
+  <div id="square3" class="square"></div>
+  <div id="square4" class="square"></div>
+  <div id="square5" class="square"></div>
+</div>
+<div id="score1" class="score">Score 1: 200</div>
+<div id="score2" class="score">Score 2: 200</div>
+<div id="score3" class="score">Score 3: 200</div>
+<div id="score4" class="score">Score 4: 200</div>
+<div id="score5" class="score">Score 5: 200</div>
 <script>
-  var score = 500;
-  var scoreDisplay = document.getElementById('score');
-  var square = document.getElementById('square');
+  var scores = [200, 200, 200, 200, 200];
+  var scoreDisplays = [
+    document.getElementById('score1'),
+    document.getElementById('score2'),
+    document.getElementById('score3'),
+    document.getElementById('score4'),
+    document.getElementById('score5')
+  ];
+var gameContainer = document.getElementById('game-container');
+  var squares = document.querySelectorAll('.square');
+  var moveStarted = 0;
 
-  square.addEventListener('mousedown', startRub);
-  square.addEventListener('touchstart', startRub);
+  squares.forEach(function(square, index) {
+    square.addEventListener('mousedown', function(event) {
+      startRub(event, index);
+    });
 
-  function startRub() {
-    square.style.backgroundColor = 'red';
+    square.addEventListener('touchstart', function(event) {
+      startRub(event, index);
+    });
+  });
 
-    square.addEventListener('mousemove', rub);
-    square.addEventListener('touchmove', rub);
+  function startRub(event, index) {
+    // Prevent default behavior to avoid scrolling and zooming
+    event.preventDefault();
 
-    document.addEventListener('mouseup', endRub);
-    document.addEventListener('touchend', endRub);
+    squares[index].addEventListener('mousemove', function() {
+      rub(index);
+    });
+
+    squares[index].addEventListener('touchmove', function() {
+      rub(index);
+    });
+
+    document.addEventListener('mouseup', function() {
+      endRub(index);
+    });
+
+    document.addEventListener('touchend', function() {
+      endRub(index);
+    });
   }
 
-  function rub() {
-    score--;
-    if (score < 0) {
-      score = 0;
+  function rub(index) {
+    scores[index]--;
+    if (scores[index] < 0) {
+      scores[index] = 0;
     }
-    scoreDisplay.textContent = 'Score: ' + score;
+    scoreDisplays[index].textContent = 'Score ' + (index + 1) + ': ' + scores[index];
+
+    // Adjust opacity based on the score
+    var opacity = (scores[index] / 200); // 500 is the initial score
+    squares[index].style.opacity = opacity;
+    
+    if (scores[0] === 0 && scores[1] === 0 && moveStarted == 0) {
+        moveStarted = 1;
+        setTimeout(gameContainer.style.transform = 'translateX(-50vh)', 500);
+      }
+
+      if (scores[2] === 0 && scores[3] === 0 && moveStarted == 1) {
+          moveStarted = 2;
+          setTimeout(gameContainer.style.transform = 'translateX(-100vh)', 500);
+        }
+
+        if (scores[4] === 0 && moveStarted == 2) {
+            moveStarted = 3;
+            var audio = new Audio('source/sounds/gameFinish.mp3');
+audio.play();
+          }
   }
 
-  function endRub() {
-    square.style.backgroundColor = 'blue';
+  function endRub(index) {
+    squares[index].style.backgroundColor = '';
 
-    square.removeEventListener('mousemove', rub);
-    square.removeEventListener('touchmove', rub);
+    squares[index].removeEventListener('mousemove', function() {
+      rub(index);
+    });
 
-    document.removeEventListener('mouseup', endRub);
-    document.removeEventListener('touchend', endRub);
+    squares[index].removeEventListener('touchmove', function() {
+      rub(index);
+    });
+
+    document.removeEventListener('mouseup', function() {
+      endRub(index);
+    });
+
+    document.removeEventListener('touchend', function() {
+      endRub(index);
+    });
   }
 </script>
 </body>
