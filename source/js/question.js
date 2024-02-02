@@ -109,7 +109,7 @@ function BeginQuestion() {
     document.getElementById("img1").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
-    document.getElementById("question").innerText = "blablabli ou blablablou ?";
+    document.getElementById("question").innerText = "Ces chevaux…";
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
@@ -132,9 +132,9 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
 
 function Q2R1() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 50;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 25;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -145,9 +145,9 @@ function Q2R1() {
 
 function Q2R2() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 25;
     } else {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 50;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -157,7 +157,7 @@ function Q2R2() {
 }
 function Q2R3() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 5;
     }
@@ -173,7 +173,7 @@ function step2() {
     document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
@@ -184,12 +184,12 @@ function step2() {
 
 function next1() {
     updateQuestionAndButtons(
-        "c'est la deusieme question ou kua ?",
-        "é wé mon pote",
+        "Que font les personnages ?",
+        "Ils se promènent.",
         "Q3R1()",
-        "bof en vrai",
+        "Ils pêchent les coquillages.",
         "Q3R2()",
-        "bof en vraaaaa",
+        "Ils admirent le reflet du ciel sur la mer.",
         "Q3R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -207,7 +207,7 @@ function Q3R1() {
     if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 5;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -220,9 +220,9 @@ function Q3R1() {
 function Q3R2() {
 
     if (typeKind == 1) {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 50;
     } else {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 25;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("container-score").style.display = "flex";
@@ -236,9 +236,9 @@ function Q3R2() {
 function Q3R3() {
 
     if (typeKind == 1) {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 25;
     } else {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 50;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("container-score").style.display = "flex";
@@ -254,7 +254,7 @@ function step3() {
     document.getElementById("img1").src = "source/image/tableau_musee/Autonme.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Rayon d’Automne. Souvenir du parc de Cognac, Louis Augustin Auguin";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next2()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
@@ -264,12 +264,12 @@ function step3() {
 
 function next2() {
     updateQuestionAndButtons(
-        "Est de 3 ?",
-        "é wé mon pote",
+        "Cette forêt est :",
+        "Accueillante et relaxante",
         "Q4R1()",
-        "bof en vrai",
+        "Originale et mystérieuse",
         "Q4R2()",
-        "bof en vrai",
+        "Stressante, mais protectrice",
         "Q4R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -283,9 +283,9 @@ function next2() {
 
 function Q4R1() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 25;
     } else {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 50;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -298,7 +298,7 @@ function Q4R2() {
     if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 5;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -309,9 +309,9 @@ function Q4R2() {
 
 function Q4R3() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 50;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 25;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -324,7 +324,7 @@ function step4() {
     document.getElementById("img1").src = "source/image/tableau_musee/Baindiane.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Le Bain de Diane, Camille Corot";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next3()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
@@ -333,12 +333,12 @@ function step4() {
 }
 function next3() {
     updateQuestionAndButtons(
-        "Est de 4 ?",
-        "é wé mon pote",
+        "Le plus important dans ce tableau c’est…",
+        "Le mythe, l’histoire qui inspire le tableau.",
         "Q5R1()",
-        "bof en vrai",
+        "L’ensemble du tableau qui donne vie à l'espace.",
         "Q5R2()",
-        "bof en vrai",
+        "Les détails qui apportent de la consistance à l’œuvre.",
         "Q5R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -354,7 +354,7 @@ function next3() {
 function Q5R1() {
     if (typeKind == 1) {
         console.log("test")
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 5;
     }
@@ -367,9 +367,9 @@ function Q5R1() {
 
 function Q5R2() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 25;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 50;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -380,9 +380,9 @@ function Q5R2() {
 
 function Q5R3() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 50;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 25;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -396,7 +396,7 @@ function step5() {
     document.getElementById("img1").src = "source/image/tableau_musee/Chasse.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = " La chasse de Méléagre ou la Mort du sanglier de Calydon, Jacques Raymond Brascassat";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next4()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
@@ -405,12 +405,12 @@ function step5() {
 }
 function next4() {
     updateQuestionAndButtons(
-        "Est de 5 ?",
-        "é wé mon pote",
+        "En regardant cette œuvre, tu ressens…",
+        "Une profonde tristesse.",
         "Q6R1()",
-        "bof en vrai",
+        "Une indifférence totale.",
         "Q6R2()",
-        "bof en vrai",
+        "Un sentiment de calme brisé.",
         "Q6R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -424,9 +424,9 @@ function next4() {
 
 function Q6R1() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 50;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 25;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -437,7 +437,7 @@ function Q6R1() {
 
 function Q6R2() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 5;
     } else {
         pointPerso = pointPerso + 5;
     }
@@ -449,9 +449,9 @@ function Q6R2() {
 }
 function Q6R3() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 25;
     } else {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 50;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -462,10 +462,10 @@ function Q6R3() {
 
 function step6() {
     document.getElementById("img1").style.display = "flex";
-    document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
+    document.getElementById("img1").src = "source/image/tableau_musee/vache.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("question").innerText = "Le retour de la foire, Auguste-François Bonheur";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
@@ -474,12 +474,12 @@ function step6() {
 }
 function next5() {
     updateQuestionAndButtons(
-        "Est de 6 ?",
-        "é wé mon pote",
+        "Je suis attiré par…",
+        "Le reflet de la vache dans la flaque d’eau.",
         "Q7R1()",
-        "bof en vrai",
+        "Les textures de la laine des moutons.",
         "Q7R2()",
-        "bof en vrai",
+        "Le soir qui approche, et les ombres qui arrivent.",
         "Q7R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -491,9 +491,9 @@ function next5() {
 }
 function Q7R1() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 25;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 50;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -505,9 +505,9 @@ function Q7R1() {
 
 function Q7R2() {
     if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
+        pointPerso = pointPerso + 50;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 25;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
@@ -520,7 +520,7 @@ function Q7R3() {
     if (typeKind == 1) {
         pointPerso = pointPerso + 5;
     } else {
-        pointPerso = pointPerso + 1;
+        pointPerso = pointPerso + 5;
     }
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
