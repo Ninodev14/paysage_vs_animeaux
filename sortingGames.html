@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trier des images</title>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .container img {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            cursor: pointer;
+            top: 80vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .drop-zonePaysage {
+            width: 25vw;
+            height: 30vh;
+            background-color: rgb(60, 255, 0);
+            z-index: 0;
+        }
+
+        .drop-zoneAnimal {
+            width: 25vw;
+            height: 30vh;
+            background-color: rgb(255, 0, 0);
+            z-index: 0;
+        }
+
+        .draggable-image {
+            z-index: 1;
+        }
+
+        .depositeZone {
+            margin-top: 10vh;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="draggable-image imgPaysage" src="source/image/testMouve1.png" alt="Image à déplacer">
+        <img class="draggable-image imgAnimal" src="source/image/testMouve2.png" alt="Image à déplacer">
+        <img class="draggable-image imgPaysage" src="source/image/testMouve3.png" alt="Image à déplacer">
+        <img class="draggable-image imgAnimal" src="source/image/testMouve4.png" alt="Image à déplacer">
+        <img class="draggable-image imgAnimal" src="source/image/testMouve5.png" alt="Image à déplacer">
+        <img class="draggable-image imgPaysage" src="source/image/testMouve6.png" alt="Image à déplacer">
+        <img class="draggable-image imgPaysage" src="source/image/testMouve7.png" alt="Image à déplacer">
+        <img class="draggable-image imgAnimal" src="source/image/testMouve8.png" alt="Image à déplacer">
+        <img class="draggable-image imgPaysage" src="source/image/testMouve9.png" alt="Image à déplacer">
+
+        <!-- Chronomètre -->
+        <p id="timer">Temps écoulé : <span id="timerValue">0</span> secondes</p>
+        <!-- Points -->
+        <p id="points">Points : <span id="pointsValue">0</span></p>
+
+        <!-- Zone de dépôt représentée par des points -->
+        <div class="depositeZone">
+            <div class="drop-zonePaysage"></div>
+            <div class="drop-zoneAnimal"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.draggable-image');
+            const imagesPaysage = document.querySelectorAll('.imgPaysage');
+            const imagesAnimal = document.querySelectorAll('.imgAnimal');
+            const dropZonesPaysage = document.querySelectorAll('.drop-zonePaysage');
+            const dropZonesAnimal = document.querySelectorAll('.drop-zoneAnimal');
+
+            let offsetX = [];
+            let offsetY = [];
+            let isDragging = [];
+            let isImageOnDropZone = [];
+            let allImagesOnDropZones = false;
+            let seconds = 0;
+            let points = 0;
+
+            for (let i = 0; i < images.length; i++) {
+                offsetX[i] = 0;
+                offsetY[i] = 0;
+                isDragging[i] = false;
+                isImageOnDropZone[i] = false;
+
+                images[i].addEventListener('mousedown', function (event) {
+                    startDragging(event, i);
+                });
+
+                images[i].addEventListener('touchstart', function (event) {
+                    startDragging(event, i);
+                });
+
+                images[i].addEventListener('mouseup', function () {
+                    stopDragging(i);
+                });
+
+                images[i].addEventListener('touchend', function () {
+                    stopDragging(i);
+                });
+            }
+
+            function startDragging(event, index) {
+                event.preventDefault();
+                isDragging[index] = true;
+                if (event.type === 'mousedown') {
+                    offsetX[index] = event.clientX - images[index].getBoundingClientRect().left;
+                    offsetY[index] = event.clientY - images[index].getBoundingClientRect().top;
+                } else if (event.type === 'touchstart') {
+                    offsetX[index] = event.touches[0].clientX - images[index].getBoundingClientRect().left;
+                    offsetY[index] = event.touches[0].clientY - images[index].getBoundingClientRect().top;
+                }
+                document.addEventListener('mousemove', function (e) {
+                    dragImage(e, index);
+                });
+                document.addEventListener('touchmove', function (e) {
+                    dragImage(e, index);
+                }, { passive: false });
+            }
+
+            function dragImage(event, index) {
+                if (isDragging[index]) {
+                    event.preventDefault();
+                    let x, y;
+                    if (event.type === 'mousemove') {
+                        x = event.clientX - offsetX[index];
+                        y = event.clientY - offsetY[index];
+                    } else if (event.type === 'touchmove') {
+                        x = event.touches[0].clientX - offsetX[index];
+                        y = event.touches[0].clientY - offsetY[index];
+                    }
+                    images[index].style.left = x + 'px';
+                    images[index].style.top = y + 'px';
+
+                    // Vérifier si l'image touche son point de dépôt correspondant
+                    const rectImage = images[index].getBoundingClientRect();
+                    const rectZonePaysage = dropZonesPaysage[0].getBoundingClientRect();
+                    const rectZoneAnimal = dropZonesAnimal[0].getBoundingClientRect();
+
+                    if (images[index].classList.contains('imgPaysage')) {
+                        if (
+                            rectImage.right >= rectZonePaysage.left &&
+                            rectImage.left <= rectZonePaysage.right &&
+                            rectImage.bottom >= rectZonePaysage.top &&
+                            rectImage.top <= rectZonePaysage.bottom
+                        ) {
+                            // Centrer l'image sur le point de dépôt avec transition
+                            const centerX = rectZonePaysage.left + rectZonePaysage.width / 2 - rectImage.width / 2;
+                            const centerY = rectZonePaysage.top + rectZonePaysage.height / 2 - rectImage.height / 2;
+                            images[index].style.transition = 'left 0.5s ease, top 0.5s ease'; // Transition
+                            images[index].style.left = centerX + 'px';
+                            images[index].style.top = centerY + 'px';
+                            isImageOnDropZone[index] = true;
+                            console.log('mis dans paysage');
+                        } else {
+                            // Réinitialiser la transition si l'image n'est pas centrée
+                            images[index].style.transition = '';
+                            isImageOnDropZone[index] = false;
+                        }
+                    }
+
+                    if (images[index].classList.contains('imgAnimal')) {
+                        if (
+                            rectImage.right >= rectZoneAnimal.left &&
+                            rectImage.left <= rectZoneAnimal.right &&
+                            rectImage.bottom >= rectZoneAnimal.top &&
+                            rectImage.top <= rectZoneAnimal.bottom
+                        ) {
+                            // Centrer l'image sur le point de dépôt avec transition
+                            const centerX = rectZoneAnimal.left + rectZoneAnimal.width / 2 - rectImage.width / 2;
+                            const centerY = rectZoneAnimal.top + rectZoneAnimal.height / 2 - rectImage.height / 2;
+                            images[index].style.transition = 'left 0.5s ease, top 0.5s ease'; // Transition
+                            images[index].style.left = centerX + 'px';
+                            images[index].style.top = centerY + 'px';
+                            isImageOnDropZone[index] = true;
+                            console.log('mis dans animal');
+                        } else {
+                            // Réinitialiser la transition si l'image n'est pas centrée
+                            images[index].style.transition = '';
+                            isImageOnDropZone[index] = false;
+                        }
+                    }
+                }
+            }
+
+            function stopDragging(index) {
+                if (isDragging[index]) {
+                    isDragging[index] = false;
+                    document.removeEventListener('mousemove', function (e) {
+                        dragImage(e, index);
+                    });
+                    document.removeEventListener('touchmove', function (e) {
+                        dragImage(e, index);
+                    });
+                    checkAllImagesOnDropZones();
+                }
+            }
+
+            function checkAllImagesOnDropZones() {
+                let allOnDropZones = isImageOnDropZone.every((onDropZone) => onDropZone);
+
+                if (allOnDropZones && !allImagesOnDropZones) {
+                    allImagesOnDropZones = true;
+                    clearInterval(timer);
+                    console.log("Toutes les images sont sur leurs points de dépôt.");
+                    calculatePoints();
+                }
+            }
+
+            function calculatePoints() {
+                if (seconds <= 10) {
+                    points = 50;
+                } else if (seconds <= 20) {
+                    points = 25;
+                } else if (seconds <= 30) {
+                    points = 5;
+                }
+                document.getElementById('pointsValue').textContent = points;
+            }
+
+            let timer = setInterval(function () {
+                seconds++;
+                document.getElementById('timerValue').textContent = seconds;
+            }, 1000); // Incrémente chaque seconde
+        });
+    </script>
+</body>
+
+</html>
