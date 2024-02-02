@@ -4,6 +4,7 @@ let typeKind = 0;
 let pointPerso = 0;
 let pointsCounted = false;
 let checkLost = 0;
+let witchReponce = 0;
 let req = new XMLHttpRequest();
 let lol = false;
 
@@ -43,7 +44,7 @@ function addPoint(teamName, points) {
     lol = false;
 }
 
-window.onbeforeunload = function(event) {
+window.onbeforeunload = function (event) {
     const link = document.getElementById('scorF');
     if (event.target === link) {
         return;
@@ -105,14 +106,17 @@ function step1() {
 
 function BeginQuestion() {
     document.getElementById("button-next").style.display = "none";
+    document.getElementById("button-next").setAttribute("onclick", "reponceQ2()");
+    document.getElementById("button-next").innerHTML = "Continuer";
     document.getElementById("paragraphe-center").style.display = "none";
     document.getElementById("img1").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
-    document.getElementById("question").innerText = "Ces chevaux…";
+    document.getElementById("question").innerText = "blablabli ou blablablou ?";
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
+    
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick, btn3Text, btn3OnClick) {
@@ -131,122 +135,180 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
 
 
 function Q2R1() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 50;
-    } else {
-        pointPerso = pointPerso + 25;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 1;
+    document.getElementById("btn1").style.backgroundColor = "red";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step2()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q2R2() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 25;
-    } else {
-        pointPerso = pointPerso + 50;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 2;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "red";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step2()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 function Q2R3() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
-    } else {
-        pointPerso = pointPerso + 5;
+    witchReponce = 3;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "red";
+    document.getElementById("button-next").style.display = "flex";
+}
+
+
+function reponceQ2() {
+    if (witchReponce = 1) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
     }
+    else if (witchReponce = 2) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    } else if (witchReponce = 3) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    }
+    document.getElementById("btn1").setAttribute("onclick", "");
+    document.getElementById("btn2").setAttribute("onclick", "");
+    document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "step2()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("paragraphe-center").style.display = "flex";
+    
 }
+
 
 function step2() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
-    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("container-score").style.display = "none"
     document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
 }
 
 
 function next1() {
     updateQuestionAndButtons(
-        "Que font les personnages ?",
-        "Ils se promènent.",
+        "c'est la deusieme question ou kua ?",
+        "é wé mon pote",
         "Q3R1()",
-        "Ils pêchent les coquillages.",
+        "bof en vrai",
         "Q3R2()",
-        "Ils admirent le reflet du ciel sur la mer.",
+        "bof en vraaaaa",
         "Q3R3()"
     );
     document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "reponceQ3()");
+    document.getElementById("button-next").innerHTML = "Continuer";
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
 }
 
 
-
 function Q3R1() {
-
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
-    } else {
-        pointPerso = pointPerso + 5;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 1;
+    document.getElementById("btn1").style.backgroundColor = "red";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step3()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
 }
-
 
 function Q3R2() {
-
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 50;
-    } else {
-        pointPerso = pointPerso + 25;
-    }
-    document.getElementById("button-next").innerText = "suivant";
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
+    witchReponce = 2;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "red";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step3()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+function Q3R3() {
+    witchReponce = 3;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "red";
+    document.getElementById("button-next").style.display = "flex";
 }
 
-function Q3R3() {
 
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 25;
-    } else {
-        pointPerso = pointPerso + 50;
+function reponceQ3() {
+    if (witchReponce = 1) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
     }
+    else if (witchReponce = 2) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    } else if (witchReponce = 3) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    }
+    document.getElementById("btn1").setAttribute("onclick", "");
+    document.getElementById("btn2").setAttribute("onclick", "");
+    document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("button-next").innerText = "suivant";
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
     document.getElementById("button-next").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "step3()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("paragraphe-center").style.display = "flex";
+    
 }
 
 function step3() {
@@ -254,22 +316,25 @@ function step3() {
     document.getElementById("img1").src = "source/image/tableau_musee/Autonme.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Rayon d’Automne. Souvenir du parc de Cognac, Louis Augustin Auguin";
-    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "next2()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("container-score").style.display = "none"
     document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
 }
 
 function next2() {
     updateQuestionAndButtons(
-        "Cette forêt est :",
-        "Accueillante et relaxante",
+        "Est de 3 ?",
+        "é wé mon pote",
         "Q4R1()",
-        "Originale et mystérieuse",
+        "bof en vrai",
         "Q4R2()",
-        "Stressante, mais protectrice",
+        "bof en vrai",
         "Q4R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -278,67 +343,101 @@ function next2() {
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
+    document.getElementById("button-next").setAttribute("onclick", "reponceQ4()");
+    document.getElementById("button-next").innerHTML = "Continuer";
 }
 
-
 function Q4R1() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 25;
-    } else {
-        pointPerso = pointPerso + 50;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 1;
+    document.getElementById("btn1").style.backgroundColor = "red";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step4()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q4R2() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
-    } else {
-        pointPerso = pointPerso + 5;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 2;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "red";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step4()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+function Q4R3() {
+    witchReponce = 3;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "red";
+    document.getElementById("button-next").style.display = "flex";
 }
 
-function Q4R3() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 50;
-    } else {
-        pointPerso = pointPerso + 25;
+
+function reponceQ4() {
+    if (witchReponce = 1) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
     }
+    else if (witchReponce = 2) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    } else if (witchReponce = 3) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    }
+    document.getElementById("btn1").setAttribute("onclick", "");
+    document.getElementById("btn2").setAttribute("onclick", "");
+    document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "step4()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("paragraphe-center").style.display = "flex";
+    
 }
 function step4() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Baindiane.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Le Bain de Diane, Camille Corot";
-    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "next3()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("container-score").style.display = "none"
     document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
 }
 function next3() {
     updateQuestionAndButtons(
-        "Le plus important dans ce tableau c’est…",
-        "Le mythe, l’histoire qui inspire le tableau.",
+        "Est de 4 ?",
+        "é wé mon pote",
         "Q5R1()",
-        "L’ensemble du tableau qui donne vie à l'espace.",
+        "bof en vrai",
         "Q5R2()",
-        "Les détails qui apportent de la consistance à l’œuvre.",
+        "bof en vrai",
         "Q5R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -347,48 +446,78 @@ function next3() {
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
+    document.getElementById("button-next").setAttribute("onclick", "reponceQ5()");
+    document.getElementById("button-next").innerHTML = "Continuer";
 }
-
 
 
 function Q5R1() {
-    if (typeKind == 1) {
-        console.log("test")
-        pointPerso = pointPerso + 5;
-    } else {
-        pointPerso = pointPerso + 5;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 1;
+    document.getElementById("btn1").style.backgroundColor = "red";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step5()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q5R2() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 25;
-    } else {
-        pointPerso = pointPerso + 50;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 2;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "red";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step5()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+function Q5R3() {
+    witchReponce = 3;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "red";
+    document.getElementById("button-next").style.display = "flex";
 }
 
-function Q5R3() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 50;
-    } else {
-        pointPerso = pointPerso + 25;
+
+function reponceQ5() {
+    if (witchReponce = 1) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
     }
+    else if (witchReponce = 2) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    } else if (witchReponce = 3) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    }
+    document.getElementById("btn1").setAttribute("onclick", "");
+    document.getElementById("btn2").setAttribute("onclick", "");
+    document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "step5()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("paragraphe-center").style.display = "flex";
+    
 }
 
 function step5() {
@@ -396,21 +525,24 @@ function step5() {
     document.getElementById("img1").src = "source/image/tableau_musee/Chasse.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = " La chasse de Méléagre ou la Mort du sanglier de Calydon, Jacques Raymond Brascassat";
-    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "next4()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("container-score").style.display = "none"
     document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
 }
 function next4() {
     updateQuestionAndButtons(
-        "En regardant cette œuvre, tu ressens…",
-        "Une profonde tristesse.",
+        "Est de 5 ?",
+        "é wé mon pote",
         "Q6R1()",
-        "Une indifférence totale.",
+        "bof en vrai",
         "Q6R2()",
-        "Un sentiment de calme brisé.",
+        "bof en vrai",
         "Q6R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -419,67 +551,101 @@ function next4() {
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
+    document.getElementById("button-next").setAttribute("onclick", "reponceQ6()");
+    document.getElementById("button-next").innerHTML = "Continuer";
 }
 
-
 function Q6R1() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 50;
-    } else {
-        pointPerso = pointPerso + 25;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 1;
+    document.getElementById("btn1").style.backgroundColor = "red";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step6()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 
 function Q6R2() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
-    } else {
-        pointPerso = pointPerso + 5;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 2;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "red";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step6()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
 }
 function Q6R3() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 25;
-    } else {
-        pointPerso = pointPerso + 50;
+    witchReponce = 3;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "red";
+    document.getElementById("button-next").style.display = "flex";
+}
+
+
+function reponceQ6() {
+    if (witchReponce = 1) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
     }
+    else if (witchReponce = 2) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    } else if (witchReponce = 3) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    }
+    document.getElementById("btn1").setAttribute("onclick", "");
+    document.getElementById("btn2").setAttribute("onclick", "");
+    document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "step6()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("paragraphe-center").style.display = "flex";
+    
 }
 
 function step6() {
     document.getElementById("img1").style.display = "flex";
-    document.getElementById("img1").src = "source/image/tableau_musee/vache.jpg";
+    document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "Le retour de la foire, Auguste-François Bonheur";
-    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+    document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
+    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("container-score").style.display = "none"
-    document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
 }
 function next5() {
     updateQuestionAndButtons(
-        "Je suis attiré par…",
-        "Le reflet de la vache dans la flaque d’eau.",
+        "Est de 6 ?",
+        "é wé mon pote",
         "Q7R1()",
-        "Les textures de la laine des moutons.",
+        "bof en vrai",
         "Q7R2()",
-        "Le soir qui approche, et les ombres qui arrivent.",
+        "bof en vrai",
         "Q7R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -488,48 +654,82 @@ function next5() {
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
+    document.getElementById("button-next").setAttribute("onclick", "reponceQ7()");
+    document.getElementById("button-next").innerHTML = "Continuer";
 }
 function Q7R1() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 25;
-    } else {
-        pointPerso = pointPerso + 50;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 1;
+    document.getElementById("btn1").style.backgroundColor = "red";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next6()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
-
 }
 
 function Q7R2() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 50;
-    } else {
-        pointPerso = pointPerso + 25;
-    }
-    document.getElementById("button-next").innerText = "suivant";
+    witchReponce = 2;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "red";
+    document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "next6()");
-    document.getElementById("container-score").style.display = "flex";
-    document.getElementById("container-score-h3").innerText = pointPerso;
+}
+function Q7R3() {
+    witchReponce = 3;
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "red";
+    document.getElementById("button-next").style.display = "flex";
 }
 
-function Q7R3() {
-    if (typeKind == 1) {
-        pointPerso = pointPerso + 5;
-    } else {
-        pointPerso = pointPerso + 5;
+
+function reponceQ7() {
+    if (witchReponce = 1) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
     }
+    else if (witchReponce = 2) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    } else if (witchReponce = 3) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 1;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            witchReponce = 0;
+        }
+    }
+    document.getElementById("btn1").setAttribute("onclick", "");
+    document.getElementById("btn2").setAttribute("onclick", "");
+    document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("button-next").innerText = "suivant";
     document.getElementById("button-next").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "next6()");
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
+    document.getElementById("paragraphe-center").style.display = "flex";
+    
 }
 
 function next6() {
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
     if (pointsCounted == false) {
         if (typeKind = 1) {
             addPoint('Team A', pointPerso);
