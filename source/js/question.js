@@ -93,7 +93,7 @@ function validationKind() {
 
 function step1() {
     document.getElementById("img1").style.display = "flex";
-    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img1").src = "source/image/tableau_musee/Chevaux.jpg";
     document.getElementById("img2").style.display = "none";
     document.getElementById("question").innerText = "La Foulaison du blé en Camargue, Rosa Bonheur";
     document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
@@ -168,7 +168,7 @@ function Q2R3() {
 
 function step2() {
     document.getElementById("img1").style.display = "flex";
-    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "nom de l'oeuvre 2";
     document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
@@ -247,7 +247,7 @@ function Q3R3() {
 
 function step3() {
     document.getElementById("img1").style.display = "flex";
-    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img1").src = "source/image/tableau_musee/Autonme.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "nom de l'oeuvre 3";
     document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
@@ -315,7 +315,7 @@ function Q4R3() {
 }
 function step4() {
     document.getElementById("img1").style.display = "flex";
-    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img1").src = "source/image/tableau_musee/Baindiane.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "nom de l'oeuvre 4";
     document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
@@ -385,7 +385,7 @@ function Q5R3() {
 
 function step5() {
     document.getElementById("img1").style.display = "flex";
-    document.getElementById("img1").src = "source/image/above_the_birds.png";
+    document.getElementById("img1").src = "source/image/tableau_musee/Chasse.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "nom de l'oeuvre 5";
     document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
