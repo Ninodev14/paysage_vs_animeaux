@@ -170,7 +170,7 @@ function step2() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "nom de l'oeuvre 2";
+    document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
     document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("button-next").innerText = "j'y suis";
@@ -249,7 +249,7 @@ function step3() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Autonme.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "nom de l'oeuvre 3";
+    document.getElementById("question").innerText = "Rayon d’Automne. Souvenir du parc de Cognac, Louis Augustin Auguin";
     document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "next2()");
     document.getElementById("button-next").innerText = "j'y suis";
@@ -317,7 +317,7 @@ function step4() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Baindiane.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "nom de l'oeuvre 4";
+    document.getElementById("question").innerText = "Le Bain de Diane, Camille Corot";
     document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "next3()");
     document.getElementById("button-next").innerText = "j'y suis";
@@ -387,7 +387,7 @@ function step5() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Chasse.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "nom de l'oeuvre 5";
+    document.getElementById("question").innerText = " La chasse de Méléagre ou la Mort du sanglier de Calydon, Jacques Raymond Brascassat";
     document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
     document.getElementById("button-next").setAttribute("onclick", "next4()");
     document.getElementById("button-next").innerText = "j'y suis";
