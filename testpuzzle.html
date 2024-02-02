@@ -13,10 +13,15 @@
         .container img {
             width: 100px;
             height: auto;
-        }
-        .draggable-image {
             position: absolute;
             cursor: pointer;
+        }
+        .drop-zone {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -31,11 +36,23 @@
         <img class="draggable-image" src="source/image/testMouve7.png" alt="Image à déplacer">
         <img class="draggable-image" src="source/image/testMouve8.png" alt="Image à déplacer">
         <img class="draggable-image" src="source/image/testMouve9.png" alt="Image à déplacer">
+
+        <!-- Zone de dépôt représentée par des points -->
+        <div class="drop-zone" style="top: 50px; left: 50px;"></div>
+        <div class="drop-zone" style="top: 50px; left: 150px;"></div>
+        <div class="drop-zone" style="top: 150px; left: 50px;"></div>
+        <div class="drop-zone" style="top: 150px; left: 150px;"></div>
+        <div class="drop-zone" style="top: 250px; left: 50px;"></div>
+        <div class="drop-zone" style="top: 250px; left: 150px;"></div>
+        <div class="drop-zone" style="top: 350px; left: 50px;"></div>
+        <div class="drop-zone" style="top: 350px; left: 150px;"></div>
+        <div class="drop-zone" style="top: 450px; left: 50px;"></div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.draggable-image');
+            const dropZones = document.querySelectorAll('.drop-zone');
             let offsetX = [];
             let offsetY = [];
             let isDragging = [];
@@ -87,6 +104,26 @@
                     }
                     images[index].style.left = x + 'px';
                     images[index].style.top = y + 'px';
+
+                    // Vérifier si l'image touche son point de dépôt correspondant
+                    const rectImage = images[index].getBoundingClientRect();
+                    const rectZone = dropZones[index].getBoundingClientRect();
+                    if (
+                        rectImage.right >= rectZone.left &&
+                        rectImage.left <= rectZone.right &&
+                        rectImage.bottom >= rectZone.top &&
+                        rectImage.top <= rectZone.bottom
+                    ) {
+                        // Centrer l'image sur le point de dépôt avec transition
+                        const centerX = rectZone.left + rectZone.width / 2 - rectImage.width / 2;
+                        const centerY = rectZone.top + rectZone.height / 2 - rectImage.height / 2;
+                        images[index].style.transition = 'left 0.5s ease, top 0.5s ease'; // Transition
+                        images[index].style.left = centerX + 'px';
+                        images[index].style.top = centerY + 'px';
+                    } else {
+                        // Réinitialiser la transition si l'image n'est pas centrée
+                        images[index].style.transition = '';
+                    }
                 }
             }
 
