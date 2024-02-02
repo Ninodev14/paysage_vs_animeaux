@@ -18,14 +18,15 @@
     align-items: center;
     justify-content: center;
     background: url('source/image/Statue.png') no-repeat;background-size: contain;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out,  scale 3s ease-in-out;
+    transform: scale(0.3) translate(-265vw, 0px);
   }
 
   .square {
     width: 120px;
     height: 120px;
     cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
     position: absolute;
     background: url('source/image/Splot.png') no-repeat center center;
     background-size: contain;
@@ -33,16 +34,18 @@
 
   .score {
 display: none;}
-  #square1 { top: 350px; left: 100px; }
-  #square2 { top: 100px; left: 250px; }
-  #square3 { top: 500px; left: 500px; }
-  #square4 { top: 100px; left: 600px; }
-  #square5 { top: 500px; left: 800px; }
+#square1 { top: 52.37%; left: 10.26%; }
+#square2 { top: 15.02%; left: 25.64%; }
+#square3 { top: 75.04%; left: 51.28%; }
+#square4 { top: 15.02%; left: 61.54%; }
+#square5 { top: 75.04%; left: 82.05%; }
+
 
   #score1, #score2, #score3, #score4, #score5 {
     font-size: 24px;
     margin-top: 20px;
   }
+
 </style>
 </head>
 <body>
@@ -59,7 +62,7 @@ display: none;}
 <div id="score4" class="score">Score 4: 200</div>
 <div id="score5" class="score">Score 5: 200</div>
 <script>
-  var scores = [200, 200, 200, 200, 200];
+  var scores = [80, 80, 80, 80, 80];
   var scoreDisplays = [
     document.getElementById('score1'),
     document.getElementById('score2'),
@@ -70,6 +73,12 @@ display: none;}
 var gameContainer = document.getElementById('game-container');
   var squares = document.querySelectorAll('.square');
   var moveStarted = 0;
+  var cinematic = false;
+
+  if (cinematic == false){
+    setTimeout(function() {gameContainer.style.transform = 'translate(0px, 0px) scale(1)'}, 1000);
+  cinematic = true;
+  }
 
   squares.forEach(function(square, index) {
     square.addEventListener('mousedown', function(event) {
@@ -126,6 +135,8 @@ var gameContainer = document.getElementById('game-container');
         if (scores[4] === 0 && moveStarted == 2) {
             moveStarted = 3;
             var audio = new Audio('source/sounds/gameFinish.mp3');
+            gameContainer.style.transform = 'translateX(0px)';
+            gameContainer.style.transform = ' scale(0.3) translate(-265vw, 0px)';
 audio.play();
           }
   }
