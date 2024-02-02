@@ -116,7 +116,7 @@ function BeginQuestion() {
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
-    
+
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick, btn3Text, btn3OnClick) {
@@ -172,22 +172,22 @@ function reponceQ2() {
     }
     else if (witchReponce = 2) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe paysage, mais au moins nous avons pu récolter quelques points.";
-            witchReponce = 0;
-        } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe animal, mais au moins nous avons pu récolter quelques points.";
-            witchReponce = 0;
-        }
-    } else if (witchReponce = 3) {
-        if (typeKind == 1) {
             pointPerso = pointPerso + 25;
             document.getElementById("paragraphe-center").innerText = "Malheureusement, cette réponse était en faveur du paysage. Rappelle-toi, nous devons tout faire pour les battre.";
             witchReponce = 0;
         } else {
             pointPerso = pointPerso + 50;
             document.getElementById("paragraphe-center").innerText = "Bravo, tu as compris. Continue sur cette lancée.";
+            witchReponce = 0;
+        }
+    } else if (witchReponce = 3) {
+        if (typeKind == 1) {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe paysage, mais au moins nous avons pu récolter quelques points.";
+            witchReponce = 0;
+        } else {
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe animal, mais au moins nous avons pu récolter quelques points.";
             witchReponce = 0;
         }
     }
@@ -200,7 +200,7 @@ function reponceQ2() {
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
     document.getElementById("paragraphe-center").style.display = "flex";
-    
+
 }
 
 
@@ -269,33 +269,33 @@ function Q3R3() {
 function reponceQ3() {
     if (witchReponce = 1) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "Certes, mais les coquillages sont des animaux.";
             witchReponce = 0;
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            document.getElementById("paragraphe-center").innerText = "Certes, mais ce ciel et son reflet étaient quand même éblouissants.";
             witchReponce = 0;
         }
     }
     else if (witchReponce = 2) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Eh oui, les coquillages sont bien des animaux.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Zut, les coquillages sont des animaux. Ce ciel, quant à lui, était quand même magnifique.";
             witchReponce = 0;
         }
     } else if (witchReponce = 3) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Zut, les coquillages sont des animaux.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Quel magnifique paysage !";
             witchReponce = 0;
         }
     }
@@ -308,7 +308,7 @@ function reponceQ3() {
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
     document.getElementById("paragraphe-center").style.display = "flex";
-    
+
 }
 
 function step3() {
@@ -374,33 +374,33 @@ function Q4R3() {
 function reponceQ4() {
     if (witchReponce = 1) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Ce paysage est tout de même un peu effrayant, non.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Eh oui, quel paysage splendide pour une petite promenade.";
             witchReponce = 0;
         }
     }
     else if (witchReponce = 2) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "Un peu trop flou, non ?";
             witchReponce = 0;
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            document.getElementById("paragraphe-center").innerText = "Un peu trop flou, non ?";
             witchReponce = 0;
         }
     } else if (witchReponce = 3) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Elle fait un peu peur, non ? Mais au moins elle accueille les animaux.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Dans la team paysage, on essaie de voir tous les paysages sous un aspect positif.";
             witchReponce = 0;
         }
     }
@@ -413,7 +413,7 @@ function reponceQ4() {
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
     document.getElementById("paragraphe-center").style.display = "flex";
-    
+
 }
 function step4() {
     document.getElementById("img1").style.display = "flex";
@@ -478,33 +478,33 @@ function Q5R3() {
 function reponceQ5() {
     if (witchReponce = 1) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 50;
-            document.getElementById("paragraphe-center").innerText = "Bravo, tu as compris. Continue sur cette lancée.";
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "Il y a un vrai mythe, mais ici, ce n’est pas le sujet le plus important pour ton équipe !";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 25;
-            document.getElementById("paragraphe-center").innerText = "Malheureusement, cette réponse était en faveur des animaux. Rappelle-toi, nous devons tout faire pour les battre.";
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "Il y a un vrai mythe, mais ici, ce n’est pas le sujet le plus important pour ton équipe !";
             witchReponce = 0;
         }
     }
     else if (witchReponce = 2) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Aïe, cette réponse était pour l’équipe paysage car l’ensemble représente majoritairement un paysage.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Yeah, tu as su choisir la bonne réponse !";
             witchReponce = 0;
         }
     } else if (witchReponce = 3) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Yeah ! Tu as su voir les lévriers sur la berge!";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Aïe, cette réponse était pour l’équipe animal. En effet, si tu regardes bien, il y a des lévriers sur la berge !";
             witchReponce = 0;
         }
     }
@@ -517,7 +517,7 @@ function reponceQ5() {
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
     document.getElementById("paragraphe-center").style.display = "flex";
-    
+
 }
 
 function step5() {
@@ -582,33 +582,33 @@ function Q6R3() {
 function reponceQ6() {
     if (witchReponce = 1) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Bravo, tu as bien répondu ! Dans le titre, tu peux retrouver 'mort du sanglier', quel triste événement !";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Dommage ! Cette réponse était pour l’équipe animal car tu peux retrouver 'mort du sanglier' dans le titre de l'œuvre.";
             witchReponce = 0;
         }
     }
     else if (witchReponce = 2) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "Pourquoi cette réponse ?";
             witchReponce = 0;
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            document.getElementById("paragraphe-center").innerText = "Pourquoi cette réponse ?";
             witchReponce = 0;
         }
     } else if (witchReponce = 3) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Mince, cette réponse était pour l’équipe paysage. En effet, tu peux remarquer qu’un arbre est brisé à droite du centre.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Félicitations, tu as remarqué l’arbre brisé ?";
             witchReponce = 0;
         }
     }
@@ -621,7 +621,7 @@ function reponceQ6() {
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
     document.getElementById("paragraphe-center").style.display = "flex";
-    
+
 }
 
 function step6() {
@@ -684,33 +684,33 @@ function Q7R3() {
 function reponceQ7() {
     if (witchReponce = 1) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Malheureusement, cette réponse était pour l’équipe paysage ! En effet, dans cette réponse, nous parlons du reflet d’une flaque.";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAADDDDADAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = "Bravo, tu as trouvé la bonne réponse ! Tu n’es pas tombé dans le piège du coucher de soleil !";
             witchReponce = 0;
         }
     }
     else if (witchReponce = 2) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAEEEEAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 50;
+            document.getElementById("paragraphe-center").innerText = " Bravo, tu as trouvé la bonne réponse ! Tu n’es pas tombé dans le piège de la flaque d’eau !";
             witchReponce = 0;
         } else {
-            pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 25;
+            document.getElementById("paragraphe-center").innerText = "Malheureusement, cette réponse était pour l’équipe animal ! Tu aurais dû te concentrer sur le reflet de la flaque d’eau…";
             witchReponce = 0;
         }
     } else if (witchReponce = 3) {
         if (typeKind == 1) {
-            pointPerso = pointPerso + 1;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAADDDAAAAAAAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            pointPerso = pointPerso + 5;
+            document.getElementById("paragraphe-center").innerText = "Oups, cette réponse était neutre. Pourtant, la texture de la laine des moutons avait l’air bien, n'est-ce pas ?";
             witchReponce = 0;
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-center").innerText = "BLAAAAAAAA45AAAAAAAAAAABLAAAAAAAAAAAAAAA";
+            document.getElementById("paragraphe-center").innerText = "Oups, cette réponse était neutre. Pourtant, le reflet de la flaque d’eau est réussi.";
             witchReponce = 0;
         }
     }
@@ -723,7 +723,7 @@ function reponceQ7() {
     document.getElementById("container-score").style.display = "flex";
     document.getElementById("container-score-h3").innerText = pointPerso;
     document.getElementById("paragraphe-center").style.display = "flex";
-    
+
 }
 
 function next6() {
