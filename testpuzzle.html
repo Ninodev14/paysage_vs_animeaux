@@ -84,6 +84,19 @@
 
             function startDragging(event, index) {
                 event.preventDefault();
+                // Vérifier si l'image est déjà centrée sur son point de dépôt
+                const rectImage = images[index].getBoundingClientRect();
+                const rectZone = dropZones[index].getBoundingClientRect();
+                if (
+                    rectImage.right >= rectZone.left &&
+                    rectImage.left <= rectZone.right &&
+                    rectImage.bottom >= rectZone.top &&
+                    rectImage.top <= rectZone.bottom
+                ) {
+                    // Ne pas démarrer le déplacement si l'image est déjà centrée
+                    return;
+                }
+
                 isDragging[index] = true;
                 if (event.type === 'mousedown') {
                     offsetX[index] = event.clientX - images[index].getBoundingClientRect().left;
@@ -113,36 +126,35 @@
                     }
                     images[index].style.left = x + 'px';
                     images[index].style.top = y + 'px';
-
-                    // Vérifier si l'image touche son point de dépôt correspondant
-                    const rectImage = images[index].getBoundingClientRect();
-                    const rectZone = dropZones[index].getBoundingClientRect();
-                    if (
-                        rectImage.right >= rectZone.left &&
-                        rectImage.left <= rectZone.right &&
-                        rectImage.bottom >= rectZone.top &&
-                        rectImage.top <= rectZone.bottom
-                    ) {
-                        // Centrer l'image sur le point de dépôt avec transition
-                        const centerX = rectZone.left + rectZone.width / 2 - rectImage.width / 2;
-                        const centerY = rectZone.top + rectZone.height / 2 - rectImage.height / 2;
-                        images[index].style.transition = 'left 0.5s ease, top 0.5s ease'; // Transition
-                        images[index].style.left = centerX + 'px';
-                        images[index].style.top = centerY + 'px';
-                    } else {
-                        // Réinitialiser la transition si l'image n'est pas centrée
-                        images[index].style.transition = '';
-                    }
                 }
                 checkAllImagesOnDropZones();
             }
 
             function stopDragging() {
                 for (let i = 0; i < images.length; i++) {
-                    isDragging[i] = false;
+                    if (isDragging[i]) {
+                        const rectImage = images[i].getBoundingClientRect();
+                        const rectZone = dropZones[i].getBoundingClientRect();
+                        if (
+                            rectImage.right >= rectZone.left &&
+                            rectImage.left <= rectZone.right &&
+                            rectImage.bottom >= rectZone.top &&
+                            rectImage.top <= rectZone.bottom
+                        ) {
+                            // Centrer l'image sur le point de dépôt avec transition
+                            const centerX = rectZone.left + rectZone.width / 2 - rectImage.width / 2;
+                            const centerY = rectZone.top + rectZone.height / 2 - rectImage.height / 2;
+                            images[i].style.transition = 'left 0.5s ease, top 0.5s ease'; // Transition
+                            images[i].style.left = centerX + 'px';
+                            images[i].style.top = centerY + 'px';
+                        } else {
+                            // Réinitialiser la transition si l'image n'est pas centrée
+                            images[i].style.transition = '';
+                        }
+                        isDragging[i] = false;
+                    }
                 }
-                document.removeEventListener('mousemove', dragImage);
-                document.removeEventListener('touchmove', dragImage);
+                checkAllImagesOnDropZones();
             }
 
             function checkAllImagesOnDropZones() {
