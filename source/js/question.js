@@ -209,7 +209,7 @@ function step2() {
     document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
@@ -223,12 +223,12 @@ function step2() {
 
 function next1() {
     updateQuestionAndButtons(
-        "c'est la deusieme question ou kua ?",
-        "é wé mon pote",
+        "Que font les personnages ?",
+        "Ils se promènent.",
         "Q3R1()",
-        "bof en vrai",
+        "Ils pêchent les coquillages.",
         "Q3R2()",
-        "bof en vraaaaa",
+        "Ils admirent le reflet du ciel sur la mer.",
         "Q3R3()"
     );
     document.getElementById("img1").style.display = "none";
@@ -316,7 +316,7 @@ function step3() {
     document.getElementById("img1").src = "source/image/tableau_musee/Autonme.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Rayon d’Automne. Souvenir du parc de Cognac, Louis Augustin Auguin";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next2()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
@@ -329,10 +329,10 @@ function step3() {
 
 function next2() {
     updateQuestionAndButtons(
-        "Est de 3 ?",
-        "é wé mon pote",
+        "Cette forêt est :",
+        "Accueillante et relaxante",
         "Q4R1()",
-        "bof en vrai",
+        "Originale et mystérieuse",
         "Q4R2()",
         "bof en vrai",
         "Q4R3()"
@@ -420,7 +420,7 @@ function step4() {
     document.getElementById("img1").src = "source/image/tableau_musee/Baindiane.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Le Bain de Diane, Camille Corot";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next3()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
@@ -525,7 +525,7 @@ function step5() {
     document.getElementById("img1").src = "source/image/tableau_musee/Chasse.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = " La chasse de Méléagre ou la Mort du sanglier de Calydon, Jacques Raymond Brascassat";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next4()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
@@ -629,7 +629,7 @@ function step6() {
     document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
-    document.getElementById("paragraphe-center").innerText = "déplacer vous jusqu'as cette oeuvre";
+    document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
