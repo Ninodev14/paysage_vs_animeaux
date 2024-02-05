@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+</head>
+<body>
+    <h1>initiation</h1>
+
+    <h1>Counter: <span id="counter">0</span></h1>
+    <button id="incrementBtn">Increment Counter</button>
+
+    <div class="bar-container" id="barContainer"></div>
+
+    <div>
+        <button onclick="addPoint('Team A')">Add Point to Team A</button>
+        <button onclick="addPoint('Team B')">Add Point to Team B</button>
+    </div>
+
+    <script>
+        let req = new XMLHttpRequest();
+        let lol = false;
+        req.onreadystatechange = () => {
+            if (req.readyState == XMLHttpRequest.DONE) {
+                const jsonData = JSON.parse(req.responseText);
+                displayData(jsonData.record.teams);
+            }
+        };
+
+        req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
+        req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
+        req.send();
+
+        function displayData(teams) {
+            const barContainer = document.getElementById('barContainer');
+            barContainer.innerHTML = ''; // Clear existing bars before updating
+
+            teams.forEach(team => {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                bar.style.height = `${team.points}px`; // Set the bar height based on points
+
+                barContainer.appendChild(bar);
+            });
+        }
+
+        function addPoint(teamName) {
+            req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    const jsonData = JSON.parse(req.responseText);
+                    const team = jsonData.record.teams.find(t => t.teamName === teamName);
+
+                    if (team) {
+                        team.points += 1;
+
+                        // Update data on JSONBin
+                        req.open("PUT", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7", true);
+                        req.setRequestHeader("Content-Type", "application/json");
+                        req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
+
+                        if (lol == false) {
+                        req.send(JSON.stringify(jsonData.record));
+                        lol = true;
+                        }
+
+                        // Display updated points
+                        displayData(jsonData.record.teams);
+                    }
+                }
+            };
+
+            req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
+            req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
+            req.send();
+            
+            lol = false; 
+        }
+    </script>
+</body>
+</html>
+
+
