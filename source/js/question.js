@@ -43,7 +43,6 @@ function addPoint(teamName, points) {
 
     lol = false;
 }
-name-kind
 window.onbeforeunload = function (event) {
     const link = document.getElementById('scorF');
     if (event.target === link) {
@@ -78,9 +77,6 @@ function IniP() {
 
 
 function validationKind() {
-    document.getElementById("name-kind").style.display = "none";
-    document.getElementById("paragraphe-center").style.display = "flex";
-    document.getElementById("button-next").setAttribute("onclick", "step1()");
     if (typeKind == 1) {
         document.getElementById("question").innerText = "Bienvenue chez les animaux";
         document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Animal. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
@@ -88,6 +84,13 @@ function validationKind() {
         document.getElementById("img1").style.width = "200px";
         document.getElementById("img1").style.height = "200px";
         document.getElementById("img1").setAttribute("onclick", "");
+        document.getElementById("name-kind").style.display = "none";
+        document.getElementById("paragraphe-center").style.display = "flex";
+        document.getElementById("button-next").setAttribute("onclick", "step1()");
+        document.getElementById("img1").setAttribute("onclick", "");
+        document.getElementById("btn1").style.borderColor = "#CD844E";
+        document.getElementById("btn2").style.borderColor = "#CD844E";
+        document.getElementById("btn3").style.borderColor = "#CD844E";
     }
     else if (typeKind == 2) {
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
@@ -96,6 +99,13 @@ function validationKind() {
         document.getElementById("img2").style.width = "200px";
         document.getElementById("img2").style.height = "200px";
         document.getElementById("img2").setAttribute("onclick", "");
+        document.getElementById("name-kind").style.display = "none";
+        document.getElementById("paragraphe-center").style.display = "flex";
+        document.getElementById("button-next").setAttribute("onclick", "step1()");
+        document.getElementById("img1").setAttribute("onclick", "");
+        document.getElementById("btn1").style.borderColor = "#AFCF94";
+        document.getElementById("btn2").style.borderColor = "#AFCF94";
+        document.getElementById("btn3").style.borderColor = "#AFCF94";
     }
 }
 
@@ -143,7 +153,11 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
 
 function Q2R1() {
     witchReponce = 1;
-    document.getElementById("btn1").style.backgroundColor = "red";
+    if (typeKind == 1) {
+        document.getElementById("btn1").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn1").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
@@ -151,16 +165,24 @@ function Q2R1() {
 
 function Q2R2() {
     witchReponce = 2;
+    if (typeKind == 1) {
+        document.getElementById("btn2").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn2").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
-    document.getElementById("btn2").style.backgroundColor = "red";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
 }
 function Q2R3() {
     witchReponce = 3;
+    if (typeKind == 1) {
+        document.getElementById("btn3").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn3").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
-    document.getElementById("btn3").style.backgroundColor = "red";
     document.getElementById("button-next").style.display = "flex";
 
 }
@@ -258,7 +280,11 @@ function next1() {
 
 function Q3R1() {
     witchReponce = 1;
-    document.getElementById("btn1").style.backgroundColor = "red";
+    if (typeKind == 1) {
+        document.getElementById("btn1").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn1").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
@@ -266,16 +292,24 @@ function Q3R1() {
 
 function Q3R2() {
     witchReponce = 2;
+    if (typeKind == 1) {
+        document.getElementById("btn2").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn2").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
-    document.getElementById("btn2").style.backgroundColor = "red";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
 }
 function Q3R3() {
     witchReponce = 3;
+    if (typeKind == 1) {
+        document.getElementById("btn3").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn3").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
-    document.getElementById("btn3").style.backgroundColor = "red";
     document.getElementById("button-next").style.display = "flex";
 }
 
@@ -369,7 +403,11 @@ function next2() {
 
 function Q4R1() {
     witchReponce = 1;
-    document.getElementById("btn1").style.backgroundColor = "red";
+    if (typeKind == 1) {
+        document.getElementById("btn1").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn1").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
@@ -377,16 +415,24 @@ function Q4R1() {
 
 function Q4R2() {
     witchReponce = 2;
+    if (typeKind == 1) {
+        document.getElementById("btn2").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn2").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
-    document.getElementById("btn2").style.backgroundColor = "red";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
 }
 function Q4R3() {
     witchReponce = 3;
+    if (typeKind == 1) {
+        document.getElementById("btn3").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn3").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
-    document.getElementById("btn3").style.backgroundColor = "red";
     document.getElementById("button-next").style.display = "flex";
 }
 
@@ -479,7 +525,11 @@ function next3() {
 
 function Q5R1() {
     witchReponce = 1;
-    document.getElementById("btn1").style.backgroundColor = "red";
+    if (typeKind == 1) {
+        document.getElementById("btn1").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn1").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
@@ -487,16 +537,24 @@ function Q5R1() {
 
 function Q5R2() {
     witchReponce = 2;
+    if (typeKind == 1) {
+        document.getElementById("btn2").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn2").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
-    document.getElementById("btn2").style.backgroundColor = "red";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
 }
 function Q5R3() {
     witchReponce = 3;
+    if (typeKind == 1) {
+        document.getElementById("btn3").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn3").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
-    document.getElementById("btn3").style.backgroundColor = "red";
     document.getElementById("button-next").style.display = "flex";
 }
 
@@ -589,7 +647,11 @@ function next4() {
 
 function Q6R1() {
     witchReponce = 1;
-    document.getElementById("btn1").style.backgroundColor = "red";
+    if (typeKind == 1) {
+        document.getElementById("btn1").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn1").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
@@ -597,16 +659,24 @@ function Q6R1() {
 
 function Q6R2() {
     witchReponce = 2;
+    if (typeKind == 1) {
+        document.getElementById("btn2").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn2").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
-    document.getElementById("btn2").style.backgroundColor = "red";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
 }
 function Q6R3() {
     witchReponce = 3;
+    if (typeKind == 1) {
+        document.getElementById("btn3").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn3").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
-    document.getElementById("btn3").style.backgroundColor = "red";
     document.getElementById("button-next").style.display = "flex";
 }
 
@@ -697,7 +767,11 @@ function next5() {
 }
 function Q7R1() {
     witchReponce = 1;
-    document.getElementById("btn1").style.backgroundColor = "red";
+    if (typeKind == 1) {
+        document.getElementById("btn1").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn1").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
@@ -705,16 +779,24 @@ function Q7R1() {
 
 function Q7R2() {
     witchReponce = 2;
+    if (typeKind == 1) {
+        document.getElementById("btn2").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn2").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
-    document.getElementById("btn2").style.backgroundColor = "red";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
 }
 function Q7R3() {
     witchReponce = 3;
+    if (typeKind == 1) {
+        document.getElementById("btn3").style.backgroundColor = "#CD844E";
+    } else if (typeKind == 2) {
+        document.getElementById("btn3").style.backgroundColor = "#AFCF94";
+    }
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
-    document.getElementById("btn3").style.backgroundColor = "red";
     document.getElementById("button-next").style.display = "flex";
 }
 
