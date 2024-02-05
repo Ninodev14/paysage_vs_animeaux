@@ -61,6 +61,7 @@ function IniA() {
     document.getElementById("img1").style.filter = "grayscale(0%)";
     document.getElementById("name-kind").innerText = "Animaux";
     document.getElementById("name-kind").style.display = "flex";
+    document.getElementById("paragraphe-center").innerText = "Les animaux sont souvent associés à la loyauté, à la force et au charisme. Ils sont reconnus pour leur générosité et leur enthousiasme.";
     bodyNone.classList.add('body-animal');
     bodyNone.classList.remove('body-paysage'); 
 }
@@ -75,6 +76,7 @@ function IniP() {
     document.getElementById("img1").style.filter = "grayscale(100%)";
     document.getElementById("name-kind").innerText = "Paysage";
     document.getElementById("name-kind").style.display = "flex";
+    document.getElementById("paragraphe-center").innerText = "Les paysages possèdent une détermination et une résilience silencieuse, comme le calme avant une tempête. Ils sont reconnus pour leur empathie et leur créativité.";
     bodyNone.classList.add('body-paysage');
     bodyNone.classList.remove('body-animal');
 }
@@ -87,8 +89,8 @@ function validationKind() {
         document.getElementById("question").innerText = "Bienvenue chez les animaux";
         document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Animal. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
         document.getElementById("img2").style.display = "none";
-        document.getElementById("img1").style.width = "200px";
-        document.getElementById("img1").style.height = "200px";
+        document.getElementById("img1").style.width = "150px";
+        document.getElementById("img1").style.height = "150px";
         document.getElementById("img1").setAttribute("onclick", "");
         document.getElementById("name-kind").style.display = "none";
         document.getElementById("paragraphe-center").style.display = "flex";
@@ -104,8 +106,8 @@ function validationKind() {
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
         document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe paysage. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
         document.getElementById("img1").style.display = "none";
-        document.getElementById("img2").style.width = "200px";
-        document.getElementById("img2").style.height = "200px";
+        document.getElementById("img2").style.width = "150px";
+        document.getElementById("img2").style.height = "150px";
         document.getElementById("img2").setAttribute("onclick", "");
         document.getElementById("name-kind").style.display = "none";
         document.getElementById("paragraphe-center").style.display = "flex";
@@ -126,6 +128,9 @@ function step1() {
     document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("paragraphe-center").style.marginTop = "0px"
+    document.getElementById("container-img").style.position = "relative"
+    document.getElementById("container-img").style.marginTop = "0px"
 }
 
 

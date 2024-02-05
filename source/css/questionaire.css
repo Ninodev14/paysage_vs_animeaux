@@ -68,7 +68,8 @@ h2 {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-
+    position: absolute;
+    margin-top: 100px;
 }
 
 .container-img img {
@@ -109,4 +110,12 @@ body {
 .body-animal {
     background-color: #F4D9BD;
     border-color: #CD844E;
+}
+#button-next{
+    margin-top: 20px;
+
+}
+
+#paragraphe-center{
+    margin-top: 200px;
 }
