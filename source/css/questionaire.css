@@ -75,6 +75,8 @@ h2 {
     margin-bottom: 20px;
     height: 80px;
     width: 80px;
+    filter: grayscale(100%);
+    transition: 500ms;
 }
 
 #name-kind{

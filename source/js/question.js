@@ -57,10 +57,12 @@ function IniA() {
     document.getElementById("img2").style.height = "100px";
     document.getElementById("img1").style.width = "150px";
     document.getElementById("img1").style.height = "150px";
+    document.getElementById("img2").style.filter = "grayscale(100%)";
+    document.getElementById("img1").style.filter = "grayscale(0%)";
     document.getElementById("name-kind").innerText = "Animaux";
     document.getElementById("name-kind").style.display = "flex";
     bodyNone.classList.add('body-animal');
-    bodyNone.classList.remove('body-paysage');
+    bodyNone.classList.remove('body-paysage'); 
 }
 
 function IniP() {
@@ -69,6 +71,8 @@ function IniP() {
     document.getElementById("img1").style.height = "100px";
     document.getElementById("img2").style.width = "150px";
     document.getElementById("img2").style.height = "150px";
+    document.getElementById("img2").style.filter = "grayscale(0%)";
+    document.getElementById("img1").style.filter = "grayscale(100%)";
     document.getElementById("name-kind").innerText = "Paysage";
     document.getElementById("name-kind").style.display = "flex";
     bodyNone.classList.add('body-paysage');
@@ -78,6 +82,8 @@ function IniP() {
 
 function validationKind() {
     if (typeKind == 1) {
+        document.getElementById("img1").style.filter = "grayscale(0%)";
+        document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les animaux";
         document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Animal. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
         document.getElementById("img2").style.display = "none";
@@ -93,6 +99,8 @@ function validationKind() {
         document.getElementById("btn3").style.borderColor = "#CD844E";
     }
     else if (typeKind == 2) {
+        document.getElementById("img1").style.filter = "grayscale(0%)";
+        document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
         document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe paysage. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
         document.getElementById("img1").style.display = "none";
