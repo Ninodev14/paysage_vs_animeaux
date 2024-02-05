@@ -53,7 +53,7 @@ h2 {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    
+
 }
 
 .container-img img {
@@ -62,15 +62,34 @@ h2 {
     width: 80px;
 }
 
-.container-score{
-
-}
-
-#button-begin, #button-lost, #scorF, #plans{
+#name-kind{
     display: none;
 }
 
-#plans{
+#button-begin,
+#button-lost,
+#scorF,
+#plans {
+    display: none;
+}
+
+#plans {
     width: 200px;
     height: auto;
+}
+
+body {
+    height: 100vh;
+    border: 10px solid;
+    border-color: #D7C999;
+}
+
+.body-paysage {
+    background-color: #E1F5ED;
+    border-color: #AFCF94;
+}
+
+.body-animal {
+    background-color: #F4D9BD;
+    border-color: #CD844E;
 }

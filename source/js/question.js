@@ -7,7 +7,7 @@ let checkLost = 0;
 let witchReponce = 0;
 let req = new XMLHttpRequest();
 let lol = false;
-
+let bodyNone = document.getElementById('body-none');
 
 req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
 req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
@@ -43,7 +43,7 @@ function addPoint(teamName, points) {
 
     lol = false;
 }
-
+name-kind
 window.onbeforeunload = function (event) {
     const link = document.getElementById('scorF');
     if (event.target === link) {
@@ -58,6 +58,10 @@ function IniA() {
     document.getElementById("img2").style.height = "100px";
     document.getElementById("img1").style.width = "150px";
     document.getElementById("img1").style.height = "150px";
+    document.getElementById("name-kind").innerText = "Animaux";
+    document.getElementById("name-kind").style.display = "flex";
+    bodyNone.classList.add('body-animal');
+    bodyNone.classList.remove('body-paysage');
 }
 
 function IniP() {
@@ -66,10 +70,17 @@ function IniP() {
     document.getElementById("img1").style.height = "100px";
     document.getElementById("img2").style.width = "150px";
     document.getElementById("img2").style.height = "150px";
+    document.getElementById("name-kind").innerText = "Paysage";
+    document.getElementById("name-kind").style.display = "flex";
+    bodyNone.classList.add('body-paysage');
+    bodyNone.classList.remove('body-animal');
 }
 
 
 function validationKind() {
+    document.getElementById("name-kind").style.display = "none";
+    document.getElementById("paragraphe-center").style.display = "flex";
+    document.getElementById("button-next").setAttribute("onclick", "step1()");
     if (typeKind == 1) {
         document.getElementById("question").innerText = "Bienvenue chez les animaux";
         document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Animal. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
@@ -77,8 +88,6 @@ function validationKind() {
         document.getElementById("img1").style.width = "200px";
         document.getElementById("img1").style.height = "200px";
         document.getElementById("img1").setAttribute("onclick", "");
-        document.getElementById("button-next").setAttribute("onclick", " step1()");
-        document.getElementById("paragraphe-center").style.display = "flex";
     }
     else if (typeKind == 2) {
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
@@ -87,8 +96,6 @@ function validationKind() {
         document.getElementById("img2").style.width = "200px";
         document.getElementById("img2").style.height = "200px";
         document.getElementById("img2").setAttribute("onclick", "");
-        document.getElementById("button-next").setAttribute("onclick", "step1()");
-        document.getElementById("paragraphe-center").style.display = "flex";
     }
 }
 
