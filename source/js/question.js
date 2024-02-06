@@ -4,6 +4,7 @@ let typeKind = 0;
 let pointPerso = 0;
 let pointsCounted = false;
 let checkLost = 0;
+let reloadCheck = 0;
 let witchReponce = 0;
 let req = new XMLHttpRequest();
 let lol = false;
@@ -44,11 +45,9 @@ function addPoint(teamName, points) {
     lol = false;
 }
 window.onbeforeunload = function (event) {
-    const link = document.getElementById('scorF');
-    if (event.target === link) {
-        return;
-    }
+   if (reloadCheck == 0){
     return "Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.";
+   } 
 };
 
 function IniA() {
@@ -63,7 +62,7 @@ function IniA() {
     document.getElementById("name-kind").style.display = "flex";
     document.getElementById("paragraphe-center").innerText = "Les animaux sont souvent associés à la loyauté, à la force et au charisme. Ils sont reconnus pour leur générosité et leur enthousiasme.";
     bodyNone.classList.add('body-animal');
-    bodyNone.classList.remove('body-paysage'); 
+    bodyNone.classList.remove('body-paysage');
 }
 
 function IniP() {
@@ -124,6 +123,9 @@ function validationKind() {
 }
 
 function step1() {
+    document.getElementById("img1").setAttribute("onclick", "");
+    document.getElementById("img1").style.width = "80%";
+    document.getElementById("img1").style.height = "auto";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Chevaux.jpg";
@@ -144,14 +146,15 @@ function BeginQuestion() {
     document.getElementById("button-next").setAttribute("onclick", "reponceQ2()");
     document.getElementById("button-next").innerHTML = "Continuer";
     document.getElementById("paragraphe-center").style.display = "none";
-    document.getElementById("img1").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
     document.getElementById("question").innerText = "Ces chevaux…";
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
-
+    document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
+    document.getElementById("img1").style.width = "50%";
+    document.getElementById("img1").style.height = "auto";
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick, btn3Text, btn3OnClick) {
@@ -267,6 +270,9 @@ function step2() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
+    document.getElementById("img1").setAttribute("onclick", "");
+    document.getElementById("img1").style.width = "80%";
+    document.getElementById("img1").style.height = "auto";
 }
 
 
@@ -281,7 +287,6 @@ function next1() {
         "Q3R3()"
     );
     document.getElementById("paragraphe-center").style.display = "none";
-    document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ3()");
@@ -289,6 +294,9 @@ function next1() {
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
+    document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
+    document.getElementById("img1").style.width = "50%";
+    document.getElementById("img1").style.height = "auto";
 }
 
 
@@ -375,6 +383,9 @@ function reponceQ3() {
 }
 
 function step3() {
+    document.getElementById("img1").setAttribute("onclick", "");
+    document.getElementById("img1").style.width = "80%";
+    document.getElementById("img1").style.height = "auto";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Autonme.jpg";
@@ -384,7 +395,7 @@ function step3() {
     document.getElementById("button-next").setAttribute("onclick", "next2()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
-       document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
@@ -401,7 +412,6 @@ function next2() {
         "Q4R3()"
     );
     document.getElementById("paragraphe-center").style.display = "none";
-    document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
     checkLost = 1;
@@ -409,6 +419,9 @@ function next2() {
     document.getElementById("button-lost").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ4()");
     document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
+    document.getElementById("img1").style.width = "50%";
+    document.getElementById("img1").style.height = "auto";
 }
 
 function Q4R1() {
@@ -494,6 +507,9 @@ function reponceQ4() {
 }
 
 function step4() {
+    document.getElementById("img1").setAttribute("onclick", "");
+    document.getElementById("img1").style.width = "80%";
+    document.getElementById("img1").style.height = "auto";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Baindiane.jpg";
@@ -503,7 +519,7 @@ function step4() {
     document.getElementById("button-next").setAttribute("onclick", "next3()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
-       document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
@@ -519,7 +535,6 @@ function next3() {
         "Q5R3()"
     );
     document.getElementById("paragraphe-center").style.display = "none";
-    document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
     checkLost = 1;
@@ -527,6 +542,9 @@ function next3() {
     document.getElementById("button-lost").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ5()");
     document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
+    document.getElementById("img1").style.width = "50%";
+    document.getElementById("img1").style.height = "auto";
 }
 
 
@@ -613,6 +631,9 @@ function reponceQ5() {
 }
 
 function step5() {
+    document.getElementById("img1").setAttribute("onclick", "");
+    document.getElementById("img1").style.width = "80%";
+    document.getElementById("img1").style.height = "auto";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Chasse.jpg";
@@ -622,7 +643,7 @@ function step5() {
     document.getElementById("button-next").setAttribute("onclick", "next4()");
     document.getElementById("button-next").innerText = "j'y suis";
     document.getElementById("container-button").style.display = "none";
-       document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
@@ -638,7 +659,6 @@ function next4() {
         "Q6R3()"
     );
     document.getElementById("paragraphe-center").style.display = "none";
-    document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
     checkLost = 1;
@@ -646,6 +666,9 @@ function next4() {
     document.getElementById("button-lost").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ6()");
     document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
+    document.getElementById("img1").style.width = "50%";
+    document.getElementById("img1").style.height = "auto";
 }
 
 function Q6R1() {
@@ -720,7 +743,7 @@ function reponceQ6() {
             pointPerso = pointPerso + 50;
             document.getElementById("paragraphe-reponce").innerText = "Félicitations, tu as remarqué l’arbre brisé ?";
             witchReponce = 0;
-            document.getElementById("container-score-h3").innerText = "+25";
+            document.getElementById("container-score-h3").innerText = "+50";
         }
     }
     document.getElementById("btn1").setAttribute("onclick", "");
@@ -731,6 +754,9 @@ function reponceQ6() {
 }
 
 function step6() {
+    document.getElementById("img1").setAttribute("onclick", "");
+    document.getElementById("img1").style.width = "80%";
+    document.getElementById("img1").style.height = "auto";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
@@ -756,7 +782,6 @@ function next5() {
         "Q7R3()"
     );
     document.getElementById("paragraphe-center").style.display = "none";
-    document.getElementById("img1").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
     checkLost = 1;
@@ -764,6 +789,9 @@ function next5() {
     document.getElementById("button-lost").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ7()");
     document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
+    document.getElementById("img1").style.width = "50%";
+    document.getElementById("img1").style.height = "auto";
 }
 function Q7R1() {
     witchReponce = 1;
@@ -848,6 +876,14 @@ function reponceQ7() {
 }
 
 function next6() {
+    if (typeKind == 1){
+        document.getElementById("img1").src = "source/image/badge-team-animaux.svg";
+    } else if (typeKind == 2){
+        document.getElementById("img1").src = "source/image/badge-team-paysage.svg";
+    }
+    document.getElementById("img1").setAttribute("onclick", "");
+    document.getElementById("img1").style.width = "150px";
+    document.getElementById("img1").style.height = "150px";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("paragraphe-center").style.display = "none";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -865,9 +901,10 @@ function next6() {
 
 function checkCompletion() {
     if (infoWithActualle = infoWithTotal) {
+        reloadCheck = 1;
         document.getElementById("question").innerText = "Merci d'avoir participer, vous avez fais " + pointPerso + " point";
         document.getElementById("container-button").style.display = "none";
-                document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
+        document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
         document.getElementById("barre-info-contenue").style.width = "100%";
         document.getElementById("scorF").style.display = "flex";
         document.getElementById("button-next").style.display = "none";
@@ -883,4 +920,19 @@ function iAmLost() {
         document.getElementById("plans").style.display = "none";
         checkLost = 0;
     }
+}
+
+function zoomImgIn() {
+    document.getElementById("img1").style.width = "80%";
+    document.getElementById("img1").style.height = "auto";
+    document.getElementById("fond-img-plans").style.display = "flex"
+    document.getElementById("img1").setAttribute("onclick", "zoomImgOut()");
+    document.getElementById("img1").style.zIndex = "2000"
+}
+function zoomImgOut() {
+    document.getElementById("img1").style.width = "50%";
+    document.getElementById("img1").style.height = "auto";
+    document.getElementById("fond-img-plans").style.display = "none"
+    document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
+    document.getElementById("img1").style.zIndex = "1"
 }

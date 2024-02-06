@@ -32,7 +32,10 @@ h2 {
     margin-bottom: 26px;
 
 }
-#btn1, #btn2, #btn3 {
+
+#btn1,
+#btn2,
+#btn3 {
     width: fit-content;
     border-radius: 5px;
 }
@@ -75,12 +78,12 @@ h2 {
 .container-img img {
     margin-bottom: 20px;
     height: 80px;
-    width: 80px;
+    width: auto;
     filter: grayscale(100%);
     transition: 500ms;
 }
 
-#name-kind{
+#name-kind {
     display: none;
 }
 
@@ -111,23 +114,24 @@ body {
     background-color: #F4D9BD;
     border-color: #CD844E;
 }
-#button-next{
+
+#button-next {
     margin-top: 20px;
 }
 
-#paragraphe-center{
+#paragraphe-center {
     margin-top: 200px;
 }
 
-#reponce-h1{
-margin-top: 26px;
-color: white;
+#reponce-h1 {
+    margin-top: 26px;
+    color: white;
 
 }
-#reponce-button{
 
-}
-#score-validation{
+#reponce-button {}
+
+#score-validation {
     display: none;
     z-index: 1000;
     display: none;
@@ -136,10 +140,12 @@ color: white;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(5px); /* Ajustez le flou selon vos préférences */
+    backdrop-filter: blur(8px);
+    /* Ajustez le flou selon vos préférences */
     transition: 500ms;
 }
-.container-score-validation{
+
+.container-score-validation {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -147,6 +153,7 @@ color: white;
     width: calc(100vw - 40px);
     margin-left: 20px;
 }
+
 .fond-assombri {
     position: absolute;
     top: 0;
@@ -154,10 +161,11 @@ color: white;
     width: 100%;
     height: 100%;
     transition: 500ms;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 998; 
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 998;
 }
-#container-score{
+
+#container-score {
     display: flex;
     height: 100px;
     width: 100px;
@@ -166,11 +174,83 @@ color: white;
     justify-content: center;
     border: 5px solid;
 }
-#paragraphe-reponce{
+
+#paragraphe-reponce {
     color: white;
 }
 
-#reponce-h1, #container-score, #paragraphe-reponce, #reponce-button{
+#reponce-h1,
+#container-score,
+#paragraphe-reponce,
+#reponce-button {
     margin-bottom: 26px;
 
+}
+
+#fond-pop-up {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    height: calc(100vh - 50px);
+    z-index: 999;
+    width: calc(100vw - 50px);
+    background-color: #AFCF94;
+}
+
+#fond-floue {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    transition: 500ms;
+}
+
+#fond-noir {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 500ms;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 997;
+}
+
+#fond-img-plans {
+    display: none;
+}
+
+#croix {
+    top: 30px;
+    right: 30px;
+    transform: rotate(45deg);
+    z-index: 1001;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+
+.ligne-horizontal,
+.ligne-vertical {
+    position: absolute;
+    background-color: black;
+}
+
+.ligne-horizontal {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-1px);
+}
+
+.ligne-vertical {
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-1px);
 }
