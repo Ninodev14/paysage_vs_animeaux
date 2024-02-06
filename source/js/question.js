@@ -115,6 +115,7 @@ function validationKind() {
         document.getElementById("btn3").style.borderColor = "#CD844E";
         document.getElementById("container-score").style.backgroundColor = "#F4D9BD";
         document.getElementById("container-score").style.borderColor = "#CD844E";
+        
     }
     else if (typeKind == 2) {
         document.getElementById("img1").style.filter = "grayscale(0%)";
@@ -942,12 +943,24 @@ function zoomImgIn() {
     document.getElementById("img1").style.height = "auto";
     document.getElementById("fond-img-plans").style.display = "flex"
     document.getElementById("img1").setAttribute("onclick", "zoomImgOut()");
-    document.getElementById("img1").style.zIndex = "2000"
+    document.getElementById("container-img").style.zIndex = "2000"
+    document.getElementById("container-img").style.position = "absolute"
+    document.getElementById("container-img").style.top = "50%"
+    document.getElementById("container-img").style.left = "50%"
+    document.getElementById("container-img").style.transform = "translate(-50%, -50%)";
+    document.getElementById("img1").style.margin = "0px";
+
 }
 function zoomImgOut() {
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
     document.getElementById("fond-img-plans").style.display = "none"
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
-    document.getElementById("img1").style.zIndex = "1"
+    document.getElementById("container-img").style.zIndex = "1"
+    document.getElementById("container-img").style.position = "relative"
+    document.getElementById("container-img").style.top = "0"
+    document.getElementById("container-img").style.left = "0"
+    document.getElementById("container-img").style.transform = "translate(0%, 0%)";
+    document.getElementById("img1").style.marginTop = "60px";
+    document.getElementById("img1").style.marginBottom = "20px";
 }
