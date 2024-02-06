@@ -154,6 +154,7 @@ function step1() {
     document.getElementById("paragraphe-center").style.marginTop = "0px"
     document.getElementById("container-img").style.position = "relative"
     document.getElementById("container-img").style.marginTop = "0px"
+    document.getElementById("container-img").style.height = "fit-content"
 }
 
 
@@ -283,6 +284,7 @@ function step2() {
     document.getElementById("button-next").innerText = "J'Y SUIS";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
+    document.getElementById("paragraphe-center").style.display = "block";
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
@@ -415,6 +417,7 @@ function step3() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
+    document.getElementById("paragraphe-center").style.display = "block";
 }
 
 function next2() {
@@ -539,6 +542,7 @@ function step4() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
+    document.getElementById("paragraphe-center").style.display = "block";
 }
 function next3() {
     updateQuestionAndButtons(
@@ -663,6 +667,7 @@ function step5() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
+    document.getElementById("paragraphe-center").style.display = "block";
 }
 function next4() {
     updateQuestionAndButtons(
@@ -786,6 +791,7 @@ function step6() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
+    document.getElementById("paragraphe-center").style.display = "block";
 }
 function next5() {
     updateQuestionAndButtons(
