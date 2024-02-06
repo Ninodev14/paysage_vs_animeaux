@@ -252,3 +252,7 @@ body {
     left: 50%;
     transform: translateX(-1px);
 }
+#button-lost{
+    text-decoration:underline;
+    margin-top: 20px;
+}
