@@ -72,8 +72,7 @@ h2 {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    position: absolute;
-    margin-top: 100px;
+    position: relative;
 }
 
 .container-img img {
