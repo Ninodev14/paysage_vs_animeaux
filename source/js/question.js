@@ -148,7 +148,7 @@ function step1() {
     document.getElementById("question").innerText = "La Foulaison du blé en Camargue, Rosa Bonheur";
     document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
-    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("button-next").innerText = "J'Y SUIS";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("paragraphe-center").style.marginTop = "0px"
     document.getElementById("container-img").style.position = "relative"
@@ -279,7 +279,7 @@ function step2() {
     document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
     document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
-    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("button-next").innerText = "J'Y SUIS";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -408,7 +408,7 @@ function step3() {
     document.getElementById("question").innerText = "Rayon d’Automne. Souvenir du parc de Cognac, Louis Augustin Auguin";
     document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next2()");
-    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("button-next").innerText = "J'Y SUIS";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -532,7 +532,7 @@ function step4() {
     document.getElementById("question").innerText = "Le Bain de Diane, Camille Corot";
     document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next3()");
-    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("button-next").innerText = "J'Y SUIS";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -656,7 +656,7 @@ function step5() {
     document.getElementById("question").innerText = " La chasse de Méléagre ou la Mort du sanglier de Calydon, Jacques Raymond Brascassat";
     document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next4()");
-    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("button-next").innerText = "J'Y SUIS";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -779,7 +779,7 @@ function step6() {
     document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
     document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
-    document.getElementById("button-next").innerText = "j'y suis";
+    document.getElementById("button-next").innerText = "J'Y SUIS";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
