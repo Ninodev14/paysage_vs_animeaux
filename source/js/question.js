@@ -759,7 +759,7 @@ function step6() {
     document.getElementById("img1").style.height = "auto";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img1").style.display = "flex";
-    document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
+    document.getElementById("img1").src = "source/image/tableau_musee/vache.jpg";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question").innerText = "Marée basse à Etaples, Eugène Boudin";
     document.getElementById("paragraphe-center").innerText = "Déplacez-vous jusqu'à cette œuvre.";
