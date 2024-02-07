@@ -37,7 +37,7 @@ body {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
 
-h1, h2, h3, .p1, .p2, .btn, a {
+h1, h2, h3, .p1, .p2, .btn, a, #btn1, #btn2, #btn3 {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
 
@@ -91,4 +91,10 @@ a {
 
 strong{
   font-weight: bold;
+}
+
+#btn1, #btn2, #btn3{
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
 }
