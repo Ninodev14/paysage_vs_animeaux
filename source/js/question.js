@@ -986,7 +986,7 @@ function iAmLost() {
 }
 
 function zoomImgIn() {
-    document.getElementById("img1").style.width = "80%";
+    document.getElementById("img1").style.width = "calc(100vw - 40px)";
     document.getElementById("img1").style.height = "auto";
     document.getElementById("fond-img-plans").style.display = "flex"
     document.getElementById("img1").setAttribute("onclick", "zoomImgOut()");

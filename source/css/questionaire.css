@@ -43,7 +43,7 @@ h2 {
 
 .container-bottom-info {
     display: none;
-    width: 96vw;
+    width: calc(100vw - 19px);
     position: absolute;
     height: 50px;
     bottom: 0px;
