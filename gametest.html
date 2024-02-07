@@ -12,14 +12,16 @@
 
   #game-container {
     position: relative;
-    width: 260vw;
+    width: 400vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('source/image/Statue.png') no-repeat;background-size: contain;
-    transition: transform 0.5s ease-in-out,  scale 3s ease-in-out;
-    transform: scale(0.3) translate(-265vw, 0px);
+    background: url('source/image/Statue.png') no-repeat;
+    background-size: auto 100%;
+    transition: transform 0.5s ease-in-out,  scale 3s ease-in-out, left 0.5s ease-in-out;
+    transform: scale(0.25) translate(-600vw, 0px);
+    left: calc(50vw - 130px);
   }
 
   .square {
@@ -34,16 +36,45 @@
 
   .score {
 display: none;}
-#square1 { top: 52.37%; left: 10.26%; }
-#square2 { top: 15.02%; left: 25.64%; }
-#square3 { top: 75.04%; left: 51.28%; }
-#square4 { top: 15.02%; left: 61.54%; }
-#square5 { top: 75.04%; left: 82.05%; }
+#square1 { top: 52.37%; left: 5vh; }
+#square2 { top: 19%; left: 28vh; }
+#square3 { top: 75.04%; left: 60vh; }
+#square4 { top: 15.02%; left: 75vh; }
+#square5 { top: 75.04%; left: 120vh; }
 
 
   #score1, #score2, #score3, #score4, #score5 {
     font-size: 24px;
     margin-top: 20px;
+  }
+
+
+  .rotating-item {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: url(source/image/Sparkle.png) no-repeat center center;
+    background-size: contain;
+    border-radius: 50%;
+    opacity: 0;
+    animation: rotateFadeInOut 1.5s linear infinite;
+  }
+  
+  @keyframes rotateFadeInOut {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0;
+      scale: 20%;
+    }
+    50% {
+      opacity: 1;
+      scale: 100%;
+    }
+    100% {
+      transform: rotate(360deg);
+      opacity: 0;
+      scale: 20%;
+    }
   }
 
 </style>
@@ -76,7 +107,7 @@ var gameContainer = document.getElementById('game-container');
   var cinematic = false;
 
   if (cinematic == false){
-    setTimeout(function() {gameContainer.style.transform = 'translate(0px, 0px) scale(1)'}, 1000);
+    setTimeout(function() {gameContainer.style = 'transform: translate(0px, 0px) scale(1); left: calc(0px);'}, 1000);
   cinematic = true;
   }
 
@@ -136,7 +167,8 @@ var gameContainer = document.getElementById('game-container');
             moveStarted = 3;
             var audio = new Audio('source/sounds/gameFinish.mp3');
             gameContainer.style.transform = 'translateX(0px)';
-            gameContainer.style.transform = ' scale(0.3) translate(-265vw, 0px)';
+            gameContainer.style = 'transform: scale(0.25) translate(-600vw, 0px); left: calc(50vw - 130px);';
+            setInterval(spawnRotatingItem, 1000);
 audio.play();
           }
   }
@@ -160,6 +192,38 @@ audio.play();
       endRub(index);
     });
   }
+
+  function spawnRotatingItem() {
+    // Create a new rotating item
+    const rotatingItem = document.createElement('div');
+    rotatingItem.classList.add('rotating-item');
+  
+    // Set a random position inside the container
+    const container = document.getElementById('game-container');
+    const randomX = Math.random() * (container.offsetWidth - rotatingItem.offsetWidth);
+    const randomY = Math.random() * (container.offsetHeight - rotatingItem.offsetHeight);
+    rotatingItem.style.left = randomX + 'px';
+    rotatingItem.style.top = randomY + 'px';
+  
+    // Append the item to the container
+    container.appendChild(rotatingItem);
+  
+    // Fade in and out effect
+    setTimeout(() => {
+      rotatingItem.style.opacity = 1;
+    }, 0);
+  
+    setTimeout(() => {
+      rotatingItem.style.opacity = 0;
+    }, 1000); // Adjust the duration of opacity
+  
+    // Remove the item after the fade out
+    setTimeout(() => {
+      container.removeChild(rotatingItem);
+    }, 1500); // Adjust the total duration including fadeIn and fadeOut
+  }
+  
+  
 </script>
 </body>
 </html>
