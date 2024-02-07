@@ -967,7 +967,7 @@ function checkCompletion() {
         document.getElementById("scorF").style.display = "flex";
         document.getElementById("button-next").style.display = "none";
         document.getElementById("paragraphe-resultat1").style.display = "block";
-        document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté"+ pointPerso + "pts"
+        document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté "+ pointPerso + " pts"
         document.getElementById("paragraphe-resultat2").style.display = "block";
         document.getElementById("paragraphe-resultat2").innerHTML = "Viens récupérer ton badge !";
     }
