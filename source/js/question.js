@@ -150,14 +150,16 @@ function step1() {
     document.getElementById("paragraphe-center").innerText = "La Foulaison du blé en Camargue\nRosa Bonheur";
     document.getElementById("paragraphe-center").style.marginTop = "-20px"
     document.getElementById("paragraphe-center").style.textAlign = "end"
-    document.getElementById("paragraphe-center").style.paddingLeft = "40%"
     document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
     document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("container-img").style.position = "relative"
     document.getElementById("container-img").style.height = "fit-content"
     document.getElementById("plans").src = "source/image/plans/Plan_BleCamargue.svg";
-
+    document.getElementById("paragraphe-center").style.marginLeft = "0%"
+    document.getElementById("paragraphe-center").style.marginRight = "0%"
+    document.getElementById("paragraphe-center").style.width = "80%"
+    document.getElementById("paragraphe-center").style.justifyContent = "flex-end"
     document.getElementById("img2").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
 
