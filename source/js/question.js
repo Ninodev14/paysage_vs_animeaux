@@ -114,6 +114,8 @@ function validationKind() {
         document.getElementById("barre-info-contenue").style.backgroundColor = "#493C36";
         document.getElementById("name-kind").style.display = "none";
         document.getElementById("img2").style.display = "none";
+        document.getElementById("img1").style.marginTop = "20px";
+        document.getElementById("img2").style.marginTop = "20px";
     }
     else if (typeKind == 2) {
         document.getElementById("img1").style.filter = "grayscale(0%)";
@@ -135,6 +137,8 @@ function validationKind() {
         document.getElementById("barre-info-contenue").style.backgroundColor = "#225945";
         document.getElementById("name-kind").style.display = "none";
         document.getElementById("img1").style.display = "none";
+        document.getElementById("img1").style.marginTop = "20px";
+        document.getElementById("img2").style.marginTop = "20px";
     }
 }
 
@@ -977,9 +981,9 @@ function reponceQ7() {
 
 function next6() {
     if (typeKind == 1) {
-        document.getElementById("img1").src = "source/image/Blason Animaux.svg";
+        document.getElementById("img1").src = "source/image/badge-animaux.svg";
     } else if (typeKind == 2) {
-        document.getElementById("img1").src = "source/image/Blason Paysages.svg";
+        document.getElementById("img1").src = "source/image/badge-paysage.svg";
     }
     if (pointsCounted == false) {
         if (typeKind = 1) {
