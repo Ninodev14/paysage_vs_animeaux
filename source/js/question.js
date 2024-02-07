@@ -45,9 +45,9 @@ function addPoint(teamName, points) {
     lol = false;
 }
 window.onbeforeunload = function (event) {
-   if (reloadCheck == 0){
-    return "Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.";
-   } 
+    if (reloadCheck == 0) {
+        return "Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.";
+    }
 };
 
 function IniA() {
@@ -61,7 +61,7 @@ function IniA() {
     document.getElementById("name-kind").innerText = "Animaux";
     document.getElementById("name-kind").style.display = "flex";
 
-    
+
     document.getElementById("paragraphe-center").style.marginLeft = "10%"
     document.getElementById("paragraphe-center").style.marginRight = "10%"
     document.getElementById("paragraphe-center").style.textAlign = "center";
@@ -115,7 +115,9 @@ function validationKind() {
         document.getElementById("btn3").style.borderColor = "#CD844E";
         document.getElementById("container-score").style.backgroundColor = "#F4D9BD";
         document.getElementById("container-score").style.borderColor = "#CD844E";
+        document.getElementById("container-bottom-info").style.backgroundColor = "#CD844E";
         
+
     }
     else if (typeKind == 2) {
         document.getElementById("img1").style.filter = "grayscale(0%)";
@@ -135,6 +137,7 @@ function validationKind() {
         document.getElementById("btn3").style.borderColor = "#AFCF94";
         document.getElementById("container-score").style.backgroundColor = "#E1F5ED";
         document.getElementById("container-score").style.borderColor = "#AFCF94";
+        document.getElementById("container-bottom-info").style.backgroundColor = "#AFCF94";
     }
 }
 
@@ -160,13 +163,15 @@ function step1() {
 
 
 function BeginQuestion() {
+    document.getElementById("question").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ2()");
     document.getElementById("button-next").innerHTML = "Continuer";
     document.getElementById("paragraphe-center").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
-    document.getElementById("question").innerText = "Ces chevaux…";
+    document.getElementById("question-ask").style.display = "block";
+    document.getElementById("question-ask").innerText = "Ces chevaux…";
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
@@ -176,13 +181,14 @@ function BeginQuestion() {
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick, btn3Text, btn3OnClick) {
-    document.getElementById("question").innerText = questionText;
+    document.getElementById("question-ask").innerText = questionText;
     document.getElementById("btn1").innerText = btn1Text;
     document.getElementById("btn1").setAttribute("onclick", btn1OnClick);
     document.getElementById("btn2").innerText = btn2Text;
     document.getElementById("btn2").setAttribute("onclick", btn2OnClick);
     document.getElementById("btn3").innerText = btn3Text;
     document.getElementById("btn3").setAttribute("onclick", btn3OnClick);
+    document.getElementById("question-ask").style.display = "block";
 }
 
 
@@ -272,11 +278,13 @@ function reponceQ2() {
 
 
 function step2() {
+    document.getElementById("question").style.display = "block";
+    document.getElementById("question-ask").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+
     document.getElementById("paragraphe-center").innerText = "Marée basse à Etaples \nEugène Boudin";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -316,6 +324,7 @@ function next1() {
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
+    document.getElementById("question").style.display = "none";
 }
 
 
@@ -402,6 +411,8 @@ function reponceQ3() {
 }
 
 function step3() {
+    document.getElementById("question").style.display = "block";
+    document.getElementById("question-ask").style.display = "none";
     document.getElementById("img1").setAttribute("onclick", "");
     document.getElementById("img1").style.width = "80%";
     document.getElementById("img1").style.height = "auto";
@@ -409,7 +420,7 @@ function step3() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Autonme.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+
     document.getElementById("paragraphe-center").innerText = "Rayon d’Automne \nSouvenir du parc de Cognac \nLouis Augustin Auguin";
     document.getElementById("button-next").setAttribute("onclick", "next2()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -445,6 +456,7 @@ function next2() {
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
+    document.getElementById("question").style.display = "none";
 }
 
 function Q4R1() {
@@ -530,6 +542,8 @@ function reponceQ4() {
 }
 
 function step4() {
+    document.getElementById("question").style.display = "block";
+    document.getElementById("question-ask").style.display = "none";
     document.getElementById("img1").setAttribute("onclick", "");
     document.getElementById("img1").style.width = "80%";
     document.getElementById("img1").style.height = "auto";
@@ -537,7 +551,7 @@ function step4() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Baindiane.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+
     document.getElementById("paragraphe-center").innerText = "Le Bain de Diane \nCamille Corot";
     document.getElementById("button-next").setAttribute("onclick", "next3()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -572,6 +586,7 @@ function next3() {
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
+    document.getElementById("question").style.display = "none";
 }
 
 
@@ -658,6 +673,8 @@ function reponceQ5() {
 }
 
 function step5() {
+    document.getElementById("question").style.display = "block";
+    document.getElementById("question-ask").style.display = "none";
     document.getElementById("img1").setAttribute("onclick", "");
     document.getElementById("img1").style.width = "80%";
     document.getElementById("img1").style.height = "auto";
@@ -665,7 +682,7 @@ function step5() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Chasse.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+
     document.getElementById("paragraphe-center").innerText = "La chasse de Méléagre ou la Mort du sanglier de Calydon \nJacques Raymond Brascassat";
     document.getElementById("button-next").setAttribute("onclick", "next4()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -700,6 +717,7 @@ function next4() {
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
+    document.getElementById("question").style.display = "none";
 }
 
 function Q6R1() {
@@ -785,6 +803,8 @@ function reponceQ6() {
 }
 
 function step6() {
+    document.getElementById("question").style.display = "block";
+    document.getElementById("question-ask").style.display = "none";
     document.getElementById("img1").setAttribute("onclick", "");
     document.getElementById("img1").style.width = "80%";
     document.getElementById("img1").style.height = "auto";
@@ -792,7 +812,7 @@ function step6() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/vache.jpg";
     document.getElementById("img2").style.width = "none";
-    document.getElementById("question").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+
     document.getElementById("paragraphe-center").innerText = "Marée basse à Etaples \nEugène Boudin";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -827,6 +847,7 @@ function next5() {
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
+    document.getElementById("question").style.display = "none";
 }
 function Q7R1() {
     witchReponce = 1;
@@ -911,9 +932,9 @@ function reponceQ7() {
 }
 
 function next6() {
-    if (typeKind == 1){
+    if (typeKind == 1) {
         document.getElementById("img1").src = "source/image/badge-team-animaux.svg";
-    } else if (typeKind == 2){
+    } else if (typeKind == 2) {
         document.getElementById("img1").src = "source/image/badge-team-paysage.svg";
     }
     document.getElementById("img1").setAttribute("onclick", "");
@@ -924,6 +945,7 @@ function next6() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
+    document.getElementById("question-ask").style.display = "none";
     if (pointsCounted == false) {
         if (typeKind = 1) {
             addPoint('Team A', pointPerso);
@@ -937,13 +959,17 @@ function next6() {
 function checkCompletion() {
     if (infoWithActualle = infoWithTotal) {
         reloadCheck = 1;
-        document.getElementById("question").innerText = "Merci d'avoir participer, vous avez fais " + pointPerso + " point";
+        document.getElementById("question").style.display = "block";
+        document.getElementById("question").innerText = "Félicitations !";
         document.getElementById("container-button").style.display = "none";
         document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
         document.getElementById("barre-info-contenue").style.width = "100%";
         document.getElementById("scorF").style.display = "flex";
         document.getElementById("button-next").style.display = "none";
-
+        document.getElementById("paragraphe-resultat1").style.display = "block";
+        document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté"+ pointPerso + "pts"
+        document.getElementById("paragraphe-resultat2").style.display = "block";
+        document.getElementById("paragraphe-resultat2").innerHTML = "Viens récupérer ton badge !";
     }
 }
 
