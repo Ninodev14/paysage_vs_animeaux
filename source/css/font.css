@@ -82,10 +82,13 @@ h3 {
 }
 
 a {
-  color: black;
   text-decoration: underline;
 }
 
 .btn a { 
   color: black;
+}
+
+strong{
+  font-weight: bold;
 }
