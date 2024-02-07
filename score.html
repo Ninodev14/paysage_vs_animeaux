@@ -10,6 +10,14 @@
             max-height: 100%;
             transform: rotate(67deg) scale(2.5);
         }
+        #bg-score {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transform: rotate(67deg) scale(2.5);
+        }
+        
         html {
         overflow:hidden;
         }
@@ -64,7 +72,7 @@
             transform: scale(1.2);
         }
         11.39% {
-            transform: scale(1.1); /* Adjust the scale factor based on your animation */
+            transform: scale(1.1);
         }
         21.07% {
             transform: scale(1.1);
@@ -121,7 +129,7 @@
             transform: scale(1.2);
         }
         11.39% {
-            transform: scale(1.1); /* Adjust the scale factor based on your animation */
+            transform: scale(1.1);
         }
         21.07% {
             transform: scale(1.1);
@@ -240,6 +248,7 @@
             <p id="points2" class="score">0 pts</p>
         </div>
     </div>
+    <img id="bg-score" src="source/image/score/score.png" alt="Score">
 
     <script>
 
@@ -277,7 +286,7 @@
 
 
         // Set initial values
-    let struggle = true;
+    let struggle = false;
     const score1Element = document.getElementById('score1');
     const score2Element = document.getElementById('score2');
     const points1Element = document.getElementById('points1');
@@ -310,20 +319,31 @@
     let counter = 0;
     let countn = 0;
 
+    function pauseIncrementalText() {
+    counter = 48.0;
+    }
     function updateIncrementalText() {
         if (counter <= 50.0) {
-            if (counter <=30.3 || counter >= 48.0) {
-            score1Element.textContent = `${countn}%`;
-            score2Element.textContent = `${countn}%`;
-        }
-            counter = (counter + 0.2);
-            countn = counter.toFixed(1)
-            setTimeout(updateIncrementalText, 4); // Update every 20 milliseconds for a smooth transition
-            points = ((counter / 50) * 2500) / 2;
-            points1Element.textContent = `${points.toFixed(0)} pts`
-            points2Element.textContent = `${points.toFixed(0)} pts`
+        
+            counter = (counter + 0.8);
+            setTimeout(updateIncrementalText, 30);
+            
+                countn = counter.toFixed(1)
+                points = ((counter / 50) * 2500) / 2;
+                
+            if (counter <=30.8 || counter >= 48.0) {
+                score1Element.textContent = `${countn}%`;
+                score2Element.textContent = `${countn}%`;
+                points1Element.textContent = `${points.toFixed(0)} pts`
+                points2Element.textContent = `${points.toFixed(0)} pts`
+            }
+                counter = (counter + 0.7);
+            
         } else {
-            setTimeout(updateTextContent(), 500);
+            score1Element.textContent = `50.0%`;
+            score2Element.textContent = `50.0%`;
+            struggle = true;
+            setTimeout(updateTextContent, 430);
         }
     }
 
