@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'FiraSansExtraCondensed-Italic';
+    src: url('source/font/FiraSansExtraCondensed-Italic.ttf') format('ttf'),
+    url('source/font/FiraSansExtraCondensed-Light.ttf') format('ttf'),
+    url('source/font/FiraSansExtraCondensed-MediumItalic.ttf') format('ttf'),
+    url('source/font/FiraSansExtraCondensed-Regular.ttf') format('ttf'),
+    url('source/font/FiraSansExtraCondensed-SemiBoldItalic.ttf') format('ttf');
+
+  }
+
+h1 {
+    font-family:'FiraSansExtraCondensed-SemiBoldItalic';
+    font-size: 32px;
+
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 20px;
+
+}
+.p1{
+     font-size: 16px;
+       
+}
+
+.p2{font-size: 12px;}
+
+.btn{
+    font-size: 16px !important;
+    border-radius: 33px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

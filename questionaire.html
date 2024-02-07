@@ -5,38 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="source/css/reset.css">
+    <link rel="stylesheet" href="source/css/font.css">
     <link rel="stylesheet" href="source/css/questionaire.css">
     <title>Questionaire</title>
 </head>
 
-<body>
+<body id="body-none">
 
     <div class="container">
         <div class="container-question">
-            <h2 id="question">choisisez votre equipe</h2>
+            <h2 id="question">Choisis ton équipe</h2>
+            <h1 id="name-kind" style="margin-bottom: 20px;"></h1>
+            <p id="paragraphe-resultat1"></p>
+            <h3 id="paragraphe-resultat2"></h3>
             <div class="container-img" id="container-img">
-                <img src="source/image/test_ani.jpg" onclick="IniA()" id="img1"></img>
-                <img src="source/image/test_pay.jpg" onclick="IniP()" id="img2"></img>
+                <img src="source/image/Blason Animaux.svg" onclick="IniA()" id="img1" style="margin-top: 50px;"></img>
+                <img src="source/image/Blason Paysages.svg" onclick="IniP()" id="img2" style="margin-top: 50px;"></img>
             </div>
+            <h2 id="question-ask"></h2>
             <p id="paragraphe-center"></p>
-            <button onclick="iAmLost()" id="button-lost">Je suis perdu</button>
             <div class="container-button" id="container-button">
-                <button onclick="Q2R1()" id="btn1">Sont de magnifiques créatures ; on dirait presque que l’on peut danser avec eux !
-                </button>
-                <button onclick="Q2R2()" id="btn2">Ne sont rien sans le magnifique décor qui les entoure !</button>
-                <button onclick="Q2R3()" id="btn3">Inspirés du principe pré-cinématographique de zoopraxiscope !</button>
+                <button onclick="Q2R1()" id="btn1">Sont vraiment trop cool </button>
+                <div class="espacement-btn-question"></div>
+                <button onclick="Q2R2()" id="btn2">Ne sont rien sans l'incroyable décor qui les accompagne !</button>
+                <div class="espacement-btn-question"></div>
+                <button onclick="Q2R3()" id="btn3">Inspirés du principe pré-cinématographique du zoopraxiscope (si, si, ça existe) !</button>
+                <div class="espacement-btn-question"></div>
             </div>
-            <div id="container-score">
-                <h3 id="container-score-h3"></h3>
-            </div>
-            <button onclick="validationKind()" id="button-next">Commencer</button>
-            <a id="scorF" href="index.html"><button>Voire les score</button></a>
+            <button onclick="validationKind()" id="button-next" class="btn">J'AI CHOISI MON CAMP </button>
+            <a onclick="iAmLost()" id="button-lost">JE SUIS PERDU</a>
+            <a id="scorF" href="score.html"><button class="btn">VOIR LES SCORES</button></a>
             <img id="plans" src="source/image/plan_test.svg" alt="plans">
+            <div id="score-validation">
+                <div class="container-score-validation">
+                    <h1 id="reponce-h1">Bravo</h1>
+                    <div id="container-score">
+                        <h3 id="container-score-h3"></h3>
+                    </div>
+                    <p id="paragraphe-reponce"></p>
+                    <button id="reponce-button">Suivant</button>
+                </div>
+                <div class="fond-assombri"></div>
+            </div>
+            <div id="fond-img-plans">
+                <div id="croix" onclick="zoomImgOut()">
+                    <div class="ligne-horizontal"></div>
+                    <div class="ligne-vertical"></div>
+                  </div>
+                <div id="fond-floue"></div>
+                <div id="fond-noir"></div>
+            </div>
         </div>
     </div>
     <div class="container-bottom-info" id="container-bottom-info">
-        <p id="bottom-info">1/5</p>
-        <div class="barre-info">
+        <p id="bottom-info">1/6</p>
+        <div id="barre-info">
             <div id="barre-info-contenue"></div>
         </div>
     </div>
