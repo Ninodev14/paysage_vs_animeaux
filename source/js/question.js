@@ -84,8 +84,8 @@ function IniP() {
     document.getElementById("name-kind").innerText = "Paysage";
     document.getElementById("name-kind").style.display = "flex";
 
-    document.getElementById("paragraphe-center").style.marginLeft = "10%"
-    document.getElementById("paragraphe-center").style.marginRight = "10%"
+    document.getElementById("paragraphe-center").style.marginLeft = "5%"
+    document.getElementById("paragraphe-center").style.marginRight = "5%"
     document.getElementById("paragraphe-center").style.textAlign = "center";
     document.getElementById("button-next").style.backgroundColor = "#AFCF94";
     document.getElementById("paragraphe-center").style.marginTop = "30px";

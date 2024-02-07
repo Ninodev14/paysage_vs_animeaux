@@ -1,4 +1,15 @@
+@font-face {
+    font-family: 'FiraSansExtraCondensed-Italic';
+    src: url('source/font/FiraSansExtraCondensed-Italic.ttf') format('ttf'),
+    url('source/font/FiraSansExtraCondensed-Light.ttf') format('ttf'),
+    url('source/font/FiraSansExtraCondensed-MediumItalic.ttf') format('ttf'),
+    url('source/font/FiraSansExtraCondensed-Regular.ttf') format('ttf'),
+    url('source/font/FiraSansExtraCondensed-SemiBoldItalic.ttf') format('ttf');
+
+  }
+
 h1 {
+    font-family:'FiraSansExtraCondensed-SemiBoldItalic';
     font-size: 32px;
 
 }
