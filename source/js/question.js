@@ -170,7 +170,7 @@ function BeginQuestion() {
     document.getElementById("question").style.display = "none";
     document.getElementById("button-next").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ2()");
-    document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("button-next").innerHTML = "JE VALIDE";
     document.getElementById("paragraphe-center").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
@@ -327,7 +327,7 @@ function next1() {
     document.getElementById("button-next").style.display = "none";
     document.getElementById("container-button").style.display = "flex";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ3()");
-    document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("button-next").innerHTML = "JE VALIDE";
     checkLost = 1;
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
@@ -468,7 +468,7 @@ function next2() {
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ4()");
-    document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("button-next").innerHTML = "JE VALIDE";
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
@@ -604,7 +604,7 @@ function next3() {
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ5()");
-    document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("button-next").innerHTML = "JE VALIDE";
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
@@ -742,7 +742,7 @@ function next4() {
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ6()");
-    document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("button-next").innerHTML = "JE VALIDE";
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
@@ -878,7 +878,7 @@ function next5() {
     iAmLost()
     document.getElementById("button-lost").style.display = "none";
     document.getElementById("button-next").setAttribute("onclick", "reponceQ7()");
-    document.getElementById("button-next").innerHTML = "Continuer";
+    document.getElementById("button-next").innerHTML = "JE VALIDE";
     document.getElementById("img1").setAttribute("onclick", "zoomImgIn()");
     document.getElementById("img1").style.width = "50%";
     document.getElementById("img1").style.height = "auto";
