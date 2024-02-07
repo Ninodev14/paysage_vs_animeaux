@@ -189,12 +189,15 @@ body {
 
 #container-score {
     display: flex;
-    height: 100px;
-    width: 100px;
-    border-radius: 50px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
     align-items: center;
     justify-content: center;
     border: 5px solid;
+}
+h3#container-score-h3{
+    font-size: 62px;
 }
 
 #paragraphe-reponce {
