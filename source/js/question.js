@@ -978,15 +978,6 @@ function next6() {
     } else if (typeKind == 2) {
         document.getElementById("img1").src = "source/image/Blason Paysages.svg";
     }
-    document.getElementById("img1").setAttribute("onclick", "");
-    document.getElementById("img1").style.width = "150px";
-    document.getElementById("img1").style.height = "150px";
-    document.getElementById("score-validation").style.display = "none";
-    document.getElementById("paragraphe-center").style.display = "none";
-    document.getElementById("btn1").style.backgroundColor = "white";
-    document.getElementById("btn2").style.backgroundColor = "white";
-    document.getElementById("btn3").style.backgroundColor = "white";
-    document.getElementById("question-ask").style.display = "none";
     if (pointsCounted == false) {
         if (typeKind = 1) {
             addPoint('Team A', pointPerso);
@@ -995,6 +986,15 @@ function next6() {
         }
         checkCompletion();
     }
+    document.getElementById("img1").setAttribute("onclick", "");
+    document.getElementById("img1").style.width = "150px";
+    document.getElementById("img1").style.height = "150px";
+    document.getElementById("btn1").style.backgroundColor = "white";
+    document.getElementById("btn2").style.backgroundColor = "white";
+    document.getElementById("btn3").style.backgroundColor = "white";
+    document.getElementById("question-ask").style.display = "none";
+    document.getElementById("score-validation").style.display = "none";
+    document.getElementById("paragraphe-center").style.display = "none";
 }
 
 function checkCompletion() {
