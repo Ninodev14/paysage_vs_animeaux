@@ -10,6 +10,14 @@
             max-height: 100%;
             transform: rotate(67deg) scale(2.5);
         }
+        #bg-score {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transform: rotate(67deg) scale(2.5);
+        }
+        
         html {
         overflow:hidden;
         }
@@ -64,7 +72,7 @@
             transform: scale(1.2);
         }
         11.39% {
-            transform: scale(1.1); /* Adjust the scale factor based on your animation */
+            transform: scale(1.1);
         }
         21.07% {
             transform: scale(1.1);
@@ -121,7 +129,7 @@
             transform: scale(1.2);
         }
         11.39% {
-            transform: scale(1.1); /* Adjust the scale factor based on your animation */
+            transform: scale(1.1);
         }
         21.07% {
             transform: scale(1.1);
@@ -240,6 +248,7 @@
             <p id="points2" class="score">0 pts</p>
         </div>
     </div>
+    <img id="bg-score" src="source/image/score/score.png" alt="Score">
 
     <script>
 
