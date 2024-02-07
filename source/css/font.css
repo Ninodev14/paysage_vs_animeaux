@@ -1,37 +1,90 @@
 @font-face {
-    font-family: 'FiraSansExtraCondensed-Italic';
-    src: url('source/font/FiraSansExtraCondensed-Italic.ttf') format('ttf'),
-    url('source/font/FiraSansExtraCondensed-Light.ttf') format('ttf'),
-    url('source/font/FiraSansExtraCondensed-MediumItalic.ttf') format('ttf'),
-    url('source/font/FiraSansExtraCondensed-Regular.ttf') format('ttf'),
-    url('source/font/FiraSansExtraCondensed-SemiBoldItalic.ttf') format('ttf');
-
+    font-family: 'Fira Sans Extra Condensed';
+    src: url('source/font/FiraSansExtraCondensed-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
   }
+  
+  @font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    src: url('csource/font/FiraSansExtraCondensed-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    src: url('source/font/FiraSansExtraCondensed-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    src: url('source/font/FiraSansExtraCondensed-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    src: url('source/font/FiraSansExtraCondensed-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
 
 h1 {
-    font-family:'FiraSansExtraCondensed-SemiBoldItalic';
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 600; /* Semi-Bold */
+    font-style: italic;
     font-size: 32px;
 
 }
+
 h2 {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 600; /* Semi-Bold */
+    font-style: italic;
     font-size: 24px;
 }
+
 h3 {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: normal;
+    font-style: italic;
     font-size: 20px;
 
 }
-.p1{
-     font-size: 16px;
-       
+
+.p1 {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+
 }
 
-.p2{font-size: 12px;}
+.p2 {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+}
 
-.btn{
+.btn {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: normal;
+    font-style: normal;
     font-size: 16px !important;
     border-radius: 33px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+
+a{
+    color: black;
 }
