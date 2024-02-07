@@ -101,7 +101,7 @@ function validationKind() {
         document.getElementById("img1").style.filter = "grayscale(0%)";
         document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les animaux";
-        document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Animal. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
+        document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas être confronté à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe animaux. Pour les mini-jeux, essaie d’obtenir rapidement le maximum de points.";
         document.getElementById("img2").style.display = "none";
         document.getElementById("img1").style.width = "150px";
         document.getElementById("img1").style.height = "150px";
@@ -122,7 +122,7 @@ function validationKind() {
         document.getElementById("img1").style.filter = "grayscale(0%)";
         document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
-        document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas devoir te confronter à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe paysage. Garde toujours cette pensée en tête avant de répondre. Pour les mini-jeux, essaie juste d’obtenir le maximum de points.";
+        document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas être confronté à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Paysage. Pour les mini-jeux, essaie d’obtenir rapidement le maximum de points.";
         document.getElementById("img1").style.display = "none";
         document.getElementById("img2").style.width = "150px";
         document.getElementById("img2").style.height = "150px";
@@ -239,7 +239,7 @@ function reponceQ2() {
             witchReponce = 0;
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était en faveur des animaux. Rappelle-toi, nous devons tout faire pour les battre.";
+            document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse est destinée à l’équipe des animaux. Rappelle-toi, nous devons tout faire pour les battre.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         }
@@ -247,7 +247,7 @@ function reponceQ2() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était en faveur du paysage. Rappelle-toi, nous devons tout faire pour les battre.";
+            document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse est destinée à l’équipe des paysages. Rappelle-toi, nous devons tout faire pour les battre.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
@@ -306,9 +306,9 @@ function step2() {
 function next1() {
     updateQuestionAndButtons(
         "Que font les personnages ?",
-        "Ils se promènent.",
+        "Ils sont perdus.",
         "Q3R1()",
-        "Ils pêchent les coquillages.",
+        "Ils essaient d'attraper des coquillages.",
         "Q3R2()",
         "Ils admirent le reflet du ciel sur la mer.",
         "Q3R3()"
@@ -386,19 +386,19 @@ function reponceQ3() {
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("paragraphe-reponce").innerText = "Zut, les coquillages sont des animaux. Ce ciel, quant à lui, était quand même magnifique.";
+            document.getElementById("paragraphe-reponce").innerText = "Ah zut, les coquillages sont des animaux. Ce ciel, quant à lui, était quand même magnifique.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         }
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("paragraphe-reponce").innerText = "Zut, les coquillages sont des animaux.";
+            document.getElementById("paragraphe-reponce").innerText = "Ah zut, les coquillages sont des animaux.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 50;
-            document.getElementById("paragraphe-reponce").innerText = "Quel magnifique paysage !";
+            document.getElementById("paragraphe-reponce").innerText = "Ah on est bien d’accord, quel paysage magnifique !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         }
@@ -438,11 +438,11 @@ function step3() {
 function next2() {
     updateQuestionAndButtons(
         "Cette forêt est :",
-        "Accueillante et relaxante",
+        "Accueillante (On se fait une sieste ?).",
         "Q4R1()",
-        "Originale et mystérieuse",
+        "Originale (Je reconnais, c’est la forêt interdite !).",
         "Q4R2()",
-        "Stressante, mais protectrice",
+        "Stressante (Mais au moins elle repousse les dangers ?).",
         "Q4R3()"
     );
     document.getElementById("paragraphe-center").style.display = "none";
@@ -568,11 +568,11 @@ function step4() {
 function next3() {
     updateQuestionAndButtons(
         "Le plus important dans ce tableau c’est…",
-        "Le mythe, l’histoire qui inspire le tableau.",
+        "Le mythe étrange qui l’inspire (Pourquoi est-ce toujours des histoires tordues ?).",
         "Q5R1()",
-        "L’ensemble du tableau qui donne vie à l'espace.",
+        "La totalité du tableau qui anime l'espace.",
         "Q5R2()",
-        "Les détails qui apportent de la consistance à l’œuvre.",
+        "Les (tout tout tout petits) détails qui apportent de la consistance à l’œuvre.",
         "Q5R3()"
     );
     document.getElementById("paragraphe-center").style.display = "none";
@@ -655,7 +655,7 @@ function reponceQ5() {
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
-            document.getElementById("paragraphe-reponce").innerText = "Yeah ! Tu as su voir les lévriers sur la berge!";
+            document.getElementById("paragraphe-reponce").innerText = "Tu as l'œil, tu as su voir les lévriers sur la berge!";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
@@ -699,11 +699,11 @@ function step5() {
 function next4() {
     updateQuestionAndButtons(
         "En regardant cette œuvre, tu ressens…",
-        "Une profonde tristesse.",
+        "Une profonde et intense tristesse (Quelle scène désolante !).",
         "Q6R1()",
-        "Une indifférence totale.",
+        "Une indifférence totale (Ok.).",
         "Q6R2()",
-        "Un sentiment de calme brisé.",
+        "Un sentiment de calme brisé (Crac).",
         "Q6R3()"
     );
     document.getElementById("paragraphe-center").style.display = "none";
@@ -773,12 +773,12 @@ function reponceQ6() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-reponce").innerText = "Pourquoi cette réponse ?";
+            document.getElementById("paragraphe-reponce").innerText = "Ah... ok ?";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("paragraphe-reponce").innerText = "Pourquoi cette réponse ?";
+            document.getElementById("paragraphe-reponce").innerText = "Ah... ok ?";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         }
@@ -829,11 +829,11 @@ function step6() {
 function next5() {
     updateQuestionAndButtons(
         "Je suis attiré par…",
-        "Le reflet de la vache dans la flaque d’eau.",
+        "Le reflet de la vache dans la flaque d'eau (Quel réalisme !).",
         "Q7R1()",
-        "Les textures de la laine des moutons.",
+        "Les textures de la laine des moutons (Qui veut leur faire des câlins ?).",
         "Q7R2()",
-        "Le soir qui approche, et les ombres qui arrivent.",
+        "Le soir qui approche et les ombres qui arrivent (Rentrez vite, les loups risquent de surgir !).",
         "Q7R3()"
     );
     document.getElementById("paragraphe-center").style.display = "none";
