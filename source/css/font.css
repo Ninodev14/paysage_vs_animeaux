@@ -7,7 +7,7 @@
   
   @font-face {
     font-family: 'Fira Sans Extra Condensed';
-    src: url('csource/font/FiraSansExtraCondensed-MediumItalic.ttf') format('truetype');
+    src: url('source/font/FiraSansExtraCondensed-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
   }
