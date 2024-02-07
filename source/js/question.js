@@ -52,9 +52,7 @@ window.onbeforeunload = function (event) {
 
 function IniA() {
     typeKind = 1;
-    document.getElementById("img2").style.width = "100px";
     document.getElementById("img2").style.height = "100px";
-    document.getElementById("img1").style.width = "150px";
     document.getElementById("img1").style.height = "150px";
     document.getElementById("img2").style.filter = "grayscale(100%)";
     document.getElementById("img1").style.filter = "grayscale(0%)";
@@ -69,13 +67,12 @@ function IniA() {
     document.getElementById("paragraphe-center").innerText = "Les animaux sont souvent associés à la loyauté, à la force et au charisme. Ils sont reconnus pour leur générosité et leur enthousiasme.";
     bodyNone.classList.add('body-animal');
     bodyNone.classList.remove('body-paysage');
+    document.getElementById("button-next").style.display = "flex";
 }
 
 function IniP() {
     typeKind = 2;
-    document.getElementById("img1").style.width = "100px";
     document.getElementById("img1").style.height = "100px";
-    document.getElementById("img2").style.width = "150px";
     document.getElementById("img2").style.height = "150px";
     document.getElementById("img2").style.filter = "grayscale(0%)";
     document.getElementById("img1").style.filter = "grayscale(100%)";
@@ -90,6 +87,7 @@ function IniP() {
     document.getElementById("paragraphe-center").innerText = "Les paysages possèdent une détermination et une résilience silencieuse, comme le calme avant une tempête. Ils sont reconnus pour leur empathie et leur créativité.";
     bodyNone.classList.add('body-paysage');
     bodyNone.classList.remove('body-animal');
+    document.getElementById("button-next").style.display = "flex";
 }
 
 
@@ -99,7 +97,6 @@ function validationKind() {
         document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les animaux";
         document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas être confronté à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe animaux. Pour les mini-jeux, essaie d’obtenir rapidement le maximum de points.";
-        document.getElementById("img1").style.width = "150px";
         document.getElementById("img1").style.height = "150px";
         document.getElementById("img1").setAttribute("onclick", "");
         document.getElementById("paragraphe-center").style.display = "flex";
@@ -122,7 +119,7 @@ function validationKind() {
         document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
         document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas être confronté à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Paysage. Pour les mini-jeux, essaie d’obtenir rapidement le maximum de points.";
-        document.getElementById("img2").style.width = "150px";
+
         document.getElementById("img2").style.height = "150px";
         document.getElementById("img2").setAttribute("onclick", "");
         document.getElementById("paragraphe-center").style.display = "flex";
@@ -994,7 +991,6 @@ function next6() {
         checkCompletion();
     }
     document.getElementById("img1").setAttribute("onclick", "");
-    document.getElementById("img1").style.width = "150px";
     document.getElementById("img1").style.height = "150px";
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
