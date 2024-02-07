@@ -60,8 +60,6 @@ function IniA() {
     document.getElementById("img1").style.filter = "grayscale(0%)";
     document.getElementById("name-kind").innerText = "Animaux";
     document.getElementById("name-kind").style.display = "flex";
-
-
     document.getElementById("paragraphe-center").style.marginLeft = "10%"
     document.getElementById("paragraphe-center").style.marginRight = "10%"
     document.getElementById("paragraphe-center").style.textAlign = "center";
@@ -83,13 +81,11 @@ function IniP() {
     document.getElementById("img1").style.filter = "grayscale(100%)";
     document.getElementById("name-kind").innerText = "Paysage";
     document.getElementById("name-kind").style.display = "flex";
-
     document.getElementById("paragraphe-center").style.marginLeft = "5%"
     document.getElementById("paragraphe-center").style.marginRight = "5%"
     document.getElementById("paragraphe-center").style.textAlign = "center";
     document.getElementById("button-next").style.backgroundColor = "#AFCF94";
     document.getElementById("paragraphe-center").style.marginTop = "30px";
-
     document.getElementById("paragraphe-center").innerText = "Les paysages possèdent une détermination et une résilience silencieuse, comme le calme avant une tempête. Ils sont reconnus pour leur empathie et leur créativité.";
     bodyNone.classList.add('body-paysage');
     bodyNone.classList.remove('body-animal');
@@ -150,7 +146,7 @@ function step1() {
     document.getElementById("img1").src = "source/image/tableau_musee/Chevaux.jpg";
     document.getElementById("img2").style.display = "none";
     document.getElementById("question").innerText = "Déplacez-vous jusqu'à cette œuvre.";
-    document.getElementById("paragraphe-center").classList.remove('p1'); // Supprimer la classe initiale
+    document.getElementById("paragraphe-center").classList.remove('p1'); 
     document.getElementById("paragraphe-center").classList.add('p2');
     document.getElementById("paragraphe-center").innerText = "La Foulaison du blé en Camargue\nRosa Bonheur";
     document.getElementById("paragraphe-center").style.marginRight = "5%"
