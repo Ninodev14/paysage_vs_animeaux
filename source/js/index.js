@@ -22,6 +22,7 @@ function explicationP1() {
 function explicationP2() {
     document.getElementById("text-2").style.display = "flex";
     document.getElementById("text-3").style.display = "flex";
+    document.getElementById("title-paragraph").innerText = "Quelle est ta mission ?";
     document.getElementById("text-1").innerText = "Ils ont besoin de ton aide pour enfin mettre fin à ce débat. Prends place : choisis ton camp et lance-toi dans le combat pour défendre ton équipe !";
     document.getElementById("text-2").innerText = "Pour cela, vous allez affronter une série d'épreuves. Les réponses peuvent sembler suggestives, mais n’oublie pas : tu dois défendre l'opinion de ton équipe. ";
     document.getElementById("text-2").style.marginLeft = "10%"
