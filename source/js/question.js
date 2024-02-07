@@ -1,5 +1,5 @@
 let infoWithTotal = 6;
-let infoWithActualle = 1;
+let infoWithActualle = 0;
 let typeKind = 0;
 let pointPerso = 0;
 let pointsCounted = false;
@@ -136,6 +136,7 @@ function validationKind() {
         document.getElementById("img1").style.display = "none";
         document.getElementById("img1").style.marginTop = "20px";
         document.getElementById("img2").style.marginTop = "20px";
+        
     }
 }
 
@@ -163,15 +164,21 @@ function step1() {
     document.getElementById("paragraphe-center").style.justifyContent = "flex-end"
     document.getElementById("img2").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
+    document.getElementById("container-bottom-info").style.display = "flex";
 
+    setTimeout(function() {
+        infoWithActualle++;
+        document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
+        document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
+    }, 1);
 }
+
 
 
 function BeginQuestion() {
 
     document.getElementById("button-next").setAttribute("onclick", "reponceQ2()");
     document.getElementById("button-next").innerHTML = "JE VALIDE";
-    document.getElementById("container-bottom-info").style.display = "flex";
     document.getElementById("container-button").style.display = "flex";
     document.getElementById("question-ask").style.display = "block";
     document.getElementById("question-ask").innerText = "Ces chevaux…";
