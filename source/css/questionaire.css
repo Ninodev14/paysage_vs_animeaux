@@ -1,4 +1,3 @@
-
 h2 {
     margin-top: 26px;
     margin-bottom: 26px;
@@ -37,9 +36,18 @@ h2 {
 #btn1,
 #btn2,
 #btn3 {
-    width: fit-content;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black !important;
+width: 100%;
+display: flex;
+align-items: start;
     border-radius: 5px;
 }
+
 
 .container-bottom-info {
     display: none;
@@ -79,7 +87,7 @@ h2 {
 }
 
 .container-img img {
-    
+
     margin-bottom: 20px;
     height: 80px;
     width: auto;
@@ -98,7 +106,7 @@ h2 {
     display: none;
 }
 
-#container-plans{
+#container-plans {
     left: 0;
     top: 0;
     position: absolute;
@@ -264,14 +272,17 @@ body {
     left: 50%;
     transform: translateX(-1px);
 }
-#button-lost{
- 
+
+#button-lost {
+
     margin-top: 20px;
 }
 
-#question-ask{
+#question-ask {
     display: none;
 }
-#paragraphe-resultat1, #paragraphe-resultat1{
+
+#paragraphe-resultat1,
+#paragraphe-resultat1 {
     display: none;
 }
