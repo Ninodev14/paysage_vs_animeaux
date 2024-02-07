@@ -1,98 +1,89 @@
+@font-face {
+  font-family: 'Fira Sans Extra Condensed';
+  src: url('font/FiraSansExtraCondensed-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
 
-  @font-face {
-    font-family: 'Fira Sans Extra Condensed';
-    src: url('source/font/FiraSansExtraCondensed-SemiBoldItalic.ttf') format('truetype');
-    font-weight: 600;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: 'Fira Sans Extra Condensed';
-    src: url('source/font/FiraSansExtraCondensed-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: 'Fira Sans Extra Condensed';
-    src: url('source/font/FiraSansExtraCondensed-Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: 'Fira Sans Extra Condensed';
-    src: url('source/font/FiraSansExtraCondensed-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  
-  @font-face {
-    font-family: 'Fira Sans Extra Condensed';
-    src: url('source/font/FiraSansExtraCondensed-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'Fira Sans Extra Condensed';
+  src: url('font/FiraSansExtraCondensed-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
 
-  
+@font-face {
+  font-family: 'Fira Sans Extra Condensed';
+  src: url('font/FiraSansExtraCondensed-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Fira Sans Extra Condensed';
+  src: url('font/FiraSansExtraCondensed-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Sans Extra Condensed';
+  src: url('font/FiraSansExtraCondensed-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+h1, h2, h3, .p1, .p2, .btn, a {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
 
 h1 {
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-weight: 600; /* Semi-Bold */
-    font-style: italic;
-    font-size: 32px;
-
+  font-weight: 600; /* Semi-Bold */
+  font-style: italic;
+  font-size: 32px;
 }
 
 h2 {
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-weight: 600; /* Semi-Bold */
-    font-style: italic;
-    font-size: 24px;
+  font-weight: 600; /* Semi-Bold */
+  font-style: italic;
+  font-size: 24px;
 }
 
 h3 {
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-weight: normal;
-    font-style: italic;
-    font-size: 20px;
-
+  font-weight: normal;
+  font-style: italic;
+  font-size: 20px;
 }
 
 .p1 {
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 16px;
-
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
 }
 
 .p2 {
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 12px;
 }
 
 .btn {
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 16px !important;
-    border-radius: 33px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: black !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  border-radius: 33px;
+  padding: 10px 20px;
+  color: black;
 }
 
-
-a{
-    color: black !important;
+a {
+  color: black;
 }
 
-.btn a{ 
-    color: black !important;
+.btn a { 
+  color: black;
 }
