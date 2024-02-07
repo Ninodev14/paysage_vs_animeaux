@@ -150,9 +150,15 @@ function step1() {
     document.getElementById("img1").src = "source/image/tableau_musee/Chevaux.jpg";
     document.getElementById("img2").style.display = "none";
     document.getElementById("question").innerText = "Déplacez-vous jusqu'à cette œuvre.";
+    document.getElementById("paragraphe-center").classList.remove('p1'); // Supprimer la classe initiale
+    document.getElementById("paragraphe-center").classList.add('p2');
     document.getElementById("paragraphe-center").innerText = "La Foulaison du blé en Camargue\nRosa Bonheur";
+    document.getElementById("paragraphe-center").style.marginRight = "5%"
+    document.getElementById("paragraphe-center").style.textAlign = "end"
+    document.getElementById("paragraphe-center").style.paddingLeft = "40%"
+
     document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
-    document.getElementById("button-next").innerText = "J'Y SUIS";
+    document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("paragraphe-center").style.marginTop = "0px"
     document.getElementById("container-img").style.position = "relative"
@@ -287,7 +293,7 @@ function step2() {
     document.getElementById("img2").style.width = "none";
     document.getElementById("paragraphe-center").innerText = "Marée basse à Etaples \nEugène Boudin";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
-    document.getElementById("button-next").innerText = "J'Y SUIS";
+    document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("paragraphe-center").style.display = "block";
@@ -423,7 +429,7 @@ function step3() {
     document.getElementById("img2").style.width = "none";
     document.getElementById("paragraphe-center").innerText = "Rayon d’Automne \nSouvenir du parc de Cognac \nLouis Augustin Auguin";
     document.getElementById("button-next").setAttribute("onclick", "next2()");
-    document.getElementById("button-next").innerText = "J'Y SUIS";
+    document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -554,7 +560,7 @@ function step4() {
     document.getElementById("img2").style.width = "none";
     document.getElementById("paragraphe-center").innerText = "Le Bain de Diane \nCamille Corot";
     document.getElementById("button-next").setAttribute("onclick", "next3()");
-    document.getElementById("button-next").innerText = "J'Y SUIS";
+    document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -685,7 +691,7 @@ function step5() {
     document.getElementById("img2").style.width = "none";
     document.getElementById("paragraphe-center").innerText = "La chasse de Méléagre ou la Mort du sanglier de Calydon \nJacques Raymond Brascassat";
     document.getElementById("button-next").setAttribute("onclick", "next4()");
-    document.getElementById("button-next").innerText = "J'Y SUIS";
+    document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -696,7 +702,7 @@ function step5() {
     document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
     document.getElementById("plans").src = "source/image/plans/Plan_ChasseMéléagre.svg";
-    
+
 }
 function next4() {
     updateQuestionAndButtons(
@@ -816,7 +822,7 @@ function step6() {
     document.getElementById("img2").style.width = "none";
     document.getElementById("paragraphe-center").innerText = "Marée basse à Etaples \nEugène Boudin";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
-    document.getElementById("button-next").innerText = "J'Y SUIS";
+    document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("button-lost").style.display = "flex";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -935,9 +941,9 @@ function reponceQ7() {
 
 function next6() {
     if (typeKind == 1) {
-        document.getElementById("img1").src = "source/image/badge-team-animaux.svg";
+        document.getElementById("img1").src = "source/image/Blason Animaux.svg";
     } else if (typeKind == 2) {
-        document.getElementById("img1").src = "source/image/badge-team-paysage.svg";
+        document.getElementById("img1").src = "source/image/Blason Paysages.svg";
     }
     document.getElementById("img1").setAttribute("onclick", "");
     document.getElementById("img1").style.width = "150px";
@@ -969,7 +975,7 @@ function checkCompletion() {
         document.getElementById("scorF").style.display = "flex";
         document.getElementById("button-next").style.display = "none";
         document.getElementById("paragraphe-resultat1").style.display = "block";
-        document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté "+ pointPerso + " pts"
+        document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté " + pointPerso + " pts"
         document.getElementById("paragraphe-resultat2").style.display = "block";
         document.getElementById("paragraphe-resultat2").innerHTML = "Viens récupérer ton badge !";
     }
