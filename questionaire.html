@@ -23,7 +23,7 @@
                 <img src="source/image/Blason Paysages.svg" onclick="IniP()" id="img2" style="margin-top: 50px;"></img>
             </div>
             <h2 id="question-ask"></h2>
-            <p id="paragraphe-center"></p>
+            <p class="p1" id="paragraphe-center"></p>
             <div class="container-button" id="container-button">
                 <button onclick="Q2R1()" id="btn1">Sont vraiment trop cool </button>
                 <div class="espacement-btn-question"></div>
@@ -33,17 +33,25 @@
                 <div class="espacement-btn-question"></div>
             </div>
             <button onclick="validationKind()" id="button-next" class="btn">J'AI CHOISI MON CAMP </button>
-            <a onclick="iAmLost()" id="button-lost">JE SUIS PERDU</a>
+            <a onclick="iAmLost()" id="button-lost">JE NE LA TROUVE PAS...</a>
             <a id="scorF" href="score.html"><button class="btn">VOIR LES SCORES</button></a>
-            <img id="plans" src="source/image/plan_test.svg" alt="plans">
+            <div id="container-plans">
+                <img id="plans" src="" alt="plans">
+                <div id="croix" onclick=" iAmLost()">
+                    <div class="ligne-horizontal"></div>
+                    <div class="ligne-vertical"></div>
+                  </div>
+                <div id="fond-floue"></div>
+                <div id="fond-noir"></div>
+            </div>
             <div id="score-validation">
                 <div class="container-score-validation">
-                    <h1 id="reponce-h1">Bravo</h1>
+                    <h1 id="reponce-h1"></h1>
                     <div id="container-score">
                         <h3 id="container-score-h3"></h3>
                     </div>
-                    <p id="paragraphe-reponce"></p>
-                    <button id="reponce-button">Suivant</button>
+                    <p class="p1" id="paragraphe-reponce"></p>
+                    <button class="btn" id="reponce-button">JE PASSE À LA SUITE</button>
                 </div>
                 <div class="fond-assombri"></div>
             </div>
