@@ -158,6 +158,7 @@ function step1() {
     document.getElementById("container-img").style.position = "relative"
     document.getElementById("container-img").style.marginTop = "0px"
     document.getElementById("container-img").style.height = "fit-content"
+    document.getElementById("plans").src = "source/image/plans/Plan_BleCamargue.svg";
 
 }
 
@@ -284,7 +285,6 @@ function step2() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
     document.getElementById("img2").style.width = "none";
-
     document.getElementById("paragraphe-center").innerText = "Marée basse à Etaples \nEugène Boudin";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -300,6 +300,7 @@ function step2() {
     infoWithActualle++;
     document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
+    document.getElementById("plans").src = "source/image/plans/Plan_MarreBasseEtample.svg";
 }
 
 
@@ -420,7 +421,6 @@ function step3() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Autonme.jpg";
     document.getElementById("img2").style.width = "none";
-
     document.getElementById("paragraphe-center").innerText = "Rayon d’Automne \nSouvenir du parc de Cognac \nLouis Augustin Auguin";
     document.getElementById("button-next").setAttribute("onclick", "next2()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -433,6 +433,7 @@ function step3() {
     infoWithActualle++;
     document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
+    document.getElementById("plans").src = "source/image/plans/Plan_RayonAutomne.svg";
 }
 
 function next2() {
@@ -551,7 +552,6 @@ function step4() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Baindiane.jpg";
     document.getElementById("img2").style.width = "none";
-
     document.getElementById("paragraphe-center").innerText = "Le Bain de Diane \nCamille Corot";
     document.getElementById("button-next").setAttribute("onclick", "next3()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -564,6 +564,7 @@ function step4() {
     infoWithActualle++;
     document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
+    document.getElementById("plans").src = "source/image/plans/Plan_BainDiane.svg";
 }
 function next3() {
     updateQuestionAndButtons(
@@ -682,7 +683,6 @@ function step5() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Chasse.jpg";
     document.getElementById("img2").style.width = "none";
-
     document.getElementById("paragraphe-center").innerText = "La chasse de Méléagre ou la Mort du sanglier de Calydon \nJacques Raymond Brascassat";
     document.getElementById("button-next").setAttribute("onclick", "next4()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -695,6 +695,8 @@ function step5() {
     infoWithActualle++;
     document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
+    document.getElementById("plans").src = "source/image/plans/Plan_ChasseMéléagre.svg";
+    
 }
 function next4() {
     updateQuestionAndButtons(
@@ -812,7 +814,6 @@ function step6() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/vache.jpg";
     document.getElementById("img2").style.width = "none";
-
     document.getElementById("paragraphe-center").innerText = "Marée basse à Etaples \nEugène Boudin";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("button-next").innerText = "J'Y SUIS";
@@ -825,6 +826,7 @@ function step6() {
     infoWithActualle++;
     document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
+    document.getElementById("plans").src = "source/image/plans/Plan_MarreBasseEtample.svg";
 }
 function next5() {
     updateQuestionAndButtons(
@@ -975,10 +977,10 @@ function checkCompletion() {
 
 function iAmLost() {
     if (checkLost == 0) {
-        document.getElementById("plans").style.display = "flex";
+        document.getElementById("container-plans").style.display = "flex";
         checkLost = 1;
     } else {
-        document.getElementById("plans").style.display = "none";
+        document.getElementById("container-plans").style.display = "none";
         checkLost = 0;
     }
 }

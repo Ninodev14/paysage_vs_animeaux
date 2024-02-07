@@ -35,7 +35,15 @@
             <button onclick="validationKind()" id="button-next" class="btn">J'AI CHOISI MON CAMP </button>
             <a onclick="iAmLost()" id="button-lost">JE SUIS PERDU</a>
             <a id="scorF" href="score.html"><button class="btn">VOIR LES SCORES</button></a>
-            <img id="plans" src="source/image/plan_test.svg" alt="plans">
+            <div id="container-plans">
+                <img id="plans" src="" alt="plans">
+                <div id="croix" onclick=" iAmLost()">
+                    <div class="ligne-horizontal"></div>
+                    <div class="ligne-vertical"></div>
+                  </div>
+                <div id="fond-floue"></div>
+                <div id="fond-noir"></div>
+            </div>
             <div id="score-validation">
                 <div class="container-score-validation">
                     <h1 id="reponce-h1">Bravo</h1>
