@@ -116,8 +116,7 @@ function validationKind() {
         document.getElementById("container-score").style.backgroundColor = "#F4D9BD";
         document.getElementById("container-score").style.borderColor = "#CD844E";
         document.getElementById("container-bottom-info").style.backgroundColor = "#CD844E";
-        
-
+        document.getElementById("barre-info-contenue").style.backgroundColor = "#493C36";
     }
     else if (typeKind == 2) {
         document.getElementById("img1").style.filter = "grayscale(0%)";
@@ -138,6 +137,7 @@ function validationKind() {
         document.getElementById("container-score").style.backgroundColor = "#E1F5ED";
         document.getElementById("container-score").style.borderColor = "#AFCF94";
         document.getElementById("container-bottom-info").style.backgroundColor = "#AFCF94";
+        document.getElementById("barre-info-contenue").style.backgroundColor = "#225945";
     }
 }
 
