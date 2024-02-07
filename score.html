@@ -277,7 +277,7 @@
 
 
         // Set initial values
-    let struggle = true;
+    let struggle = false;
     const score1Element = document.getElementById('score1');
     const score2Element = document.getElementById('score2');
     const points1Element = document.getElementById('points1');
@@ -317,24 +317,23 @@
         if (counter <= 50.0) {
         
             counter = (counter + 0.8);
-            setTimeout(updateIncrementalText, 4);
+            setTimeout(updateIncrementalText, 30);
             
                 countn = counter.toFixed(1)
                 points = ((counter / 50) * 2500) / 2;
-                points1Element.textContent = `${points.toFixed(0)} pts`
-                points2Element.textContent = `${points.toFixed(0)} pts`
-                counter = (counter + 0.7);
-                setTimeout(updateIncrementalText, 4);
                 
             if (counter <=30.8 || counter >= 48.0) {
                 score1Element.textContent = `${countn}%`;
                 score2Element.textContent = `${countn}%`;
+                points1Element.textContent = `${points.toFixed(0)} pts`
+                points2Element.textContent = `${points.toFixed(0)} pts`
             }
+                counter = (counter + 0.7);
             
         } else {
             score1Element.textContent = `50.0%`;
             score2Element.textContent = `50.0%`;
-
+            struggle = true;
             setTimeout(updateTextContent, 430);
         }
     }
