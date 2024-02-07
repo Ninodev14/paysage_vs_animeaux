@@ -310,20 +310,32 @@
     let counter = 0;
     let countn = 0;
 
+    function pauseIncrementalText() {
+    counter = 48.0;
+    }
     function updateIncrementalText() {
         if (counter <= 50.0) {
-            if (counter <=30.3 || counter >= 48.0) {
-            score1Element.textContent = `${countn}%`;
-            score2Element.textContent = `${countn}%`;
-        }
-            counter = (counter + 0.2);
-            countn = counter.toFixed(1)
-            setTimeout(updateIncrementalText, 4); // Update every 20 milliseconds for a smooth transition
-            points = ((counter / 50) * 2500) / 2;
-            points1Element.textContent = `${points.toFixed(0)} pts`
-            points2Element.textContent = `${points.toFixed(0)} pts`
+        
+            counter = (counter + 0.8);
+            setTimeout(updateIncrementalText, 4);
+            
+                countn = counter.toFixed(1)
+                points = ((counter / 50) * 2500) / 2;
+                points1Element.textContent = `${points.toFixed(0)} pts`
+                points2Element.textContent = `${points.toFixed(0)} pts`
+                counter = (counter + 0.7);
+                setTimeout(updateIncrementalText, 4);
+                
+            if (counter <=30.8 || counter >= 48.0) {
+                score1Element.textContent = `${countn}%`;
+                score2Element.textContent = `${countn}%`;
+            }
+            
         } else {
-            setTimeout(updateTextContent(), 500);
+            score1Element.textContent = `50.0%`;
+            score2Element.textContent = `50.0%`;
+
+            setTimeout(updateTextContent, 430);
         }
     }
 
