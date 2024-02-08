@@ -19,6 +19,8 @@ function addPoint(teamName, points) {
         if (req.readyState == XMLHttpRequest.DONE) {
             const jsonData = JSON.parse(req.responseText);
             const team = jsonData.record.teams.find(t => t.teamName === teamName);
+            console.log(teamName);
+            console.log(team);
 
             if (team) {
                 team.points += points;
@@ -1038,7 +1040,7 @@ function next6() {
         document.getElementById("img1").src = "source/image/badge-paysage.svg";
     }
     if (pointsCounted == false) {
-        if (typeKind = 1) {
+        if (typeKind == 1) {
             addPoint('Team A', pointPerso);
         } else {
             addPoint('Team B', pointPerso)
