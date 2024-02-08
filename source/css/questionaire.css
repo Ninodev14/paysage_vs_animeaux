@@ -1,4 +1,3 @@
-
 h2 {
     margin-top: 26px;
     text-align: center;
@@ -107,7 +106,7 @@ h2 {
     display: none;
 }
 
-#scorF{
+#scorF {
     text-decoration: none;
 }
 
@@ -195,8 +194,7 @@ body {
 
 #container-score {
     display: flex;
-    height: 200px;
-    width: 200px;
+    padding: 15%;
     border-radius: 100px;
     align-items: center;
     justify-content: center;
@@ -204,7 +202,7 @@ body {
 }
 
 h3#container-score-h3 {
-    font-size: 62px;
+    font-size: 42px;
 }
 
 #paragraphe-reponce {
@@ -214,10 +212,23 @@ h3#container-score-h3 {
 #reponce-h1,
 #container-score,
 #paragraphe-reponce,
-#reponce-button {
+#reponce-button,
+#reponce-h2,
+#img-reponce {
     margin-bottom: 26px;
 
 }
+#reponce-h2{
+    margin-top: 0px;
+    color: #FFFFFF;
+}
+
+
+#img-reponce {
+    width: 100%;
+    height: auto;
+}
+
 
 
 #fond-floue {
