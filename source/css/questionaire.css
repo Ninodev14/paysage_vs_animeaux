@@ -1,7 +1,6 @@
 
 h2 {
     margin-top: 26px;
-    margin-bottom: 26px;
     text-align: center;
 }
 
@@ -91,7 +90,6 @@ h2 {
 
 .container-img img {
 
-    margin-bottom: 20px;
     height: 150px;
     width: auto;
     filter: grayscale(0%);
@@ -144,7 +142,7 @@ body {
 
 #button-next {
     display: none;
-    margin-top: 20px;
+    margin-top: 26px;
 }
 
 #paragraphe-center {
@@ -283,7 +281,7 @@ h3#container-score-h3 {
 
 #button-lost {
 
-    margin-top: 20px;
+    margin-top: 26px;
 }
 
 #question-ask {

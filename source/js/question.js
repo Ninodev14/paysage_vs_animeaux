@@ -111,8 +111,8 @@ function validationKind() {
         document.getElementById("barre-info-contenue").style.backgroundColor = "#493C36";
         document.getElementById("name-kind").style.display = "none";
         document.getElementById("img2").style.display = "none";
-        document.getElementById("img1").style.marginTop = "20px";
-        document.getElementById("img2").style.marginTop = "20px";
+        document.getElementById("img1").style.marginTop = "26px";
+        document.getElementById("img2").style.marginTop = "26px";
     }
     else if (typeKind == 2) {
         document.getElementById("img1").style.filter = "grayscale(0%)";
@@ -134,9 +134,9 @@ function validationKind() {
         document.getElementById("barre-info-contenue").style.backgroundColor = "#225945";
         document.getElementById("name-kind").style.display = "none";
         document.getElementById("img1").style.display = "none";
-        document.getElementById("img1").style.marginTop = "20px";
-        document.getElementById("img2").style.marginTop = "20px";
-        
+        document.getElementById("img1").style.marginTop = "26px";
+        document.getElementById("img2").style.marginTop = "26px";
+
     }
 }
 
@@ -147,10 +147,10 @@ function step1() {
     document.getElementById("img1").style.display = "flex";
     document.getElementById("img1").src = "source/image/tableau_musee/Chevaux.jpg";
     document.getElementById("question").innerText = "Déplacez-vous jusqu'à cette œuvre.";
-    document.getElementById("paragraphe-center").classList.remove('p1'); 
+    document.getElementById("paragraphe-center").classList.remove('p1');
     document.getElementById("paragraphe-center").classList.add('p2');
     document.getElementById("paragraphe-center").innerText = "La Foulaison du blé en Camargue\nRosa Bonheur";
-    document.getElementById("paragraphe-center").style.marginTop = "-20px"
+    document.getElementById("paragraphe-center").style.marginTop = "0px"
     document.getElementById("paragraphe-center").style.textAlign = "end"
     document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
     document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
@@ -166,7 +166,7 @@ function step1() {
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
 
-    setTimeout(function() {
+    setTimeout(function () {
         infoWithActualle++;
         document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
         document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
