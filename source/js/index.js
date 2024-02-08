@@ -2,22 +2,23 @@ function explicationP1() {
     document.body.style.backgroundColor = "#ffffff";
     document.getElementById("title-paragraph").style.display = "flex";
     document.getElementById("text-1").style.display = "block";
+    document.getElementById("text-2").style.display = "block";
     document.getElementById("container-menue-home").style.height = "fit-content";
     document.getElementById("container-menue-home").style.justifyContent = "normal";
     document.getElementById("container-menue-home").style.marginTop = "26px";
     document.getElementById("container-menue-home-title").style.display = "none";
     document.getElementById("bottom-container-menue-home").style.display = "none";
     document.getElementById("title-paragraph").innerText = "Mais que se passe-t-il ?";
-    document.getElementById("text-1").innerText = "C’est la cacophonie dans la salle “Paysages & peinture animalière” ! En cette soirée de Bacchanight, deux équipes s’affrontent avec acharnement pour déterminer qui des animaux ou des paysages est le plus important pour cette salle…";
+    document.getElementById("text-1").innerText = "C’est la cacophonie dans la salle “Paysages & peinture animalière” ! ";
+    document.getElementById("text-2").innerText = "En cette soirée de Bacchanight, deux équipes s’affrontent avec acharnement pour déterminer qui des animaux ou des paysages est le plus important pour cette salle…";
     document.getElementById("btn-explication").setAttribute("onclick", "explicationP2()");
     document.getElementById("btn-explication").innerText = "LIRE LA SUITE";
     document.getElementById("btn-explication").style.backgroundColor ="#1D1D1D";
     document.getElementById("btn-explication").style.setProperty("color", "#ffffff", "important");
-    document.getElementById("btn-explication").style.marginTop ="96px";
-    document.getElementById("text-1").style.display = "block";
-    document.getElementById("text-1").style.marginLeft = "10%"
-    document.getElementById("text-1").style.marginRight = "10%"
+    document.getElementById("btn-explication").style.position ="absolute";
+    document.getElementById("btn-explication").style.bottom ="40px";
     document.getElementById("text-1").style.textAlign = "center";
+    document.getElementById("text-2").style.textAlign = "center";
     document.getElementById("svg-transition1").style.display = "block";
 }
 
