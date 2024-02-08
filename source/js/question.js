@@ -222,6 +222,7 @@ function Q2R1() {
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 function Q2R2() {
@@ -234,6 +235,7 @@ function Q2R2() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 function Q2R3() {
     witchReponce = 3;
@@ -245,6 +247,7 @@ function Q2R3() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 
 }
 
@@ -256,12 +259,16 @@ function reponceQ2() {
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Bravo, tu as compris. Continue sur cette lancée.";
             document.getElementById("container-score-h3").innerText = "+50";
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             witchReponce = 0;
         } else {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse est destinée à l’équipe des animaux. Rappelle-toi, nous devons tout faire pour les battre.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         }
     }
@@ -271,12 +278,16 @@ function reponceQ2() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse est destinée à l’équipe des paysages. Rappelle-toi, nous devons tout faire pour les battre.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Bravo, tu as compris. Continue sur cette lancée.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         }
     } else if (witchReponce == 3) {
@@ -285,12 +296,16 @@ function reponceQ2() {
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe paysage, mais au moins nous avons pu récolter quelques points.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe animal, mais au moins nous avons pu récolter quelques points.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         }
     }
@@ -365,6 +380,7 @@ function Q3R1() {
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 function Q3R2() {
@@ -377,6 +393,7 @@ function Q3R2() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 function Q3R3() {
     witchReponce = 3;
@@ -388,6 +405,7 @@ function Q3R3() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 
@@ -398,12 +416,16 @@ function reponceQ3() {
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Certes, mais les coquillages sont des animaux.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Certes, mais ce ciel et son reflet étaient quand même éblouissants.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         }
     }
@@ -413,12 +435,16 @@ function reponceQ3() {
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Eh oui, les coquillages sont bien des animaux.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Ah zut, les coquillages sont des animaux. Ce ciel, quant à lui, était quand même magnifique.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         }
     } else if (witchReponce == 3) {
@@ -427,12 +453,16 @@ function reponceQ3() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Ah zut, les coquillages sont des animaux.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Ah on est bien d’accord, quel paysage magnifique !";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         }
     }
@@ -503,6 +533,7 @@ function Q4R1() {
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 function Q4R2() {
@@ -515,6 +546,7 @@ function Q4R2() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 function Q4R3() {
     witchReponce = 3;
@@ -526,6 +558,7 @@ function Q4R3() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 
@@ -536,12 +569,16 @@ function reponceQ4() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Ce paysage est tout de même un peu effrayant, non.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Eh oui, quel paysage splendide pour une petite promenade.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         }
     }
@@ -551,12 +588,16 @@ function reponceQ4() {
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Un peu trop flou, non ?";
             witchReponce = 0;
+            document.getElementById("reponce-h2e").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Un peu trop flou, non ?";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         }
     } else if (witchReponce == 3) {
@@ -565,12 +606,16 @@ function reponceQ4() {
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Elle fait un peu peur, non ? Mais au moins elle accueille les animaux.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Dans la team paysage, on essaie de voir tous les paysages sous un aspect positif.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         }
     }
@@ -642,6 +687,7 @@ function Q5R1() {
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 function Q5R2() {
@@ -654,6 +700,7 @@ function Q5R2() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 function Q5R3() {
     witchReponce = 3;
@@ -665,6 +712,7 @@ function Q5R3() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 
@@ -675,12 +723,16 @@ function reponceQ5() {
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Il y a un vrai mythe, mais ici, ce n’est pas le sujet le plus important pour ton équipe !";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Il y a un vrai mythe, mais ici, ce n’est pas le sujet le plus important pour ton équipe !";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         }
     }
@@ -690,12 +742,16 @@ function reponceQ5() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Aïe, cette réponse était pour l’équipe paysage car l’ensemble représente majoritairement un paysage.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Yeah, tu as su choisir la bonne réponse !";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         }
     } else if (witchReponce == 3) {
@@ -704,12 +760,16 @@ function reponceQ5() {
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Tu as l'œil, tu as su voir les lévriers sur la berge!";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Aïe, cette réponse était pour l’équipe animal. En effet, si tu regardes bien, il y a des lévriers sur la berge !";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         }
     }
@@ -781,6 +841,7 @@ function Q6R1() {
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 function Q6R2() {
@@ -793,6 +854,7 @@ function Q6R2() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 function Q6R3() {
     witchReponce = 3;
@@ -804,6 +866,7 @@ function Q6R3() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 
@@ -814,12 +877,16 @@ function reponceQ6() {
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Bravo, tu as bien répondu ! Dans le titre, tu peux retrouver 'mort du sanglier', quel triste événement !";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Dommage ! Cette réponse était pour l’équipe animal car tu peux retrouver 'mort du sanglier' dans le titre de l'œuvre.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         }
     }
@@ -829,12 +896,16 @@ function reponceQ6() {
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Ah... ok ?";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Ah... ok ?";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         }
     } else if (witchReponce == 3) {
@@ -843,12 +914,16 @@ function reponceQ6() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Mince, cette réponse était pour l’équipe paysage. En effet, tu peux remarquer qu’un arbre est brisé à droite du centre.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Félicitations, tu as remarqué l’arbre brisé ?";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         }
     }
@@ -917,6 +992,7 @@ function Q7R1() {
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 function Q7R2() {
@@ -929,6 +1005,7 @@ function Q7R2() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn3").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 function Q7R3() {
     witchReponce = 3;
@@ -940,6 +1017,7 @@ function Q7R3() {
     document.getElementById("btn1").style.backgroundColor = "white";
     document.getElementById("btn2").style.backgroundColor = "white";
     document.getElementById("button-next").style.display = "flex";
+    document.getElementById("button-next").scrollIntoView({ behavior: 'smooth' });
 }
 
 
@@ -950,12 +1028,16 @@ function reponceQ7() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe paysage ! En effet, dans cette réponse, nous parlons du reflet d’une flaque.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Bravo, tu as trouvé la bonne réponse ! Tu n’es pas tombé dans le piège du coucher de soleil !";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         }
     }
@@ -965,12 +1047,16 @@ function reponceQ7() {
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = " Bravo, tu as trouvé la bonne réponse ! Tu n’es pas tombé dans le piège de la flaque d’eau !";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe animal ! Tu aurais dû te concentrer sur le reflet de la flaque d’eau…";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+25";
         }
     } else if (witchReponce == 3) {
@@ -979,12 +1065,16 @@ function reponceQ7() {
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Oups, cette réponse était neutre. Pourtant, la texture de la laine des moutons avait l’air bien, n'est-ce pas ?";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Oups, cette réponse était neutre. Pourtant, le reflet de la flaque d’eau est réussi.";
             witchReponce = 0;
+            document.getElementById("reponce-h2").innerText = "lol le test lol";
+            document.getElementById("img-reponce").src = "source/image/above_the_birds.png";
             document.getElementById("container-score-h3").innerText = "+5";
         }
     }
