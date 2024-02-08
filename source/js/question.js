@@ -152,7 +152,7 @@ function step1() {
     document.getElementById("paragraphe-center").classList.remove('p1');
     document.getElementById("paragraphe-center").classList.add('p2');
     document.getElementById("paragraphe-center").innerText = "La Foulaison du blé en Camargue\nRosa Bonheur";
-    document.getElementById("paragraphe-center").style.marginTop = "0px"
+    document.getElementById("paragraphe-center").style.marginTop = "5px"
     document.getElementById("paragraphe-center").style.textAlign = "end"
     document.getElementById("button-next").setAttribute("onclick", "BeginQuestion()");
     document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
@@ -1095,7 +1095,7 @@ function zoomImgIn() {
     document.getElementById("container-img").style.top = "50%"
     document.getElementById("container-img").style.left = "50%"
     document.getElementById("container-img").style.transform = "translate(-50%, -50%)";
-    document.getElementById("img1").style.margin = "0px";
+
 
 }
 function zoomImgOut() {
@@ -1107,7 +1107,5 @@ function zoomImgOut() {
     document.getElementById("container-img").style.top = "0"
     document.getElementById("container-img").style.left = "0"
     document.getElementById("container-img").style.transform = "translate(0%, 0%)";
-    document.getElementById("img1").style.marginTop = "60px";
-    document.getElementById("img1").style.marginBottom = "20px";
     document.getElementById("fond-img-plans").style.display = "none"
 }
