@@ -170,6 +170,7 @@ body {
     height: 100%;
     backdrop-filter: blur(8px);
     transition: 500ms;
+    overflow-y: scroll;
 }
 
 .container-score-validation {
