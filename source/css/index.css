@@ -72,8 +72,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    height: 100%;
-    width: 100%;
+    width: 100vw; /* Utilisation de 'vw' pour spécifier 100% de la largeur de la fenêtre */
+    height: 100vh; /* Utilisation de 'vh' pour spécifier 100% de la hauteur de la fenêtre */
+    object-fit: cover; /* Pour couvrir toute la zone de l'élément */
     z-index: -1;
 }
 

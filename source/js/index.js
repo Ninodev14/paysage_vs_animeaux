@@ -21,6 +21,7 @@ function explicationP1() {
     document.getElementById("text-1").style.textAlign = "center";
     document.getElementById("text-2").style.textAlign = "center";
     document.getElementById("svg-transition1").style.display = "block";
+
 }
 
 function explicationP2() {
