@@ -11,12 +11,14 @@ function explicationP1() {
     document.getElementById("text-1").innerText = "C’est la cacophonie dans la salle “Paysages & peinture animalière” ! En cette soirée de Bacchanight, deux équipes s’affrontent avec acharnement pour déterminer qui des animaux ou des paysages est le plus important pour cette salle…";
     document.getElementById("btn-explication").setAttribute("onclick", "explicationP2()");
     document.getElementById("btn-explication").innerText = "LIRE LA SUITE";
-    document.getElementById("btn-explication").style.backgroundColor ="#D7C999";
+    document.getElementById("btn-explication").style.backgroundColor ="#1D1D1D";
+    document.getElementById("btn-explication").style.setProperty("color", "#ffffff", "important");
     document.getElementById("btn-explication").style.marginTop ="96px";
     document.getElementById("text-1").style.display = "block";
     document.getElementById("text-1").style.marginLeft = "10%"
     document.getElementById("text-1").style.marginRight = "10%"
     document.getElementById("text-1").style.textAlign = "center";
+    document.getElementById("absolut-transition").src = "source/image/separation/RUBAN-1.svg";
 }
 
 function explicationP2() {
