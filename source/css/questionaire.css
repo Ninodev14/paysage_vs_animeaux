@@ -52,7 +52,7 @@ h2 {
 .container-bottom-info {
     display: none;
     width: calc(100vw - 19px);
-    position: absolute;
+    position: fixed;
     height: 50px;
     bottom: 0px;
     align-items: center;
