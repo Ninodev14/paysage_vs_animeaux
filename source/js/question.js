@@ -96,7 +96,7 @@ function validationKind() {
         document.getElementById("img1").style.filter = "grayscale(0%)";
         document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les animaux";
-        document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas être confronté à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe animaux. Pour les mini-jeux, essaie d’obtenir rapidement le maximum de points.";
+        document.getElementById("paragraphe-center").innerHTML = "Attention le combat va bientôt commencer. Durant cet affrontement, les questions te rapporteront plus ou moins de points. <br> <br> Il y a 3 types de réponses possibles: <br> Pour ton équipe : <strong>50 points. </strong> <br> Pour aucune équipe: <strong>25 points.</strong> <br>Pour l’équipe adverse : <strong>5 points.</strong> <br> <br> Choisis la réponse adaptée à l’équipe Animaux pour rapporter le plus de points." ;
         document.getElementById("img1").style.height = "150px";
         document.getElementById("img1").setAttribute("onclick", "");
         document.getElementById("paragraphe-center").style.display = "flex";
@@ -118,7 +118,7 @@ function validationKind() {
         document.getElementById("img1").style.filter = "grayscale(0%)";
         document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
-        document.getElementById("paragraphe-center").innerText = "Pour défendre notre équipe dans ce combat acharné, tu vas être confronté à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Paysage. Pour les mini-jeux, essaie d’obtenir rapidement le maximum de points.";
+        document.getElementById("paragraphe-center").innerHTML = "Pour défendre notre équipe dans ce combat acharné, tu vas être confronté à une série de mini-jeux et de questions. En ce qui concerne les questions, toutes les réponses peuvent te sembler correctes, mais ne te trompe pas, tu fais partie de l'équipe Paysage. Pour les mini-jeux, essaie d’obtenir rapidement le maximum de points.";
 
         document.getElementById("img2").style.height = "150px";
         document.getElementById("img2").setAttribute("onclick", "");
