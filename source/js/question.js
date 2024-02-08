@@ -7,7 +7,7 @@ let checkLost = 0;
 let reloadCheck = 0;
 let witchReponce = 0;
 let req = new XMLHttpRequest();
-let lol = false;
+let pointisSet = false;
 let bodyNone = document.getElementById('body-none');
 
 req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
@@ -28,10 +28,10 @@ function addPoint(teamName, points) {
                 req.setRequestHeader("Content-Type", "application/json");
                 req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
 
-                if (lol == false) {
+                if (pointisSet == false) {
                     req.send(JSON.stringify(jsonData.record));
                     console.log('POINTS!');
-                    lol = true;
+                    pointisSet = true;
                 }
 
             }
@@ -42,7 +42,7 @@ function addPoint(teamName, points) {
     req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
     req.send();
 
-    lol = false;
+    pointisSet = false;
 }
 window.onbeforeunload = function (event) {
     if (reloadCheck == 0) {
