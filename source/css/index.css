@@ -19,13 +19,22 @@ body {
     width: calc(100vw - 40px);
     font-size: 48px;
     justify-content: space-evenly;
-    
+
 }
 
-#absolut-transition{
+#svg-transition2{
+    display: none;
+    width: 100vw;
+    margin-top: calc(-15% + 26px);
+    margin-bottom: calc(-60% + 26px);
+}
+
+#svg-transition1 {
+    display: none;
     height: auto;
     width: 100vw;
-    margin-bottom: 26px;
+    margin-top: calc(-100% + 26px);
+    margin-bottom: calc(-90% + 26px);
 }
 
 #bottom-container-menue-home {
@@ -35,7 +44,7 @@ body {
     justify-content: space-between;
     width: calc(100vw - 40px);
     font-size: 12px;
-    
+
 }
 
 
@@ -50,4 +59,3 @@ body {
     margin-bottom: 26px;
     display: none;
 }
-
