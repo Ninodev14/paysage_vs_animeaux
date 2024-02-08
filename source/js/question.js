@@ -191,7 +191,9 @@ function BeginQuestion() {
     document.getElementById("paragraphe-center").style.display = "none";
     document.getElementById("question").style.display = "none";
     document.getElementById("button-next").style.display = "none";
-    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "0ms";
+    setTimeout(function () {
+        document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "0ms";
+    }, 500);
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick, btn3Text, btn3OnClick) {
@@ -203,7 +205,9 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
     document.getElementById("btn3").innerText = btn3Text;
     document.getElementById("btn3").setAttribute("onclick", btn3OnClick);
     document.getElementById("question-ask").style.display = "block";
-    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "0ms";
+    setTimeout(function () {
+        document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "0ms";
+    }, 500);
 }
 
 
