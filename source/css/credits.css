@@ -1,15 +1,29 @@
-.btn-accueil{
+
+.btn-accueil {
     display: flex;
     justify-content: space-around;
-  
+    position: absolute;
+bottom: 40px;
+
 }
 
-.btn{
-    background-color: #D7C999;
-    
+.btn {
+    background-color: #1D1D1D;
 }
+
 .btn a {
     text-decoration: none;
-color: #000;
-font-size: 16px;
+    color: #fff !important;
+}
+
+.container-credit {
+    margin-left: 20px;
+    width: calc(100vw - 40px);
+}
+
+#svg-transition3 {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
