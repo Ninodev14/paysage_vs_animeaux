@@ -1109,15 +1109,3 @@ function zoomImgOut() {
     document.getElementById("container-img").style.transform = "translate(0%, 0%)";
     document.getElementById("fond-img-plans").style.display = "none"
 }
-
-let scoreValidation = document.getElementById("score-validation");
-
-scoreValidation.addEventListener('mouseenter', function () {
-    // Bloquer le défilement du corps de la page
-    document.body.style.overflow = 'hidden';
-});
-
-scoreValidation.addEventListener('mouseleave', function () {
-    // Réactiver le défilement du corps de la page
-    document.body.style.overflow = '';
-});
