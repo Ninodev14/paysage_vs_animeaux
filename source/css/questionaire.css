@@ -2,6 +2,12 @@ h2 {
     margin-top: 26px;
     text-align: center;
 }
+body {
+    position: fixed;
+    height: 100%;
+    border: 10px solid;
+    border-color: #D7C999;
+}
 
 
 .container {
@@ -125,12 +131,6 @@ h2 {
     position: absolute;
     width: calc(100% - 40px);
     height: auto;
-}
-
-body {
-    height: 100vh;
-    border: 10px solid;
-    border-color: #D7C999;
 }
 
 .body-paysage {
