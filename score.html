@@ -5,10 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scores</title>
     <style>
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loading-circle {
+            border: 8px solid #141414; /* Border color (adjust as needed) */
+            border-top: 8px solid #ffffff; /* Border color of the empty part (adjust as needed) */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite; /* Rotation animation */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+
         #scoreImage {
             max-width: 100%;
             max-height: 100%;
             transform: rotate(67deg) scale(2.5);
+            display: none;
         }
         #bg-score {
             position: absolute;
@@ -29,6 +57,7 @@
             margin: 0;
             overflow: hidden;
             background-color: #F4D9BD;
+            position: relative;
         }
         .text {
         position: absolute;
@@ -36,6 +65,7 @@
         width: 100%;
         bottom: 0px;
         right: 0px;
+        z-index: 2;
     }
     .top-left-text {
         top: 0;
@@ -44,8 +74,11 @@
         margin-left: 20px ;
         position: absolute;
         transform-origin: top left;
-        animation: growTopLeft 5.3s ease forwards;
         transform: scale(1.2);
+    }
+
+    .Aanimate{
+        animation: growTopLeft 5.3s ease forwards;
     }
 
     .bottom-right-text {
@@ -55,8 +88,10 @@
         margin-right: 20px ;
         position: absolute;
         transform-origin: bottom right;
-        animation: growBottomRight 5.3s ease forwards;
         transform: scale(1.2);
+    }
+    .Banimate {
+        animation: growBottomRight 5.3s ease forwards;    
     }
 
     .score1, .score2 {
@@ -181,11 +216,40 @@
         }
     }
 
+    .blason {
+        position: absolute;
+        height: 60%;
+        width: 60%;
+        
+    }
+    #blasonA{
+        top: -70px;
+        right: -70px;
+    }
+    #blasonB{
+        bottom: -70px;
+        left: -70px;
+    }
+
     </style>
 
     <script>
-        
-        let req = new XMLHttpRequest();
+
+        function initializePage() {
+
+            document.querySelector('.top-left-text').classList.add('Aanimate');
+            document.querySelector('.bottom-right-text').classList.add('Banimate');
+            var gifImage = document.getElementById('scoreImage');
+        gifImage.src = 'source/image/score/struggle.gif';
+        gifImage.style.display = 'block';
+       
+            // Your script code goes here
+            
+    
+            // Hide the loading screen
+            document.getElementById('loadingScreen').style.display = 'none';
+    
+            let req = new XMLHttpRequest();
         let data = null;
         var pointsA = 0;
         var pointsB = 0;
@@ -230,32 +294,6 @@
     }
 
         } 
-    </script>
-</head>
-<body>
-
-    <div class="cont">
-        <img id="scoreImage" src="source/image/score/struggle.gif" alt="Score">
-        
-    </div>
-    <div class="text">
-        <div class="top-left-text" id="tl">
-            <h1 id="score1" class="score">00.0%</h1>
-            <p id="points1" class="score">0 pts</p>
-        </div>
-        <div class="bottom-right-text" id="br">
-            <h1 id="score2" class="score">00.0%</h1>
-            <p id="points2" class="score">0 pts</p>
-        </div>
-    </div>
-    <img id="bg-score" src="source/image/score/score.png" alt="Score">
-
-    <script>
-
-
-        
-
-        // Get the image element
         var scoreImage = document.getElementById('scoreImage');
         var points = 0;
 
@@ -350,6 +388,45 @@
     // Call the function to start updating the text content
     updateIncrementalText();
 
+
+        }
+    
+        // Attach the initializePage function to the window.onload event
+        window.onload = initializePage;
+        
+        
+    </script>
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="loading-circle"></div>
+    </div>
+    
+
+    <div class="cont">
+        <img id="scoreImage" src="source/image/score/score.png" alt="Score">
+        
+    </div>
+    <div class="text">
+        <div class="top-left-text" id="tl">
+            <h1 id="score1" class="score">00.0%</h1>
+            <p id="points1" class="score">0 pts</p>
+        </div>
+        <div class="bottom-right-text" id="br">
+            <h1 id="score2" class="score">00.0%</h1>
+            <p id="points2" class="score">0 pts</p>
+        </div>
+    </div>
+    <img src="source/image/score/BlasonA.svg" alt="" class="blason" id="blasonA">
+        <img src="source/image/score/BlasonB.svg" alt="" class="blason" id="blasonB">
+    <script>
+
+
+        
+
+        // Get the image element
+        
+
     
     </script>
 
@@ -390,6 +467,22 @@
             }
             100% {
                 transform: rotate(67deg) scale(2.5) translate(calc(var(--Apercent) * 0.2), 0px);
+            }
+        }
+        @media (min-width: 768px) {
+            @keyframes animatePng {
+                0% {
+                    transform: rotate(67deg) scale(2.5) translate(calc(0% * 0.2), 0px);
+                }
+                20% {
+                    transform: rotate(67deg) scale(2.5) translate(calc(-15% * 0.2), 0px);
+                }
+                50% {
+                    transform: rotate(67deg) scale(2.5) translate(calc(-40% * 0.2 / 2), 0px);
+                }
+                100% {
+                    transform: rotate(67deg) scale(2.5) translate(calc(var(--Apercent) * 0.1), 0px);
+                }
             }
         }
     </style>
