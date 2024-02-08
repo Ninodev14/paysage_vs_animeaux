@@ -191,6 +191,7 @@ function BeginQuestion() {
     document.getElementById("paragraphe-center").style.display = "none";
     document.getElementById("question").style.display = "none";
     document.getElementById("button-next").style.display = "none";
+    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "0ms";
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick, btn3Text, btn3OnClick) {
@@ -202,6 +203,7 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
     document.getElementById("btn3").innerText = btn3Text;
     document.getElementById("btn3").setAttribute("onclick", btn3OnClick);
     document.getElementById("question-ask").style.display = "block";
+    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "0ms";
 }
 
 
@@ -293,6 +295,8 @@ function reponceQ2() {
     document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("reponce-button").setAttribute("onclick", "step2()");
     document.getElementById("score-validation").style.display = "flex";
+    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+
 }
 
 
@@ -433,6 +437,7 @@ function reponceQ3() {
     document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("reponce-button").setAttribute("onclick", "step3()");
     document.getElementById("score-validation").style.display = "flex";
+    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
 }
 
 function step3() {
@@ -570,6 +575,7 @@ function reponceQ4() {
     document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("reponce-button").setAttribute("onclick", "step4()");
     document.getElementById("score-validation").style.display = "flex";
+    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
 }
 
 function step4() {
@@ -708,6 +714,7 @@ function reponceQ5() {
     document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("reponce-button").setAttribute("onclick", "step5()");
     document.getElementById("score-validation").style.display = "flex";
+    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
 }
 
 function step5() {
@@ -846,6 +853,7 @@ function reponceQ6() {
     document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("reponce-button").setAttribute("onclick", "step6()");
     document.getElementById("score-validation").style.display = "flex";
+    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
 }
 
 function step6() {
@@ -981,6 +989,7 @@ function reponceQ7() {
     document.getElementById("btn3").setAttribute("onclick", "");
     document.getElementById("reponce-button").setAttribute("onclick", "next6()");
     document.getElementById("score-validation").style.display = "flex";
+    document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
 }
 
 function next6() {
