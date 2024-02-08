@@ -428,14 +428,16 @@
         }
         95% {
             transform: translate(-12px, 12px);
+            
+            left: -70px;
         }
         96% {
-            transform: translate(var(--Bpos), 50%);
-            right: 0px;
+            transform: translate(var(--Bpos), -50%);
+            left: 0px;
         }
         100%{
-            transform: translate(var(--Bpos), 50%);
-            right: 0px;
+            transform: translate(var(--Bpos), -50%);
+            left: 0px;
         }
     }
 
@@ -497,8 +499,8 @@
 
         var blasonA = document.getElementById('blasonA');
         var blasonB = document.getElementById('blasonB');
-        blasonA.style.setProperty('--Apos','-200vw');
-        blasonB.style.setProperty('--Bpos','-20vw');
+        blasonA.style.setProperty('--Apos','200vw');
+        blasonB.style.setProperty('--Bpos','20vw');
     }else {
         
         
@@ -510,7 +512,7 @@
         var blasonA = document.getElementById('blasonA');
         var blasonB = document.getElementById('blasonB');
         blasonA.style.setProperty('--Apos','-20vw');
-        blasonB.style.setProperty('--Bpos','-50vw');
+        blasonB.style.setProperty('--Bpos','-200vw');
     }
 
         } 
