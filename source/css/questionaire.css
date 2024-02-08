@@ -1,6 +1,6 @@
+
 h2 {
     margin-top: 26px;
-    margin-bottom: 26px;
     text-align: center;
 }
 
@@ -40,12 +40,12 @@ h2 {
     font-weight: normal;
     font-style: normal;
     font-size: 16px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     color: black !important;
-width: 100%;
-display: flex;
-align-items: start;
+    width: 100%;
+    display: flex;
+    text-align: left;
     border-radius: 5px;
 }
 
@@ -71,7 +71,8 @@ align-items: start;
 }
 
 #barre-info-contenue {
-    width: 20%;
+    transition: 500ms;
+    width: 0%;
     height: 10px;
     border-radius: 20px;
 
@@ -89,8 +90,7 @@ align-items: start;
 
 .container-img img {
 
-    margin-bottom: 20px;
-    height: 80px;
+    height: 150px;
     width: auto;
     filter: grayscale(0%);
     transition: 500ms;
@@ -105,6 +105,10 @@ align-items: start;
 #scorF,
 #container-plans {
     display: none;
+}
+
+#scorF{
+    text-decoration: none;
 }
 
 #container-plans {
@@ -141,7 +145,8 @@ body {
 }
 
 #button-next {
-    margin-top: 20px;
+    display: none;
+    margin-top: 26px;
 }
 
 #paragraphe-center {
@@ -197,7 +202,8 @@ body {
     justify-content: center;
     border: 5px solid;
 }
-h3#container-score-h3{
+
+h3#container-score-h3 {
     font-size: 62px;
 }
 
@@ -279,7 +285,7 @@ h3#container-score-h3{
 
 #button-lost {
 
-    margin-top: 20px;
+    margin-top: 26px;
 }
 
 #question-ask {
