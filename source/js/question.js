@@ -34,6 +34,7 @@ function addPoint(teamName, points) {
                     req.send(JSON.stringify(jsonData.record));
                     console.log('POINTS!');
                     pointisSet = true;
+                    document.getElementById('scorebtn').removeAttribute('disabled');
                 }
 
             }
