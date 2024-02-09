@@ -1,4 +1,7 @@
+
+
 function initializePage() {
+    
             var animatedElement = document.getElementById('scoreImage');
             animatedElement.style.setProperty('--Apercent', `0%`);
 
