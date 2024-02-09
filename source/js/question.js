@@ -65,7 +65,6 @@ function IniA() {
     document.getElementById("paragraphe-center").style.textAlign = "center";
     document.getElementById("button-next").style.backgroundColor = "#CD844E";
     document.getElementById("paragraphe-center").style.marginTop = "30px";
-    document.getElementById("question").innerText = "L’équipe";
     document.getElementById("paragraphe-center").innerText = "Les animaux sont souvent associés à la loyauté, à la force et au charisme. Ils sont reconnus pour leur générosité et leur enthousiasme.";
     bodyNone.classList.add('body-animal');
     bodyNone.classList.remove('body-paysage');
@@ -85,7 +84,6 @@ function IniP() {
     document.getElementById("paragraphe-center").style.textAlign = "center";
     document.getElementById("button-next").style.backgroundColor = "#AFCF94";
     document.getElementById("paragraphe-center").style.marginTop = "30px";
-    document.getElementById("question").innerText = "L’équipe";
     document.getElementById("paragraphe-center").innerText = "Les paysages possèdent une détermination et une résilience silencieuse, comme le calme avant une tempête. Ils sont reconnus pour leur empathie et leur créativité.";
     bodyNone.classList.add('body-paysage');
     bodyNone.classList.remove('body-animal');
@@ -115,13 +113,13 @@ function validationKind() {
         document.getElementById("img2").style.display = "none";
         document.getElementById("img1").style.marginTop = "26px";
         document.getElementById("img2").style.marginTop = "26px";
+
     }
     else if (typeKind == 2) {
         document.getElementById("img1").style.filter = "grayscale(0%)";
         document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les paysages";
         document.getElementById("paragraphe-center").innerHTML = "Attention le combat va bientôt commencer. Durant cet affrontement, les questions te rapporteront plus ou moins de points. <br> <br> Il y a 3 types de réponses possibles: <br> Pour ton équipe : <strong>50 points. </strong> <br> Pour aucune équipe: <strong>25 points.</strong> <br>Pour l’équipe adverse : <strong>5 points.</strong> <br> <br> Choisis la réponse adaptée à l’équipe Paysages pour rapporter le plus de points.";
-
         document.getElementById("img2").style.height = "150px";
         document.getElementById("img2").setAttribute("onclick", "");
         document.getElementById("paragraphe-center").style.display = "block";
@@ -138,7 +136,6 @@ function validationKind() {
         document.getElementById("img1").style.display = "none";
         document.getElementById("img1").style.marginTop = "26px";
         document.getElementById("img2").style.marginTop = "26px";
-
     }
 }
 
@@ -1067,11 +1064,13 @@ function checkCompletion() {
         document.getElementById("barre-info-contenue").style.width = "100%";
         document.getElementById("scorF").style.display = "flex";
         document.getElementById("paragraphe-resultat1").style.display = "block";
+        document.getElementById("paragraphe-resultat1").style.textAlign = "center";
         document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté " + pointPerso + " pts"
         document.getElementById("paragraphe-resultat2").style.display = "block";
         document.getElementById("paragraphe-resultat2").innerHTML = "Viens récupérer ton badge !";
         document.getElementById("button-next").style.display = "none";
         document.getElementById("container-button").style.display = "none";
+        document.getElementById("img1").style.marginBottom = "26px";
     }
 }
 

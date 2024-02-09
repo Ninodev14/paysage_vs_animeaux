@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="source/css/reset.css">
     <link rel="stylesheet" href="source/css/font.css">
     <link rel="stylesheet" href="source/css/questionaire.css">
-    <title>Questionaire</title>
+    <link rel="icon" type="image/x-icon" href="source/image/Logo_ZIZANIE.ico">
+    <title>La Zizanie | Le questionaire</title>
 </head>
 
 <body id="body-none">
@@ -30,9 +31,11 @@
                     <div class="espacement-btn-question"></div>
                     <button onclick="Q2R1()" id="btn1">Semblent effrayés par le gardian !</button>
                     <div class="espacement-btn-question"></div>
-                    <button onclick="Q2R2()" id="btn2">Ne sont rien sans l’incroyable décor qui les accompagne !</button>
+                    <button onclick="Q2R2()" id="btn2">Ne sont rien sans l’incroyable décor qui les accompagne
+                        !</button>
                     <div class="espacement-btn-question"></div>
-                    <button onclick="Q2R3()" id="btn3">Sont inspirés du principe pré-cinématographique de zoopraxiscope. (si, si, ca existe ! Ce sont des jouets optiques du XIXe siècle.)</button>
+                    <button onclick="Q2R3()" id="btn3">Sont inspirés du principe pré-cinématographique de zoopraxiscope.
+                        (si, si, ca existe ! Ce sont des jouets optiques du XIXe siècle.)</button>
                 </div>
                 <button onclick="validationKind()" id="button-next" class="btn">C'EST PARTI</button>
                 <a onclick="iAmLost()" id="button-lost">JE NE LA TROUVE PAS...</a>
@@ -63,23 +66,28 @@
             </div>
         </div>
         <div id="score-validation">
-            <div class="container-score-validation">
-                <h1 id="reponce-h1"></h1>
-                <div id="container-score">
-                    <h3 id="container-score-h3"></h3>
+            <div class="fond-assombri">
+                <div class="container-score-validation">
+                    <h1 id="reponce-h1"></h1>
+                    <div id="container-score">
+                        <h3 id="container-score-h3"></h3>
+                    </div>
+                    <p class="p1" id="paragraphe-reponce"></p>
+                    <img id="img-reponce" src="" alt="image de corection">
+                    <button class="btn" id="reponce-button">JE PASSE À LA SUITE</button>
                 </div>
-                <img  id="img-reponce" src="" alt="image de corection">
-                <p class="p1" id="paragraphe-reponce"></p>
-                <button class="btn" id="reponce-button">JE PASSE À LA SUITE</button>
             </div>
-            <div class="fond-assombri"></div>
         </div>
         <script src="source/js/question.js"></script>
     </div>
 
     <div class="responsive-in">
-        <h1>Oups...</h1>
-        <h2>Ce site ne fonctionne que sur portable a la ligne-vertical</h2>
+        <img class="transtion-type1" src="source/image/separation/transi-media1.svg" alt="">
+        <img class="transtion-type2" src="source/image/separation/transi-media2.svg" alt="">
+        <div class="responsive-container">
+            <h1>Oups...</h1>
+            <h2>Ce site ne fonctionne uniquement sur portable au format vertical</h2>
+        </div>
     </div>
 </body>
 

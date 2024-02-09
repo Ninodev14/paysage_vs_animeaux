@@ -2,6 +2,11 @@ h2 {
     margin-top: 26px;
     text-align: center;
 }
+body {
+    position: fixed;
+    height: 100%;
+
+}
 
 
 .container {
@@ -127,18 +132,14 @@ h2 {
     height: auto;
 }
 
-body {
-    height: 100vh;
-    border: 10px solid;
-    border-color: #D7C999;
-}
-
 .body-paysage {
+    border: 10px solid;
     background-color: #E1F5ED;
     border-color: #AFCF94;
 }
 
 .body-animal {
+    border: 10px solid;  
     background-color: #F4D9BD;
     border-color: #CD844E;
 }
@@ -163,14 +164,14 @@ body {
     display: none;
     z-index: 1000;
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     backdrop-filter: blur(8px);
     transition: 500ms;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .container-score-validation {
@@ -187,16 +188,16 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    height: fit-content;
     transition: 500ms;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 998;
-    box-sizing: border-box;
 }
 
 #container-score {
     display: flex;
-    padding: 15%;
+    padding: 20%;
     border-radius: 100px;
     align-items: center;
     justify-content: center;
@@ -204,7 +205,8 @@ body {
 }
 
 h3#container-score-h3 {
-    font-size: 42px;
+    font-size: 40px;
+    position: absolute;
 }
 
 #paragraphe-reponce {
@@ -299,7 +301,8 @@ h3#container-score-h3 {
     display: none;
 }
 
-#paragraphe-resultat1,
 #paragraphe-resultat1 {
     display: none;
+    margin-top: 26px;
+    margin-bottom: 26px;
 }

@@ -1,4 +1,5 @@
 function explicationP1() {
+    document.getElementById("container-presentation").style.display = "none";
     document.body.style.backgroundColor = "#ffffff";
     document.getElementById("title-paragraph").style.display = "flex";
     document.getElementById("text-1").style.display = "block";
@@ -7,7 +8,7 @@ function explicationP1() {
     document.getElementById("container-menue-home").style.justifyContent = "normal";
     document.getElementById("container-menue-home").style.marginTop = "26px";
     document.getElementById("container-menue-home-title").style.display = "none";
-    document.getElementById("bottom-container-menue-home").style.display = "none";
+    document.getElementById("container-menue-home").style.display = "flex";
     document.getElementById("title-paragraph").innerText = "Mais que se passe-t-il ?";
     document.getElementById("text-1").innerText = "C’est la cacophonie dans la salle “Paysages & peinture animalière” ! ";
     document.getElementById("text-2").innerText = "En cette soirée de Bacchanight, deux équipes s’affrontent avec acharnement pour déterminer qui des animaux ou des paysages est le plus important pour cette salle…";
@@ -20,6 +21,7 @@ function explicationP1() {
     document.getElementById("text-1").style.textAlign = "center";
     document.getElementById("text-2").style.textAlign = "center";
     document.getElementById("svg-transition1").style.display = "block";
+
 }
 
 function explicationP2() {

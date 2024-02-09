@@ -2,6 +2,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     width: 100%;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -9,7 +10,7 @@ body {
 }
 
 #container-menue-home {
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: column;
     height: calc(100vh);
@@ -20,7 +21,7 @@ body {
 
 }
 
-#svg-transition2{
+#svg-transition2 {
     display: none;
     width: 100vw;
     margin-top: calc(-15% + 26px);
@@ -35,14 +36,8 @@ body {
     margin-bottom: calc(-90% + 26px);
 }
 
-#bottom-container-menue-home {
-    display: flex;
-    position: absolute;
-    bottom: 10px;
-    justify-content: space-between;
-    width: calc(100vw - 40px);
-    font-size: 12px;
-
+.container-presentation {
+    background-color: #F4D9BD;
 }
 
 
@@ -58,6 +53,41 @@ body {
     display: none;
 }
 
-#text-3{
+#text-3 {
     margin-top: 26px;
+}
+
+
+
+.home-top {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    width: 30%;
+}
+
+
+.svg-home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 100vw; /* Utilisation de 'vw' pour spécifier 100% de la largeur de la fenêtre */
+    height: 100vh; /* Utilisation de 'vh' pour spécifier 100% de la hauteur de la fenêtre */
+    object-fit: cover; /* Pour couvrir toute la zone de l'élément */
+    z-index: -1;
+}
+
+.home-bottom {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+}
+
+#btn-home{
+    margin-bottom: 26px;
 }

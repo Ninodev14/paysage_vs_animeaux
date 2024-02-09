@@ -7,31 +7,44 @@
     <link rel="stylesheet" href="source/css/reset.css">
     <link rel="stylesheet" href="source/css/font.css">
     <link rel="stylesheet" href="source/css/index.css">
-
-    <title>Page d'accueil</title>
+    <link rel="icon" type="image/x-icon" href="source/image/Logo_ZIZANIE.ico">
+    <title>La Zizanie | Page d'accueil</title>
 </head>
 
 <body>
     <div class="responsive-out">
+        <div id="container-presentation">
+            <h2 class="home-top">Soyez prêts pour le combat du siècle...</h2>
+
+            <img src="source/image/separation/HOME.svg" class="svg-home">
+
+            <div class="home-bottom">
+                <button id="btn-home" class="btn btn-explication" onclick="explicationP1()">DÉMARRER</button>
+                <a class="p2" href="credit.html">Crédits</a>
+            </div>
+
+        </div>
+
+
         <div id="container-menue-home">
-            <h1 id="container-menue-home-title">La Zizanie </h1>
+            <h1 id="container-menue-home-title"></h1>
             <h2 id="title-paragraph"></h2>
             <p class="p1" id="text-1"></p>
             <img src="source/image/separation/RUBAN-2.svg" id="svg-transition2">
             <p class="p1" id="text-2"></p>
             <img src="source/image/separation/RUBAN-1.svg" id="svg-transition1">
             <p class="p1" id="text-3"></p>
-            <button id="btn-explication" class="btn btn-explication " onclick="explicationP1()">DÉMARRER</button>
-            <div id="bottom-container-menue-home">
-                <a class="p2" href="credit.html">Crédits</a>
-            </div>
+            <button id="btn-explication" class="btn btn-explication" onclick="explicationP1()">DÉMARRER</button>
         </div>
         <script src="source/js/index.js"></script>
     </div>
-    
     <div class="responsive-in">
-        <h1>Oups...</h1>
-        <h2>Ce site ne fonctionne que sur portable a la ligne-vertical</h2>
+        <img class="transtion-type1" src="source/image/separation/transi-media1.svg" alt="">
+        <img class="transtion-type2" src="source/image/separation/transi-media2.svg" alt="">
+        <div class="responsive-container">
+            <h1>Oups...</h1>
+            <h2>Ce site ne fonctionne uniquement sur portable au format vertical</h2>
+        </div>
     </div>
 </body>
 
