@@ -256,13 +256,13 @@ function reponceQ2() {
     if (witchReponce == 1) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Tu t’en sors très bien !";
             document.getElementById("paragraphe-reponce").innerText = "Bravo, tu as compris le principe. Tu dois choisir la réponse en fonction de ton équipe. Continue sur cette lancée.";
             document.getElementById("container-score-h3").innerText = "+50";
             witchReponce = 0;
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Dommage !";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse est destinée à l’équipe Animaux. Rappelle-toi, tu dois choisir la réponse en fonction de ton équipe pour pouvoir gagner.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
@@ -271,13 +271,13 @@ function reponceQ2() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Dommage !";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était destinée à l’équipe Paysages. Rappelle-toi, tu dois choisir la réponse en fonction de ton équipe pour pouvoir gagner.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Tu t’en sors très bien !";
             document.getElementById("paragraphe-reponce").innerText = "Bravo, tu as compris le principe. Tu dois choisir la réponse en fonction de ton équipe. Continue sur cette lancée.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
@@ -285,13 +285,13 @@ function reponceQ2() {
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
+            document.getElementById("reponce-h1").innerText = "Pas mal !";
             document.getElementById("paragraphe-reponce").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe Paysages, mais au moins nous avons pu récolter quelques points. Réfléchis bien à choisir ta réponse en fonction de ton équipe.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
+            document.getElementById("reponce-h1").innerText = "Pas mal !";
             document.getElementById("paragraphe-reponce").innerText = "Cette réponse n'avait rien à voir avec notre combat contre l'équipe Animaux, mais au moins nous avons pu récolter quelques points. Réfléchis bien à choisir ta réponse en fonction de ton équipe.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
@@ -401,13 +401,13 @@ function reponceQ3() {
     if (witchReponce == 1) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
+            document.getElementById("reponce-h1").innerText = "Tu y étais presque !";
             document.getElementById("paragraphe-reponce").innerText = "Peut-être que toi aussi, tu n'es pas sur le bon chemin, mais sache que les coquillages sont des animaux !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
+            document.getElementById("reponce-h1").innerText = "Tu y étais presque !";
             document.getElementById("paragraphe-reponce").innerText = " Peut-être que toi aussi, tu n'es pas sur le bon chemin, mais regarde ce magnifique paysage !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
@@ -416,13 +416,13 @@ function reponceQ3() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Joli !";
             document.getElementById("paragraphe-reponce").innerText = "Eh oui, les coquillages sont bien des animaux.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Mauvaise pioche !";
             document.getElementById("paragraphe-reponce").innerText = "Ah zut, les coquillages sont des animaux. Ce ciel, quant à lui, était quand même magnifique.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
@@ -430,13 +430,13 @@ function reponceQ3() {
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Mauvaise pioche !";
             document.getElementById("paragraphe-reponce").innerText = "Ah zut, les coquillages sont des animaux…";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Joli !";
             document.getElementById("paragraphe-reponce").innerText = "Ah on est bien d’accord, quel paysage magnifique !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
@@ -542,13 +542,13 @@ function reponceQ4() {
     if (witchReponce == 1) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Tu auras essayé…";
             document.getElementById("paragraphe-reponce").innerText = "Mais ce paysage est tout de même effrayant, non ?";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Bravo !";
             document.getElementById("paragraphe-reponce").innerText = "Eh oui, quel paysage splendide, parfait pour un petit dodo.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
@@ -557,13 +557,13 @@ function reponceQ4() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
+            document.getElementById("reponce-h1").innerText = "Tu n’es pas dans le bon univers…";
             document.getElementById("paragraphe-reponce").innerText = "Si seulement il pouvait y avoir une équipe “Sorciers”...";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
+            document.getElementById("reponce-h1").innerText = "Tu n’es pas dans le bon univers…";
             document.getElementById("paragraphe-reponce").innerText = "Si seulement il pouvait y avoir une équipe “Sorciers”...";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
@@ -571,13 +571,13 @@ function reponceQ4() {
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Bravo !";
             document.getElementById("paragraphe-reponce").innerText = "Elle fait un peu peur, non ? Mais au moins elle accueille les animaux.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Tu auras essayé…";
             document.getElementById("paragraphe-reponce").innerText = "Eh oui, quel paysage splendide, parfait pour un petit dodo.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
@@ -684,13 +684,13 @@ function reponceQ5() {
     if (witchReponce == 1) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
+            document.getElementById("reponce-h1").innerText = "C’est un choix compréhensible…";
             document.getElementById("paragraphe-reponce").innerText = "Il y a une vraie inspiration d’un mythe de Diane, mais ici ce n’est pas le sujet le plus important pour ton équipe ! Regarde plutôt les lévriers sur la berge.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
+            document.getElementById("reponce-h1").innerText = "C’est un choix compréhensible…";
             document.getElementById("paragraphe-reponce").innerText = "Il y a une vraie inspiration d’un mythe de Diane, mais ici ce n’est pas le sujet le plus important pour ton équipe !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
@@ -699,13 +699,13 @@ function reponceQ5() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Tu es passé à côté…";
             document.getElementById("paragraphe-reponce").innerText = "Aïe, tu as manqué un détail essentiel. Si tu regardes bien, il y a des lévriers sur la berge !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Très bon choix !";
             document.getElementById("paragraphe-reponce").innerText = "Yeah, tu as su choisir la bonne réponse ! La globalité de l'œuvre représente majoritairement la nature.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
@@ -713,13 +713,13 @@ function reponceQ5() {
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Bien vu !";
             document.getElementById("paragraphe-reponce").innerText = "Tu as l'œil ! Tu as su voir les lévriers sur la berge !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Ce n’est pas le plus intéressant…";
             document.getElementById("paragraphe-reponce").innerText = "Aïe, cette réponse était pour l’équipe Animaux ! L’œuvre représente majoritairement les bois et une source d’eau. ";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
