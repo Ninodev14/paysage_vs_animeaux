@@ -1,0 +1,297 @@
+
+#loadingScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.loading-circle {
+    border: 8px solid #141414; /* Border color (adjust as needed) */
+    border-top: 8px solid #ffffff; /* Border color of the empty part (adjust as needed) */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Rotation animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+#scoreImage {
+    max-width: 100%;
+    max-height: 100%;
+    transform: rotate(67deg) scale(2.5);
+    display: none;
+    transition: all 2s ease;
+}
+#bg-score {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: rotate(67deg) scale(2.5);
+}
+
+html {
+overflow:hidden;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the height of the body to 100% of the viewport height */
+    margin: 0;
+    overflow: hidden;
+    background-color: #F4D9BD;
+    position: relative;
+    background: linear-gradient(to bottom, #F4D9BD 50%, #E1F5ED 50%); 
+    
+}
+.text {
+position: absolute;
+height: 100%;
+width: 100%;
+bottom: 0px;
+right: 0px;
+display: none;
+color: white;
+}
+.top-left-text {
+top: 0;
+left: 0;
+margin: 150px;
+margin-left: 20px ;
+margin-top: 20px ;
+position: absolute;
+transform-origin: top left;
+transform: scale(1.2);
+}
+
+.Aanimate{
+animation: growTopLeft 5.3s ease forwards;
+}
+
+.bottom-right-text {
+bottom: 0;
+right: 0;
+margin: 150px;
+margin-right: 20px ;
+margin-bottom: 20px ;
+position: absolute;
+transform-origin: bottom right;
+transform: scale(1.2);
+text-align: end;
+}
+.Banimate {
+animation: growBottomRight 5.3s ease forwards;    
+}
+.score {
+margin: 0px;
+}
+
+#score1, #score2{
+
+display: none;
+}
+
+.blason {
+position: absolute;
+height: 60%;
+width: 60%;
+
+}
+#blasonA{
+top: -70px;
+right: -70px;
+}
+#blasonB{
+bottom: -70px;
+left: -70px;
+}
+.bA {
+top: -70px;
+display: none;
+}   
+.bB {
+bottom: -70px;
+display: none;
+}
+.scoreImagefin {
+
+max-width: 100%;
+max-height: 100%;
+transform: rotate(67deg) scale(2.5);
+display: none;
+transition: all 2s ease;
+}
+.blasonAanimate {
+transition: all 0.5s ease-in-out;
+animation: blasonA 5.3s ease forwards; 
+z-index: 3;
+}
+.blasonBanimate {
+transition: all 0.5s ease-in-out;
+animation: blasonB 5.3s ease forwards; 
+z-index: 4;
+}
+
+
+@keyframes blasonA {
+0% {
+    transform: translate(12px, -12px);
+}
+11.39% {
+    transform: translate(55px, -55px);
+}
+21.07% {
+    transform: translate(55px, -55px);
+}
+22.01% {
+    transform: translate(calc(-200px /2), calc(200px /2));
+}
+35% {
+    transform: translate(calc(-200px/2), calc(200px/2));
+}
+
+40% {
+    transform: translate(12px, -12px);
+}
+41% {
+    transform: translate(-100px, 100px);
+    
+    right: -70px;
+}
+47%{
+    transform: translate(var(--Apos), 50%);
+    right: 0px;
+}
+100%{
+    transform: translate(var(--Apos), 50%);
+    right: 0px;
+}
+}
+@keyframes blasonB {
+0% {
+    transform: translate(-12px, 12px);
+}
+11.39% {
+    transform: translate(-55px, 55px);
+}
+21.07% {
+    transform: translate(-55px, 55px);
+}
+22.01% {
+    transform: translate(calc(200px /2), calc(-200px /2));
+}
+35% {
+    transform: translate(calc(200px/2), calc(-200px/2));
+    z-index: 4;
+}
+
+40% {
+    transform: translate(-12px, 12px);
+    
+}
+41% {
+    transform: translate(100px, -100px);
+    
+    left: -70px;
+}
+47%{
+    transform: translate(var(--Bpos), -50%);
+    left: 0px;
+}
+100%{
+    transform: translate(var(--Bpos), -50%);
+    left: 0px;
+}
+}
+
+
+
+.play-once {
+animation: playOnce 1.33s forwards cubic-bezier(.25,-0.23,1,.29);
+}
+
+/* Define the playOnce animation to play once and freeze on the last frame */
+@keyframes playOnce {
+to {
+    opacity: 1;
+}
+}
+
+@-webkit-keyframes playOnce {
+to {
+    opacity: 1;
+}
+}
+
+/* Add a class for animating the PNG */
+.animate-png {
+animation: animatePng 0.8s forwards cubic-bezier(.25,-0.23,1,.29);
+}
+
+/* Define the animatePng animation */
+@keyframes animatePng {
+0% {
+    transform: rotate(67deg) scale(2.5) translate(calc(0% * 0.2), 0px);
+}
+20% {
+    transform: rotate(67deg) scale(2.5) translate(calc(-15% * 0.2), 0px);
+}
+50% {
+    transform: rotate(67deg) scale(2.5) translate(calc(-40% * 0.2 / 2), 0px);
+}
+100% {
+    transform: rotate(67deg) scale(2.5) translate(calc(var(--Apercent) * 0.2), 0px);
+}
+}
+
+
+.band {
+    position: absolute;
+    height: 200px;
+    z-index: -2;
+    
+}
+.bottom-right-text .band {
+    bottom: -20px;
+    right: -20px;
+}
+.top-left-text .band{
+    transform: scale(-1);    
+    top: -20px;
+    left: -20px;
+}
+@media (min-width: 768px) {
+@keyframes animatePng {
+    0% {
+        transform: rotate(67deg) scale(2.5) translate(calc(0% * 0.2), 0px);
+    }
+    20% {
+        transform: rotate(67deg) scale(2.5) translate(calc(-15% * 0.2), 0px);
+    }
+    50% {
+        transform: rotate(67deg) scale(2.5) translate(calc(-40% * 0.2 / 2), 0px);
+    }
+    100% {
+        transform: rotate(67deg) scale(2.5) translate(calc(var(--Apercent) * 0.1), 0px);
+    }
+}
+}
+@media (min-width: 1122px) {
+    .band {
+        width: 100vw;
+        height: auto;
+    }
+}
+
