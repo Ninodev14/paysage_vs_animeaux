@@ -1064,11 +1064,12 @@ function checkCompletion() {
         document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
         document.getElementById("barre-info-contenue").style.width = "100%";
         document.getElementById("paragraphe-resultat1").style.textAlign = "center";
-        document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté " + pointPerso + " pts"
+        document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté " + pointPerso + " points"
         document.getElementById("paragraphe-resultat2").innerHTML = "Viens récupérer ton badge !";
         document.getElementById("button-next").style.display = "none";
         document.getElementById("container-button").style.display = "none";
         document.getElementById("img1").style.marginBottom = "26px";
+        document.getElementById("img1").style.width = "80%";
         document.getElementById("question").style.display = "block";
         document.getElementById("scorF").style.display = "flex";
         document.getElementById("paragraphe-resultat1").style.display = "block";
