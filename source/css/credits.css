@@ -1,9 +1,10 @@
+body{
+    overflow: visible;
+}
 
 .btn-accueil {
     display: flex;
     justify-content: space-around;
-    position: absolute;
-bottom: 40px;
 
 }
 
@@ -21,9 +22,12 @@ bottom: 40px;
     width: calc(100vw - 40px);
 }
 
+
 #svg-transition3 {
     height: 100vh;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
+   
+    
 }
