@@ -50,22 +50,14 @@ function initializePage() {
     if (pointsB > pointsA) {
         document.body.style.backgroundColor = '#E1F5ED';
         
-        var TopLeft = document.getElementById('tl');
-        TopLeft.style.setProperty('--Ascale','1.3');
-        var BottomRight = document.getElementById('br');
-        BottomRight.style.setProperty('--Bscale','2.7');
 
         var blasonA = document.getElementById('blasonA');
         var blasonB = document.getElementById('blasonB');
         blasonA.style.setProperty('--Apos','100vw');
         blasonB.style.setProperty('--Bpos','20vw');
-    }else {
+    }else if(pointsA > pointsB){
         
         
-        var TopLeft = document.getElementById('tl');
-        TopLeft.style.setProperty('--Ascale','2.7');
-        var BottomRight = document.getElementById('br');
-        BottomRight.style.setProperty('--Bscale','1.3');
         
         var blasonA = document.getElementById('blasonA');
         var blasonB = document.getElementById('blasonB');
@@ -73,6 +65,13 @@ function initializePage() {
         blasonB.style.setProperty('--Bpos','-100vw');
 
         
+    } else {
+        var blasonA = document.getElementById('blasonA');
+        var blasonB = document.getElementById('blasonB');
+        blasonA.style.setProperty('--Apos','50px');
+        blasonB.style.setProperty('--Bpos','-50px');
+
+
     }
 
         } 
