@@ -66,7 +66,7 @@ function IniA() {
     document.getElementById("paragraphe-center").style.textAlign = "center";
     document.getElementById("button-next").style.backgroundColor = "#CD844E";
     document.getElementById("paragraphe-center").style.marginTop = "30px";
-    document.getElementById("paragraphe-center").innerText = "Les animaux sont souvent associés à la loyauté, à la force et au charisme. Ils sont reconnus pour leur générosité et leur enthousiasme.";
+    document.getElementById("paragraphe-center").innerText = "Ils sont souvent associés à la loyauté, à la force et au charisme. Ils sont reconnus pour leur générosité et leur enthousiasme.";
     bodyNone.classList.add('body-animal');
     bodyNone.classList.remove('body-paysage');
     document.getElementById("button-next").style.display = "flex";
@@ -78,14 +78,14 @@ function IniP() {
     document.getElementById("img2").style.height = "150px";
     document.getElementById("img2").style.filter = "grayscale(0%)";
     document.getElementById("img1").style.filter = "grayscale(100%)";
-    document.getElementById("name-kind").innerText = "Paysage";
+    document.getElementById("name-kind").innerText = "Paysages";
     document.getElementById("name-kind").style.display = "flex";
     document.getElementById("paragraphe-center").style.marginLeft = "5%"
     document.getElementById("paragraphe-center").style.marginRight = "5%"
     document.getElementById("paragraphe-center").style.textAlign = "center";
     document.getElementById("button-next").style.backgroundColor = "#AFCF94";
     document.getElementById("paragraphe-center").style.marginTop = "30px";
-    document.getElementById("paragraphe-center").innerText = "Les paysages possèdent une détermination et une résilience silencieuse, comme le calme avant une tempête. Ils sont reconnus pour leur empathie et leur créativité.";
+    document.getElementById("paragraphe-center").innerText = "Ils possèdent une détermination et une résilience silencieuse, comme le calme avant une tempête. Ils sont reconnus pour leur empathie et leur créativité.";
     bodyNone.classList.add('body-paysage');
     bodyNone.classList.remove('body-animal');
     document.getElementById("button-next").style.display = "flex";
@@ -114,6 +114,7 @@ function validationKind() {
         document.getElementById("img2").style.display = "none";
         document.getElementById("img1").style.marginTop = "26px";
         document.getElementById("img2").style.marginTop = "26px";
+        scrollToTop();
 
     }
     else if (typeKind == 2) {
@@ -137,6 +138,7 @@ function validationKind() {
         document.getElementById("img1").style.display = "none";
         document.getElementById("img1").style.marginTop = "26px";
         document.getElementById("img2").style.marginTop = "26px";
+        scrollToTop();
     }
 }
 
@@ -165,7 +167,7 @@ function step1() {
     document.getElementById("img2").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
-
+    scrollToTop();
     setTimeout(function () {
         infoWithActualle++;
         document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
@@ -176,7 +178,7 @@ function step1() {
 
 
 function BeginQuestion() {
-
+    scrollToTop();
     document.getElementById("button-next").setAttribute("onclick", "reponceQ2()");
     document.getElementById("button-next").innerHTML = "JE VALIDE";
     document.getElementById("container-button").style.display = "flex";
@@ -197,17 +199,18 @@ function BeginQuestion() {
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick, btn3Text, btn3OnClick) {
-    document.getElementById("question-ask").innerText = questionText;
-    document.getElementById("btn1").innerText = btn1Text;
+    document.getElementById("question-ask").innerHTML = questionText;
+    document.getElementById("btn1").innerHTML = btn1Text;
     document.getElementById("btn1").setAttribute("onclick", btn1OnClick);
-    document.getElementById("btn2").innerText = btn2Text;
+    document.getElementById("btn2").innerHTML = btn2Text;
     document.getElementById("btn2").setAttribute("onclick", btn2OnClick);
-    document.getElementById("btn3").innerText = btn3Text;
+    document.getElementById("btn3").innerHTML = btn3Text;
     document.getElementById("btn3").setAttribute("onclick", btn3OnClick);
     document.getElementById("question-ask").style.display = "block";
     setTimeout(function () {
         document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "0ms";
     }, 500);
+    scrollToTop();
 }
 
 
@@ -303,6 +306,7 @@ function reponceQ2() {
     document.getElementById("reponce-button").setAttribute("onclick", "step2()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 
 }
 
@@ -330,6 +334,7 @@ function step2() {
     document.getElementById("img2").style.width = "none";
     document.getElementById("question-ask").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
+    scrollToTop();
 }
 
 
@@ -448,6 +453,7 @@ function reponceQ3() {
     document.getElementById("reponce-button").setAttribute("onclick", "step3()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function step3() {
@@ -473,6 +479,7 @@ function step3() {
     document.getElementById("container-button").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("score-validation").style.display = "none";
+    scrollToTop();
 }
 
 function next2() {
@@ -589,6 +596,7 @@ function reponceQ4() {
     document.getElementById("reponce-button").setAttribute("onclick", "step4()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function step4() {
@@ -614,6 +622,7 @@ function step4() {
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("container-button").style.display = "none";
+    scrollToTop();
 }
 function next3() {
     updateQuestionAndButtons(
@@ -731,6 +740,7 @@ function reponceQ5() {
     document.getElementById("reponce-button").setAttribute("onclick", "step5()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function step5() {
@@ -756,6 +766,7 @@ function step5() {
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("container-button").style.display = "none";
+    scrollToTop();
 
 }
 function next4() {
@@ -763,9 +774,9 @@ function next4() {
         "En regardant cette œuvre, tu ressens…",
         "Une profonde et intense tristesse. (Quelle scène désolante !)",
         "Q6R1()",
-        "Une indifférence totale (Ok.).",
+        "Une indifférence totale.",
         "Q6R2()",
-        "Un sentiment de calme brisé (Crac).",
+        "Un sentiment de calme brisé (<em>*Crac*</em>).",
         "Q6R3()"
     );
     document.getElementById("container-button").style.display = "flex";
@@ -826,13 +837,13 @@ function reponceQ6() {
     if (witchReponce == 1) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Tu as le sens du détail !";
             document.getElementById("paragraphe-reponce").innerText = "Dans le titre tu peux retrouver Mort du sanglier, quel triste événement !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "C’était visible pourtant…";
             document.getElementById("paragraphe-reponce").innerText = "Dommage ! Si tu regardes bien, il y a un grand arbre brisé composant le tableau.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
@@ -841,27 +852,27 @@ function reponceQ6() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
-            document.getElementById("paragraphe-reponce").innerText = "Ah... ok ?";
+            document.getElementById("reponce-h1").innerText = "Ah.";
+            document.getElementById("paragraphe-reponce").innerText = "... Ok ?";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
-            document.getElementById("paragraphe-reponce").innerText = "Ah... ok ?";
+            document.getElementById("reponce-h1").innerText = "Ah.";
+            document.getElementById("paragraphe-reponce").innerText = "... Ok ?";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         }
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "C’était écrit pourtant…";
             document.getElementById("paragraphe-reponce").innerText = "Dommage, cette réponse était pour l’équipe Paysages. Tu peux remarquer que le nom du tableau Mort du sanglier annonce une sombre nouvelle…";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Tu as le sens du détail !";
             document.getElementById("paragraphe-reponce").innerText = "Félicitations, tu as remarqué l’arbre brisé qui a une grande importance dans ce tableau.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
@@ -873,6 +884,7 @@ function reponceQ6() {
     document.getElementById("reponce-button").setAttribute("onclick", "step6()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function step6() {
@@ -898,6 +910,7 @@ function step6() {
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("container-button").style.display = "none";
+    scrollToTop();
 }
 function next5() {
     updateQuestionAndButtons(
@@ -965,13 +978,13 @@ function reponceQ7() {
     if (witchReponce == 1) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Tu es tombé dans le piège !";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Paysages. Dans cette réponse, on parle bien du reflet de la vache, mais on ne le verrait pas sans la petite flaque d’eau.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Super !";
             document.getElementById("paragraphe-reponce").innerText = "Bravo, tu as trouvé la bonne réponse ! Tu étais à deux doigts de tomber à l'eau ! (... Tu as compris ? ;D)";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
@@ -980,13 +993,13 @@ function reponceQ7() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Super !";
             document.getElementById("paragraphe-reponce").innerText = "C’était la bonne réponse ! Leur laine a l’air si douce !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Bien essayé !";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Animaux ! Tu aurais dû te concentrer sur le reflet de la flaque d’eau…";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
@@ -994,14 +1007,14 @@ function reponceQ7() {
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
-            document.getElementById("paragraphe-reponce").innerText = "Oups, cette réponse était neutre. La texture de la laine des moutons avait l’air toute douce pourtant…";
+            document.getElementById("reponce-h1").innerText = "Oups !";
+            document.getElementById("paragraphe-reponce").innerText = "Cette réponse était neutre. La texture de la laine des moutons avait l’air toute douce pourtant…";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
-            document.getElementById("paragraphe-reponce").innerText = "Oups, cette réponse était neutre. Pourtant, le reflet de la vache dans la flaque d’eau était réussi, tu ne trouves pas ?";
+            document.getElementById("reponce-h1").innerText = "Oups !";
+            document.getElementById("paragraphe-reponce").innerText = "Cette réponse était neutre. Pourtant, le reflet de la vache dans la flaque d’eau était réussi, tu ne trouves pas ? ";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         }
@@ -1012,6 +1025,7 @@ function reponceQ7() {
     document.getElementById("reponce-button").setAttribute("onclick", "next6()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function next6() {
@@ -1041,6 +1055,7 @@ function next6() {
 function checkCompletion() {
     if (infoWithActualle = infoWithTotal) {
         reloadCheck = 1;
+        document.getElementById("container-bottom-info").style.display = "none";
         document.getElementById("question").style.display = "block";
         document.getElementById("question").innerText = "Félicitations !";
         document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
@@ -1054,6 +1069,7 @@ function checkCompletion() {
         document.getElementById("button-next").style.display = "none";
         document.getElementById("container-button").style.display = "none";
         document.getElementById("img1").style.marginBottom = "26px";
+        scrollToTop();
     }
 }
 
@@ -1090,4 +1106,11 @@ function zoomImgOut() {
     document.getElementById("container-img").style.left = "0"
     document.getElementById("container-img").style.transform = "translate(0%, 0%)";
     document.getElementById("fond-img-plans").style.display = "none"
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0, 
+        behavior: 'smooth' 
+    });
 }
