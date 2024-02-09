@@ -114,6 +114,7 @@ function validationKind() {
         document.getElementById("img2").style.marginTop = "26px";
         document.getElementById("name-kind").style.display = "none";
         document.getElementById("img2").style.display = "none";
+        document.getElementById("ico").href = "source/image/Logo_ZIZANIE_A.ico";
         scrollToTop();
 
     }
@@ -138,6 +139,7 @@ function validationKind() {
         document.getElementById("img1").style.display = "none";
         document.getElementById("img1").style.marginTop = "26px";
         document.getElementById("img2").style.marginTop = "26px";
+        document.getElementById("ico").href = "source/image/Logo_ZIZANIE_P.ico";
         scrollToTop();
     }
 }
