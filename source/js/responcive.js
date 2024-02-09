@@ -4,7 +4,6 @@ window.onload = function() {
     var largeurMinimale = 450; 
 
     if (largeurEcran > largeurMinimale) {
-        console.log("test")
         window.location.href = "desktop.html";
     }
 };
