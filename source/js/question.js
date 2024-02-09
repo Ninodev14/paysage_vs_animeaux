@@ -115,6 +115,7 @@ function validationKind() {
         document.getElementById("img2").style.display = "none";
         document.getElementById("img1").style.marginTop = "26px";
         document.getElementById("img2").style.marginTop = "26px";
+
     }
     else if (typeKind == 2) {
         document.getElementById("img1").style.filter = "grayscale(0%)";

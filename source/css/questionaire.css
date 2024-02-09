@@ -5,8 +5,7 @@ h2 {
 body {
     position: fixed;
     height: 100%;
-    border: 10px solid;
-    border-color: #D7C999;
+
 }
 
 
@@ -134,11 +133,13 @@ body {
 }
 
 .body-paysage {
+    border: 10px solid;
     background-color: #E1F5ED;
     border-color: #AFCF94;
 }
 
 .body-animal {
+    border: 10px solid;  
     background-color: #F4D9BD;
     border-color: #CD844E;
 }
