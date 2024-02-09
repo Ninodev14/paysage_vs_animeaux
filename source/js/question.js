@@ -164,7 +164,7 @@ function step1() {
     document.getElementById("img2").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
-    document.getElementById("img-reponce").style.display = "none";
+
     setTimeout(function () {
         infoWithActualle++;
         document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
@@ -686,8 +686,6 @@ function reponceQ5() {
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Il y a une vraie inspiration d’un mythe de Diane, mais ici ce n’est pas le sujet le plus important pour ton équipe ! Regarde plutôt les lévriers sur la berge.";
             witchReponce = 0;
-            document.getElementById("img-reponce").style.display = "block";
-            document.getElementById("img-reponce").src = "source/image/image_error/bain_chienCrop.jpg";
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
@@ -703,8 +701,6 @@ function reponceQ5() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Aïe, tu as manqué un détail essentiel. Si tu regardes bien, il y a des lévriers sur la berge !";
             witchReponce = 0;
-            document.getElementById("img-reponce").style.display = "block";
-            document.getElementById("img-reponce").src = "source/image/image_error/bain_chienCrop.jpg";
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
@@ -719,8 +715,6 @@ function reponceQ5() {
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Tu as l'œil ! Tu as su voir les lévriers sur la berge !";
             witchReponce = 0;
-            document.getElementById("img-reponce").style.display = "block";
-            document.getElementById("img-reponce").src = "source/image/image_error/bain_chienCrop.jpg";
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
@@ -761,7 +755,6 @@ function step5() {
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("container-button").style.display = "none";
-    document.getElementById("img-reponce").style.display = "none";
 
 }
 function next4() {
@@ -841,8 +834,6 @@ function reponceQ6() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Dommage ! Si tu regardes bien, il y a un grand arbre brisé composant le tableau.";
             witchReponce = 0;
-            document.getElementById("img-reponce").src = "source/image/image_error/chasse_arbreCrop.jpg";
-            document.getElementById("img-reponce").style.display = "block";
             document.getElementById("container-score-h3").innerText = "+5";
         }
     }
@@ -872,7 +863,6 @@ function reponceQ6() {
             document.getElementById("reponce-h1").innerText = "Bravo";
             document.getElementById("paragraphe-reponce").innerText = "Félicitations, tu as remarqué l’arbre brisé qui a une grande importance dans ce tableau.";
             witchReponce = 0;
-            document.getElementById("img-reponce").src = "source/image/image_error/chasse_arbreCrop.jpg";
             document.getElementById("container-score-h3").innerText = "+50";
         }
     }
@@ -907,7 +897,6 @@ function step6() {
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("container-button").style.display = "none";
-    document.getElementById("img-reponce").style.display = "none";
 }
 function next5() {
     updateQuestionAndButtons(
@@ -978,8 +967,6 @@ function reponceQ7() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Paysages. Dans cette réponse, on parle bien du reflet de la vache, mais on ne le verrait pas sans la petite flaque d’eau.";
             witchReponce = 0;
-            document.getElementById("img-reponce").style.display = "block";
-            document.getElementById("img-reponce").src = "source/image/image_error/foire_refletCrop.jpg";
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
@@ -1001,8 +988,6 @@ function reponceQ7() {
             document.getElementById("reponce-h1").innerText = "Super";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Animaux ! Tu aurais dû te concentrer sur le reflet de la flaque d’eau…";
             witchReponce = 0;
-            document.getElementById("img-reponce").style.display = "block";
-            document.getElementById("img-reponce").src = "source/image/image_error/foire_refletCrop.jpg";
             document.getElementById("container-score-h3").innerText = "+5";
         }
     } else if (witchReponce == 3) {
@@ -1017,8 +1002,6 @@ function reponceQ7() {
             document.getElementById("reponce-h1").innerText = "bien joué...";
             document.getElementById("paragraphe-reponce").innerText = "Oups, cette réponse était neutre. Pourtant, le reflet de la vache dans la flaque d’eau était réussi, tu ne trouves pas ?";
             witchReponce = 0;
-            document.getElementById("img-reponce").style.display = "block";
-            document.getElementById("img-reponce").src = "source/image/image_error/foire_refletCrop.jpg";
             document.getElementById("container-score-h3").innerText = "+25";
         }
     }
@@ -1052,7 +1035,6 @@ function next6() {
     document.getElementById("question-ask").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("paragraphe-center").style.display = "none";
-    document.getElementById("img-reponce").style.display = "none";
 }
 
 function checkCompletion() {
@@ -1085,7 +1067,7 @@ function iAmLost() {
 }
 
 function zoomImgIn() {
-    document.getElementById("img1").style.width = "calc(100vw - 40px)";
+    document.getElementById("img1").style.width = "calc(100% - 40px)";
     document.getElementById("img1").style.height = "auto";
     document.getElementById("fond-img-plans").style.display = "flex"
     document.getElementById("img1").setAttribute("onclick", "zoomImgOut()");
