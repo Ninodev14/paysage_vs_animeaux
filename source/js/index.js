@@ -1,3 +1,4 @@
+screen.orientation.lock('portrait');
 function explicationP1() {
     document.getElementById("container-presentation").style.display = "none";
     document.body.style.backgroundColor = "#ffffff";
