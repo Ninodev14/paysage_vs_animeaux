@@ -122,7 +122,10 @@ strong {
   .responsive-out {
     display: none;
   }
-
+  body{
+    background-color: #fff !important;
+    border: 0 !important;
+  }
   .responsive-in {
     display: flex;
     height: 100%;
