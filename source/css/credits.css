@@ -1,11 +1,8 @@
-body{
-    overflow: visible;
-}
-
 .btn-accueil {
+    margin-top: 26px;
     display: flex;
     justify-content: space-around;
-
+    margin-bottom: 26px;
 }
 
 .btn {
@@ -19,15 +16,5 @@ body{
 
 .container-credit {
     margin-left: 20px;
-    width: calc(100vw - 40px);
-}
-
-
-#svg-transition3 {
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-   
-    
+    width: calc(100% - 40px);
 }
