@@ -65,7 +65,6 @@ function IniA() {
     document.getElementById("paragraphe-center").style.textAlign = "center";
     document.getElementById("button-next").style.backgroundColor = "#CD844E";
     document.getElementById("paragraphe-center").style.marginTop = "30px";
-    document.getElementById("question").innerText = "L’équipe";
     document.getElementById("paragraphe-center").innerText = "Les animaux sont souvent associés à la loyauté, à la force et au charisme. Ils sont reconnus pour leur générosité et leur enthousiasme.";
     bodyNone.classList.add('body-animal');
     bodyNone.classList.remove('body-paysage');
@@ -85,7 +84,6 @@ function IniP() {
     document.getElementById("paragraphe-center").style.textAlign = "center";
     document.getElementById("button-next").style.backgroundColor = "#AFCF94";
     document.getElementById("paragraphe-center").style.marginTop = "30px";
-    document.getElementById("question").innerText = "L’équipe";
     document.getElementById("paragraphe-center").innerText = "Les paysages possèdent une détermination et une résilience silencieuse, comme le calme avant une tempête. Ils sont reconnus pour leur empathie et leur créativité.";
     bodyNone.classList.add('body-paysage');
     bodyNone.classList.remove('body-animal');
