@@ -20,3 +20,7 @@ html{
     width: 100vw;
     filter: blur(20px) opacity(50%);
 }
+
+iframe{
+    background-color: white;
+}
