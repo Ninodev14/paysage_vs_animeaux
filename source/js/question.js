@@ -14,6 +14,7 @@ req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", t
 req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
 req.send();
 
+
 function addPoint(teamName, points) {
     req.onreadystatechange = () => {
         if (req.readyState == XMLHttpRequest.DONE) {

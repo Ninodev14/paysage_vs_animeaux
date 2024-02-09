@@ -9,7 +9,6 @@ function adjustHeight() {
 // Initial adjustment and listen for window resize events
 adjustHeight();
 window.addEventListener('resize', adjustHeight);
-
 function initializePage() {
 
     
