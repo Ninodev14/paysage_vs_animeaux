@@ -199,12 +199,12 @@ function BeginQuestion() {
 }
 
 function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text, btn2OnClick, btn3Text, btn3OnClick) {
-    document.getElementById("question-ask").innerText = questionText;
-    document.getElementById("btn1").innerText = btn1Text;
+    document.getElementById("question-ask").innerHTML = questionText;
+    document.getElementById("btn1").innerHTML = btn1Text;
     document.getElementById("btn1").setAttribute("onclick", btn1OnClick);
-    document.getElementById("btn2").innerText = btn2Text;
+    document.getElementById("btn2").innerHTML = btn2Text;
     document.getElementById("btn2").setAttribute("onclick", btn2OnClick);
-    document.getElementById("btn3").innerText = btn3Text;
+    document.getElementById("btn3").innerHTML = btn3Text;
     document.getElementById("btn3").setAttribute("onclick", btn3OnClick);
     document.getElementById("question-ask").style.display = "block";
     setTimeout(function () {
@@ -774,9 +774,9 @@ function next4() {
         "En regardant cette œuvre, tu ressens…",
         "Une profonde et intense tristesse. (Quelle scène désolante !)",
         "Q6R1()",
-        "Une indifférence totale (Ok.).",
+        "Une indifférence totale.",
         "Q6R2()",
-        "Un sentiment de calme brisé (Crac).",
+        "Un sentiment de calme brisé (<em>*Crac*</em>).",
         "Q6R3()"
     );
     document.getElementById("container-button").style.display = "flex";
@@ -837,13 +837,13 @@ function reponceQ6() {
     if (witchReponce == 1) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Tu as le sens du détail !";
             document.getElementById("paragraphe-reponce").innerText = "Dans le titre tu peux retrouver Mort du sanglier, quel triste événement !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "C’était visible pourtant…";
             document.getElementById("paragraphe-reponce").innerText = "Dommage ! Si tu regardes bien, il y a un grand arbre brisé composant le tableau.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
@@ -852,27 +852,27 @@ function reponceQ6() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
-            document.getElementById("paragraphe-reponce").innerText = "Ah... ok ?";
+            document.getElementById("reponce-h1").innerText = "Ah.";
+            document.getElementById("paragraphe-reponce").innerText = "... Ok ?";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
-            document.getElementById("paragraphe-reponce").innerText = "Ah... ok ?";
+            document.getElementById("reponce-h1").innerText = "Ah.";
+            document.getElementById("paragraphe-reponce").innerText = "... Ok ?";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         }
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "C’était écrit pourtant…";
             document.getElementById("paragraphe-reponce").innerText = "Dommage, cette réponse était pour l’équipe Paysages. Tu peux remarquer que le nom du tableau Mort du sanglier annonce une sombre nouvelle…";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Tu as le sens du détail !";
             document.getElementById("paragraphe-reponce").innerText = "Félicitations, tu as remarqué l’arbre brisé qui a une grande importance dans ce tableau.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
@@ -978,13 +978,13 @@ function reponceQ7() {
     if (witchReponce == 1) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Tu es tombé dans le piège !";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Paysages. Dans cette réponse, on parle bien du reflet de la vache, mais on ne le verrait pas sans la petite flaque d’eau.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Super !";
             document.getElementById("paragraphe-reponce").innerText = "Bravo, tu as trouvé la bonne réponse ! Tu étais à deux doigts de tomber à l'eau ! (... Tu as compris ? ;D)";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
@@ -993,13 +993,13 @@ function reponceQ7() {
     else if (witchReponce == 2) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
-            document.getElementById("reponce-h1").innerText = "Bravo";
+            document.getElementById("reponce-h1").innerText = "Super !";
             document.getElementById("paragraphe-reponce").innerText = "C’était la bonne réponse ! Leur laine a l’air si douce !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
-            document.getElementById("reponce-h1").innerText = "Super";
+            document.getElementById("reponce-h1").innerText = "Bien essayé !";
             document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Animaux ! Tu aurais dû te concentrer sur le reflet de la flaque d’eau…";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
@@ -1007,14 +1007,14 @@ function reponceQ7() {
     } else if (witchReponce == 3) {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
-            document.getElementById("paragraphe-reponce").innerText = "Oups, cette réponse était neutre. La texture de la laine des moutons avait l’air toute douce pourtant…";
+            document.getElementById("reponce-h1").innerText = "Oups !";
+            document.getElementById("paragraphe-reponce").innerText = "Cette réponse était neutre. La texture de la laine des moutons avait l’air toute douce pourtant…";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
-            document.getElementById("reponce-h1").innerText = "bien joué...";
-            document.getElementById("paragraphe-reponce").innerText = "Oups, cette réponse était neutre. Pourtant, le reflet de la vache dans la flaque d’eau était réussi, tu ne trouves pas ?";
+            document.getElementById("reponce-h1").innerText = "Oups !";
+            document.getElementById("paragraphe-reponce").innerText = "Cette réponse était neutre. Pourtant, le reflet de la vache dans la flaque d’eau était réussi, tu ne trouves pas ? ";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         }
