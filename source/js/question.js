@@ -78,7 +78,7 @@ function IniP() {
     document.getElementById("img2").style.height = "150px";
     document.getElementById("img2").style.filter = "grayscale(0%)";
     document.getElementById("img1").style.filter = "grayscale(100%)";
-    document.getElementById("name-kind").innerText = "Paysage";
+    document.getElementById("name-kind").innerText = "Paysages";
     document.getElementById("name-kind").style.display = "flex";
     document.getElementById("paragraphe-center").style.marginLeft = "5%"
     document.getElementById("paragraphe-center").style.marginRight = "5%"
