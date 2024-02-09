@@ -102,6 +102,7 @@ body {
 
 #name-kind {
     display: none;
+    margin-top: 26px;
 }
 
 #button-begin,

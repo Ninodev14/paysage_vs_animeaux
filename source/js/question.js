@@ -1055,6 +1055,7 @@ function next6() {
 function checkCompletion() {
     if (infoWithActualle = infoWithTotal) {
         reloadCheck = 1;
+        document.getElementById("container-bottom-info").style.display = "none";
         document.getElementById("question").style.display = "block";
         document.getElementById("question").innerText = "Félicitations !";
         document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
