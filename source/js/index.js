@@ -1,4 +1,5 @@
 function explicationP1() {
+    document.html.style.overflow = "auto";
     document.getElementById("container-presentation").style.display = "none";
     document.body.style.backgroundColor = "#ffffff";
     document.getElementById("title-paragraph").style.display = "flex";
