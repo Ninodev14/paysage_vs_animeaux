@@ -1,6 +1,18 @@
+function adjustHeight() {
+    var fullHeightElement = document.getElementById('fullHeightElement');
+    var viewportHeight = window.innerHeight;
 
+    // Set the height of the element to the viewport height
+    fullHeightElement.style.height = viewportHeight + 'px';
+}
+
+// Initial adjustment and listen for window resize events
+adjustHeight();
+window.addEventListener('resize', adjustHeight);
 
 function initializePage() {
+
+    
     
             var animatedElement = document.getElementById('scoreImage');
             animatedElement.style.setProperty('--Apercent', `0%`);
