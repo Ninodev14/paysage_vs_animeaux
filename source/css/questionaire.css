@@ -300,7 +300,8 @@ h3#container-score-h3 {
     display: none;
 }
 
-#paragraphe-resultat1,
 #paragraphe-resultat1 {
     display: none;
+    margin-top: 26px;
+    margin-bottom: 26px;
 }
