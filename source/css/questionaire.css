@@ -119,8 +119,8 @@ body {
     left: 0;
     top: 0;
     position: absolute;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -164,22 +164,22 @@ body {
     display: none;
     z-index: 1000;
     display: none;
-    position: fixed;
+    position:absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 110%;
     backdrop-filter: blur(8px);
     transition: 500ms;
-    overflow-y: auto;
 }
 
 .container-score-validation {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
     z-index: 999;
-    width: calc(100vw - 40px);
+    width: calc(100% - 40px);
     margin-left: 20px;
 }
 
@@ -216,16 +216,10 @@ h3#container-score-h3 {
 #reponce-h1,
 #container-score,
 #paragraphe-reponce,
-#reponce-button,
-#img-reponce {
+#reponce-button{
     margin-bottom: 26px;
 }
 
-
-#img-reponce {
-    width: 80%;
-    height: auto;
-}
 
 
 
