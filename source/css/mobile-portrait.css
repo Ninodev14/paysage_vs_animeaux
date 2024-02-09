@@ -1,0 +1,21 @@
+.landscape{
+    display: none;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    position: absolute;
+    z-index: 9999999;
+    justify-content: center;
+    align-items: center;
+  }
+  .landscape img{
+    width: 50px;
+  }
+@media screen and (orientation: landscape) {
+  
+    .landscape{
+      display: flex;
+  
+    }
+  }
