@@ -114,6 +114,7 @@ function validationKind() {
         document.getElementById("img2").style.display = "none";
         document.getElementById("img1").style.marginTop = "26px";
         document.getElementById("img2").style.marginTop = "26px";
+        scrollToTop();
 
     }
     else if (typeKind == 2) {
@@ -137,6 +138,7 @@ function validationKind() {
         document.getElementById("img1").style.display = "none";
         document.getElementById("img1").style.marginTop = "26px";
         document.getElementById("img2").style.marginTop = "26px";
+        scrollToTop();
     }
 }
 
@@ -165,7 +167,7 @@ function step1() {
     document.getElementById("img2").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("container-bottom-info").style.display = "flex";
-
+    scrollToTop();
     setTimeout(function () {
         infoWithActualle++;
         document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
@@ -176,7 +178,7 @@ function step1() {
 
 
 function BeginQuestion() {
-
+    scrollToTop();
     document.getElementById("button-next").setAttribute("onclick", "reponceQ2()");
     document.getElementById("button-next").innerHTML = "JE VALIDE";
     document.getElementById("container-button").style.display = "flex";
@@ -208,6 +210,7 @@ function updateQuestionAndButtons(questionText, btn1Text, btn1OnClick, btn2Text,
     setTimeout(function () {
         document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "0ms";
     }, 500);
+    scrollToTop();
 }
 
 
@@ -303,6 +306,7 @@ function reponceQ2() {
     document.getElementById("reponce-button").setAttribute("onclick", "step2()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 
 }
 
@@ -330,6 +334,7 @@ function step2() {
     document.getElementById("img2").style.width = "none";
     document.getElementById("question-ask").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
+    scrollToTop();
 }
 
 
@@ -448,6 +453,7 @@ function reponceQ3() {
     document.getElementById("reponce-button").setAttribute("onclick", "step3()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function step3() {
@@ -473,6 +479,7 @@ function step3() {
     document.getElementById("container-button").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("score-validation").style.display = "none";
+    scrollToTop();
 }
 
 function next2() {
@@ -589,6 +596,7 @@ function reponceQ4() {
     document.getElementById("reponce-button").setAttribute("onclick", "step4()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function step4() {
@@ -614,6 +622,7 @@ function step4() {
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("container-button").style.display = "none";
+    scrollToTop();
 }
 function next3() {
     updateQuestionAndButtons(
@@ -731,6 +740,7 @@ function reponceQ5() {
     document.getElementById("reponce-button").setAttribute("onclick", "step5()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function step5() {
@@ -756,6 +766,7 @@ function step5() {
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("container-button").style.display = "none";
+    scrollToTop();
 
 }
 function next4() {
@@ -873,6 +884,7 @@ function reponceQ6() {
     document.getElementById("reponce-button").setAttribute("onclick", "step6()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function step6() {
@@ -898,6 +910,7 @@ function step6() {
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("container-button").style.display = "none";
+    scrollToTop();
 }
 function next5() {
     updateQuestionAndButtons(
@@ -1012,6 +1025,7 @@ function reponceQ7() {
     document.getElementById("reponce-button").setAttribute("onclick", "next6()");
     document.getElementById("score-validation").style.display = "flex";
     document.getElementById("container-img").getElementsByTagName("img")[0].style.transition = "500ms";
+    scrollToTop();
 }
 
 function next6() {
@@ -1054,6 +1068,7 @@ function checkCompletion() {
         document.getElementById("button-next").style.display = "none";
         document.getElementById("container-button").style.display = "none";
         document.getElementById("img1").style.marginBottom = "26px";
+        scrollToTop();
     }
 }
 
@@ -1090,4 +1105,11 @@ function zoomImgOut() {
     document.getElementById("container-img").style.left = "0"
     document.getElementById("container-img").style.transform = "translate(0%, 0%)";
     document.getElementById("fond-img-plans").style.display = "none"
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0, 
+        behavior: 'smooth' 
+    });
 }
