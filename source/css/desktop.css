@@ -1,0 +1,21 @@
+html{
+    overflow: hidden;
+}
+.band{
+    height: 100vh;
+}
+.background{
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+}
+.deskstop-center{
+    position: relative;
+}
+.bg-img{
+    position: absolute;
+    z-index: -2;
+    top: 0px;
+    height: 100vh;
+    filter: blur(20px) opacity(50%);
+}

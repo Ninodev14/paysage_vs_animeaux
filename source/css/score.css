@@ -82,7 +82,7 @@ text-align: end;
 .bottom-right-text {
 bottom: 0;
 right: 0;
-margin: 150px;
+margin: 200px;
 margin-right: 20px ;
 margin-bottom: 20px ;
 position: absolute;
@@ -100,11 +100,11 @@ display: none;
 }
 
 #points1{
-    right: 0px;
+    right: -20px;
 }
 
 #points2{
-    left: 0px;
+    left: -20px;
 }
 
 .blason {
@@ -297,6 +297,12 @@ animation: animatePng 0.8s forwards cubic-bezier(.25,-0.23,1,.29);
         width: 100vw;
         height: auto;
     }
-    
+    .bottom-right-text{
+        width: 300px;
+    }
+    .top-left-text{
+        
+width: 300px;
+    }
 }
 
