@@ -97,7 +97,7 @@ function validationKind() {
         document.getElementById("img1").style.filter = "grayscale(0%)";
         document.getElementById("img2").style.filter = "grayscale(0%)";
         document.getElementById("question").innerText = "Bienvenue chez les animaux";
-        document.getElementById("paragraphe-center").innerHTML = "Attention le combat va bientôt commencer. Durant cet affrontement, les questions te rapporteront plus ou moins de points. <br> <br> Il y a 3 types de réponses possibles: <br> Pour ton équipe : <strong>50 points. </strong> <br> Pour aucune équipe: <strong>25 points.</strong> <br>Pour l’équipe adverse : <strong>5 points.</strong> <br> <br> Choisis la réponse adaptée à l’équipe Animaux pour rapporter le plus de points." ;
+        document.getElementById("paragraphe-center").innerHTML = "Attention le combat va bientôt commencer. Durant cet affrontement, les questions te rapporteront plus ou moins de points. <br> <br> Il y a 3 types de réponses possibles: <br> Pour ton équipe : <strong>50 points. </strong> <br> Pour aucune équipe: <strong>25 points.</strong> <br>Pour l’équipe adverse : <strong>5 points.</strong> <br> <br> Choisis la réponse adaptée à l’équipe Animaux pour rapporter le plus de points.";
         document.getElementById("img1").style.height = "150px";
         document.getElementById("img1").setAttribute("onclick", "");
         document.getElementById("paragraphe-center").style.display = "block";
@@ -1110,7 +1110,7 @@ function zoomImgOut() {
 
 function scrollToTop() {
     window.scrollTo({
-        top: 0, 
-        behavior: 'smooth' 
+        top: 0,
+        behavior: 'smooth'
     });
 }
