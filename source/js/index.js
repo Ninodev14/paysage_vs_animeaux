@@ -1,4 +1,3 @@
-screen.orientation.lock('portrait');
 function explicationP1() {
     document.documentElement.style.overflow = "auto";
     document.getElementById("container-presentation").style.display = "none";
