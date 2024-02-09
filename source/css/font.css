@@ -183,7 +183,7 @@ strong {
   #container-bottom-info {
     display: none;
     width: 350px;
-    position: absolute;
+    position: fixed;
     margin-left: -2px;
     margin-bottom: 0px;
     overflow: hidden;
