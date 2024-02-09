@@ -75,10 +75,8 @@ margin-top: 20px ;
 position: absolute;
 transform-origin: top left;
 transform: scale(1.2);
-}
-
-.Aanimate{
-animation: growTopLeft 5.3s ease forwards;
+width: 220px;
+text-align: end;
 }
 
 .bottom-right-text {
@@ -90,10 +88,7 @@ margin-bottom: 20px ;
 position: absolute;
 transform-origin: bottom right;
 transform: scale(1.2);
-text-align: end;
-}
-.Banimate {
-animation: growBottomRight 5.3s ease forwards;    
+width: 220px;
 }
 .score {
 margin: 0px;
@@ -102,6 +97,14 @@ margin: 0px;
 #score1, #score2{
 
 display: none;
+}
+
+#points1{
+    right: 0px;
+}
+
+#points2{
+    left: 0px;
 }
 
 .blason {
@@ -294,5 +297,6 @@ animation: animatePng 0.8s forwards cubic-bezier(.25,-0.23,1,.29);
         width: 100vw;
         height: auto;
     }
+    
 }
 
