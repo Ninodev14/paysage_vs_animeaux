@@ -315,8 +315,8 @@ function reponceQ2() {
 
 
 function step2() {
-    document.getElementById("img1").src = "source/image/tableau_musee/Mareebasse.jpg";
-    document.getElementById("paragraphe-center").innerText = "Marée basse à Etaples \nEugène Boudin";
+    document.getElementById("img1").src = "source/image/tableau_musee/Chabry_Léonce_-_La_vague.jpg";
+    document.getElementById("paragraphe-center").innerText = "La vague \nMartin Léonce Chabry";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -328,7 +328,7 @@ function step2() {
     infoWithActualle++;
     document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
-    document.getElementById("plans").src = "source/image/plans/Plan_MarreBasseEtample.svg";
+    document.getElementById("plans").src = "source/image/plans/Plan_Vague.svg";
     document.getElementById("container-button").style.display = "none";
     document.getElementById("img2").style.width = "none";
     document.getElementById("question-ask").style.display = "none";
@@ -343,12 +343,12 @@ function step2() {
 
 function next1() {
     updateQuestionAndButtons(
-        "Que font ces personnages ?",
-        "Ils sont perdus.",
+        "/ ?",
+        "/",
         "Q3R1()",
-        "Ils essaient d’attraper des coquillages.",
+        "/",
         "Q3R2()",
-        "Ils profitent du grand air (le temps d’une ballade).",
+        "/",
         "Q3R3()"
     );
     document.getElementById("container-button").style.display = "flex";
@@ -896,7 +896,7 @@ function step6() {
     document.getElementById("img1").style.width = "80%";
     document.getElementById("img1").style.height = "auto";
     document.getElementById("img1").src = "source/image/tableau_musee/vache.jpg";
-    document.getElementById("paragraphe-center").innerText = "Marée basse à Etaples \nEugène Boudin";
+    document.getElementById("paragraphe-center").innerText = "Equipage de boeufs \nRené Princeteau";
     document.getElementById("button-next").setAttribute("onclick", "next5()");
     document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -905,7 +905,7 @@ function step6() {
     infoWithActualle++;
     document.getElementById("bottom-info").innerText = infoWithActualle + "/" + infoWithTotal;
     document.getElementById("barre-info-contenue").style.width = (100 * infoWithActualle / infoWithTotal) + "%";
-    document.getElementById("plans").src = "source/image/plans/Plan_MarreBasseEtample.svg";
+    document.getElementById("plans").src = "source/image/plans/Plan_Equipage.svg";
     document.getElementById("question-ask").style.display = "none";
     document.getElementById("score-validation").style.display = "none";
     document.getElementById("img2").style.width = "none";
@@ -918,12 +918,12 @@ function step6() {
 }
 function next5() {
     updateQuestionAndButtons(
-        "Ce qui m’attire dans ce tableau, c’est…",
-        "La vache qui s’admire dans la flaque d’eau (Quel réalisme !).",
+        "/ ?",
+        "/",
         "Q7R1()",
-        "Les textures de la laine des moutons. (Qui veut leur faire des câlins ?)",
+        "/",
         "Q7R2()",
-        "Son nom : Le retour de la foire. (Les parcs d’attraction existaient déjà à cette époque ?)",
+        "/",
         "Q7R3()"
     );
     document.getElementById("container-button").style.display = "flex";
