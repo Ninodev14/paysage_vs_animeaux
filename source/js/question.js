@@ -316,7 +316,7 @@ function reponceQ2() {
 
 function step2() {
     document.getElementById("img1").src = "source/image/tableau_musee/Chabry_Léonce_-_La_vague.jpg";
-    document.getElementById("paragraphe-center").innerText = "La vague \nMartin Léonce Chabry";
+    document.getElementById("paragraphe-center").innerText = "La vague \n Léonce Chabry";
     document.getElementById("button-next").setAttribute("onclick", "next1()");
     document.getElementById("button-next").innerText = "JE SUIS DEVANT !";
     document.getElementById("btn1").style.backgroundColor = "white";
@@ -343,12 +343,12 @@ function step2() {
 
 function next1() {
     updateQuestionAndButtons(
-        "/ ?",
-        "/",
+        "Cette mer est ...",
+        "Est agitée. (Qui a amené sa planche de surf ?)",
         "Q3R1()",
-        "/",
+        "Doit être pleine de vie.",
         "Q3R2()",
-        "/",
+        "Est sublimée par son contraste avec le ciel.",
         "Q3R3()"
     );
     document.getElementById("container-button").style.display = "flex";
@@ -410,13 +410,13 @@ function reponceQ3() {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Tu y étais presque !";
-            document.getElementById("paragraphe-reponce").innerText = "Peut-être que toi aussi, tu n'es pas sur le bon chemin, mais sache que les coquillages sont des animaux !";
+            document.getElementById("paragraphe-reponce").innerText = "Jolie figure, mais cette mer est sans doute pleine de poissons !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Tu y étais presque !";
-            document.getElementById("paragraphe-reponce").innerText = " Peut-être que toi aussi, tu n'es pas sur le bon chemin, mais regarde ce magnifique paysage !";
+            document.getElementById("paragraphe-reponce").innerText = " Jolie figure, mais regarde plutôt ce magnifique paysage créé avec le contraste entre ciel et mer.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         }
@@ -425,13 +425,13 @@ function reponceQ3() {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Joli !";
-            document.getElementById("paragraphe-reponce").innerText = "Eh oui, les coquillages sont bien des animaux.";
+            document.getElementById("paragraphe-reponce").innerText = "Eh oui, la mer est sans doute pleine de poissons.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "Mauvaise pioche !";
-            document.getElementById("paragraphe-reponce").innerText = "Ah zut, les coquillages sont des animaux. Ce ciel, quant à lui, était quand même magnifique.";
+            document.getElementById("paragraphe-reponce").innerText = "Ah zut, cette mer est sans doute pleine de poissons ! Ce contraste entre ciel et mer, quant à lui, était quand même magnifique.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         }
@@ -439,13 +439,13 @@ function reponceQ3() {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "Mauvaise pioche !";
-            document.getElementById("paragraphe-reponce").innerText = "Ah zut, les coquillages sont des animaux…";
+            document.getElementById("paragraphe-reponce").innerText = "Ces deux éléments créent un magnifique paysage, mais cette mer est sans doute pleine de poissons !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Joli !";
-            document.getElementById("paragraphe-reponce").innerText = "Ah on est bien d’accord, quel paysage magnifique !";
+            document.getElementById("paragraphe-reponce").innerText = "Ah, on est bien d’accord, ces deux éléments créent un magnifique paysage !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         }
@@ -918,12 +918,12 @@ function step6() {
 }
 function next5() {
     updateQuestionAndButtons(
-        "/ ?",
-        "/",
+        "Ce qui m’attire dans ce tableau, c’est…",
+        "Les ombres des animaux qui animent le tableau.",
         "Q7R1()",
-        "/",
+        "La joie de vivre du chien. (Qui veut lui faire des câlins ?)",
         "Q7R2()",
-        "/",
+        "Son nom : Équipages de bœufs charriant des engrais... (Equipage ? On part à l'aventure ?!)",
         "Q7R3()"
     );
     document.getElementById("container-button").style.display = "flex";
@@ -983,13 +983,13 @@ function reponceQ7() {
         if (typeKind == 1) {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "Tu es tombé dans le piège !";
-            document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Paysages. Dans cette réponse, on parle bien du reflet de la vache, mais on ne le verrait pas sans la petite flaque d’eau.";
+            document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Paysages. Dans cette réponse, on parle de l’ombre d’un animal, ombre qui fait partie du paysage du tableau.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         } else {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Super !";
-            document.getElementById("paragraphe-reponce").innerText = "Bravo, tu as trouvé la bonne réponse ! Tu étais à deux doigts de tomber à l'eau ! (... Tu as compris ? ;D)";
+            document.getElementById("paragraphe-reponce").innerText = " Bravo, tu as trouvé la bonne réponse ! Ces ombres animent parfaitement le paysage.";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         }
@@ -998,13 +998,13 @@ function reponceQ7() {
         if (typeKind == 1) {
             pointPerso = pointPerso + 50;
             document.getElementById("reponce-h1").innerText = "Super !";
-            document.getElementById("paragraphe-reponce").innerText = "C’était la bonne réponse ! Leur laine a l’air si douce !";
+            document.getElementById("paragraphe-reponce").innerText = "C’était la bonne réponse ! Il a l’air si heureux !";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+50";
         } else {
             pointPerso = pointPerso + 5;
             document.getElementById("reponce-h1").innerText = "Bien essayé !";
-            document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Animaux ! Tu aurais dû te concentrer sur le reflet de la flaque d’eau…";
+            document.getElementById("paragraphe-reponce").innerText = "Malheureusement, cette réponse était pour l’équipe Animaux ! Tu aurais dû te concentrer sur les ombres du tableau…";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+5";
         }
@@ -1012,13 +1012,13 @@ function reponceQ7() {
         if (typeKind == 1) {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Oups !";
-            document.getElementById("paragraphe-reponce").innerText = "Cette réponse était neutre. La texture de la laine des moutons avait l’air toute douce pourtant…";
+            document.getElementById("paragraphe-reponce").innerText = "Cette réponse était neutre. Ce chien avait pourtant l’air si heureux…";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         } else {
             pointPerso = pointPerso + 25;
             document.getElementById("reponce-h1").innerText = "Oups !";
-            document.getElementById("paragraphe-reponce").innerText = "Cette réponse était neutre. Pourtant, le reflet de la vache dans la flaque d’eau était réussi, tu ne trouves pas ? ";
+            document.getElementById("paragraphe-reponce").innerText = "Cette réponse était neutre. Pourtant, les ombres des animaux étaient réussies, tu ne trouves pas ?";
             witchReponce = 0;
             document.getElementById("container-score-h3").innerText = "+25";
         }
