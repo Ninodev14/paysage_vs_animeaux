@@ -100,11 +100,24 @@ display: none;
 }
 
 #points1{
-    right: -20px;
+    right: -0px;
 }
 
 #points2{
-    left: -20px;
+    left: -0px;
+}
+@media screen and (min-width: 1901px) {
+    .score {
+        font-size: 70px;
+        white-space: nowrap;
+        }
+    .bottom-right-text{
+        padding-right: 180px;
+    }
+    .top-left-text{
+        padding-left: 180px;
+    }
+
 }
 
 .blason {
