@@ -52,15 +52,15 @@ window.onbeforeunload = function (event) {
     if (reloadCheck == 0) {
         return "Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.";
     }
-};
-
-window.addEventListener('pagehide', function(event) {
+}; function confirmExit() {
     if (reloadCheck == 0) {
-        event.preventDefault();
-        event.returnValue = ''; // Pour certains navigateurs, tels que Safari
-        alert("Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.");
+        // Affichez un message à l'utilisateur pour l'avertir
+        alert("Veuillez sauvegarder vos données avant de quitter la page !");
     }
-});
+}
+
+// Attachez la fonction confirmExit à l'événement beforeunload
+window.addEventListener('beforeunload', confirmExit);
 
 
 function IniA() {
