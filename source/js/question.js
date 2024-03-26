@@ -52,15 +52,7 @@ window.onbeforeunload = function (event) {
     if (reloadCheck == 0) {
         return "Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.";
     }
-}; function confirmExit() {
-    if (reloadCheck == 0) {
-        // Affichez un message à l'utilisateur pour l'avertir
-        alert("Veuillez sauvegarder vos données avant de quitter la page !");
-    }
-}
-
-// Attachez la fonction confirmExit à l'événement beforeunload
-window.addEventListener('beforeunload', confirmExit);
+};
 
 
 function IniA() {
