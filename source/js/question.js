@@ -54,6 +54,15 @@ window.onbeforeunload = function (event) {
     }
 };
 
+window.addEventListener('pagehide', function(event) {
+    if (reloadCheck == 0) {
+        event.preventDefault();
+        event.returnValue = ''; // Pour certains navigateurs, tels que Safari
+        alert("Êtes-vous sûr de vouloir quitter cette page ? Vos données non sauvegardées seront perdues.");
+    }
+});
+
+
 function IniA() {
     typeKind = 1;
     document.getElementById("img2").style.height = "100px";
