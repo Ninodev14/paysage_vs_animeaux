@@ -1064,7 +1064,6 @@ function checkCompletion() {
         document.getElementById("bottom-info").innerText = infoWithTotal + "/" + infoWithTotal;
         document.getElementById("barre-info-contenue").style.width = "100%";
         document.getElementById("paragraphe-resultat1").style.textAlign = "center";
-        document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté " + pointPerso + " points"
         document.getElementById("paragraphe-resultat2").innerHTML = "Viens récupérer ton badge !";
         document.getElementById("button-next").style.display = "none";
         document.getElementById("container-button").style.display = "none";
@@ -1075,6 +1074,11 @@ function checkCompletion() {
         document.getElementById("paragraphe-resultat1").style.display = "block";
         document.getElementById("paragraphe-resultat2").style.display = "block";
         scrollToTop();
+        if (typeKind == 1) {
+            document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Animaux a remporté " + pointPerso + " points"
+        } else {
+            document.getElementById("paragraphe-resultat1").innerHTML = "Grâce à toi, ton équipe Paysages a remporté " + pointPerso + " points"
+        }
     }
 }
 
