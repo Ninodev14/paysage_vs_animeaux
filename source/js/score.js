@@ -35,9 +35,11 @@ function initializePage() {
             return (inputValue - inputRangeMin) / (inputRangeMax - inputRangeMin) * (outputRangeMax - outputRangeMin) + outputRangeMin;
         }
 
+
         function setPoints(data){
             pointsA = data.record.teams.find(team => team.teamName === "Team A").points;
             pointsB = data.record.teams.find(team => team.teamName === "Team B").points;
+            console.log(data);
             updateIncrementalText();
             if (pointsA > pointsB) {
                 mostPoints = pointsA;
@@ -45,6 +47,7 @@ function initializePage() {
                 mostPoints = pointsB;
             }
             var animatedElement = document.getElementById('scoreImage');
+            console.log(data);
     animatedElement.style.setProperty('--Apercent', `${mapValue((((pointsA / (pointsA + pointsB))) * 100), 0, 100, -205, 205)}%`);
     if (pointsB > pointsA) {
         document.body.style.backgroundColor = '#E1F5ED';
@@ -128,17 +131,19 @@ function initializePage() {
             var pointsA = 0;
             var pointsB = 0;
             var mostPoints = 0;
-            req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
+            req.open("GET", "https://api.jsonbin.io/v3/b/660346ebfe36e24a20a863ba/latest", true);
             req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
             req.send();
             req.onreadystatechange = () => {
                 if (req.readyState == XMLHttpRequest.DONE) {
                     const jsonData = JSON.parse(req.responseText);
+                    console.log(jsonData);
                     setPoints(jsonData);
                 }
             };
             setTimeout(updatePoints, 600000);
         }
+
 
 
 

@@ -10,7 +10,7 @@ let req = new XMLHttpRequest();
 let pointisSet = false;
 let bodyNone = document.getElementById('body-none');
 
-req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
+req.open("GET", "https://api.jsonbin.io/v3/b/660346ebfe36e24a20a863ba/latest", true);
 req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
 req.send();
 
@@ -27,7 +27,7 @@ function addPoint(teamName, points) {
                 team.points += points;
 
                 // Update data on JSONBin
-                req.open("PUT", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7", true);
+                req.open("PUT", "https://api.jsonbin.io/v3/b/660346ebfe36e24a20a863ba", true);
                 req.setRequestHeader("Content-Type", "application/json");
                 req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
 
@@ -42,7 +42,7 @@ function addPoint(teamName, points) {
         }
     };
 
-    req.open("GET", "https://api.jsonbin.io/v3/b/65ba11021f5677401f28c1a7/latest", true);
+    req.open("GET", "https://api.jsonbin.io/v3/b/660346ebfe36e24a20a863ba/latest", true);
     req.setRequestHeader("X-Master-Key", "$2a$10$t0TB.mYwq16iqROanh0X7OBAWGrdVeyeXa3Xd92lZNir2NRkwtOi.");
     req.send();
 
